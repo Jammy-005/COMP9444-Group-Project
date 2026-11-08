@@ -22,13 +22,13 @@ class Example:
 
 class KnowledgeGraph:
     def __init__(self, kb_path: Path) -> None:
-        self.edges = dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
+        self.edges: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
         self.triples = 0
 
         with kb_path.open(encoding="utf-8-sig") as file:
             for line_number, data in enumerate(file, 1):
                 data = data.strip()
-                if data is None:
+                if not data:
                     continue
 
                 triple = data.split("|")
@@ -44,7 +44,12 @@ class KnowledgeGraph:
     def follow(self, topic: str, path: tuple[str, ...]) -> set[str]:
         nodes: set[str] = {topic}
         for relation in path:
-            nodes = {target for node in nodes for target in self.edges.get(node, {}).get(relation, ())}
+            next_nodes = set[str]()
+            for node in nodes:
+                targets = self.edges.get(node, {}).get(relation, ())
+                for target in targets:
+                    next_nodes.add(target)
+            nodes = next_nodes
             if not nodes:
                 break
         return nodes
@@ -70,7 +75,7 @@ def parse_question(question: str, answers: str) -> Example:
     template = ENTITY_REGEX.sub(" ENTITY ", question, count=1).lower()
     template = " ".join(WORD_REGEX.findall(template))
     answer_set = frozenset(answer.strip() for answer in answers.split("|"))
-    if answer_set is None:
+    if not answer_set:
         raise ValueError(f"Question has no answers: {question}")
     return Example(question, topic, template, answer_set)
 
@@ -82,7 +87,7 @@ def load_qa(root: Path, hop: int, split: str) -> list[Example]:
     with path.open(encoding="utf-8-sig") as file:
         for line_number, data in enumerate(file, 1):
             data = data.strip()
-            if data is None:
+            if not data:
                 continue
             try:
                 question, answers = data.split("\t", maxsplit=1)
