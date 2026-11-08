@@ -20,7 +20,9 @@ def train(model: VRN, examples: Sequence[Example], optimizer: torch.optim.Optimi
     for index, example in enumerate(examples, 1):
         optimizer.zero_grad()
 
-        loss: Tensor = model.loss(example, hops)
+        loss = model.loss(example, hops)
+        if loss is None:
+            continue
         loss.backward()     # pyright: ignore [reportUnknownMemberType]
         optimizer.step()
 
