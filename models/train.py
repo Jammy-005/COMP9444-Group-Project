@@ -1,0 +1,81 @@
+
+from __future__ import annotations
+
+import argparse
+import random
+from pathlib import Path
+from collections.abc import Sequence
+
+import torch
+from torch import Tensor
+
+from base import Example, KnowledgeGraph, load_qa
+from paper1 import VRN
+
+
+def train(model: VRN, examples: Sequence[Example], optimizer: torch.optim.Optimizer, hops: int, epoch: int) -> float:
+    model.train()
+    total_loss = 0.0
+
+    for index, example in enumerate(examples, 1):
+        optimizer.zero_grad()
+
+        loss: Tensor = model.loss(example, hops)
+        loss.backward()     # pyright: ignore [reportUnknownMemberType]
+        optimizer.step()
+
+        total_loss += loss.item()
+
+        if index % 100 == 0 or index == len(examples):
+            print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
+                epoch, index, len(examples),
+                100. * index / len(examples), loss.item()
+            ))
+
+    return total_loss / len(examples)
+
+
+def test(model: VRN, examples: Sequence[Example], hops: int) -> float:
+    model.eval()
+    correct = 0
+
+    with torch.no_grad():
+        for example in examples:
+            candidates, logits = model(example, hops)
+            prediction = candidates[int(logits.argmax().item())]
+            correct += int(prediction in example.answers)
+
+    return correct / len(examples)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", type=Path, default=Path("data"))
+    parser.add_argument("--hops", type=int, default=1)
+    parser.add_argument("--epochs", type=int, default=20)
+    parser.add_argument("--lr", type=float, default=0.001)
+    parser.add_argument("--no_cuda", action="store_true", default=False)
+    args = parser.parse_args()
+
+    root = Path(args.root)
+    hops = int(args.hops)
+    epochs = int(args.epochs)
+    lr = float(args.lr)
+
+    device = torch.device("cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu")
+
+    graph = KnowledgeGraph(root / "kb.txt")
+    training = load_qa(root, hops, "train")
+    validation = load_qa(root, hops, "dev")
+
+    model = VRN(graph, training).to(device)
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+
+    for epoch in range(1, epochs + 1):
+        random.shuffle(training)
+
+        train(model, training, optimizer, hops, epoch)
+        test(model, validation, hops)
+
+if __name__ == "__main__":
+    main()
