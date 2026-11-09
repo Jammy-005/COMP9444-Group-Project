@@ -41,9 +41,9 @@ class KnowledgeGraph:
                 self.edges[target][INVERSE + relation].add(source)
                 self.triples += 1
 
-    def follow(self, topic: str, path: tuple[str, ...]) -> set[str]:
-        nodes: set[str] = {topic}
-        for relation in path:
+    def follow(self, topic_entity: str, relation_path: tuple[str, ...]) -> set[str]:
+        nodes: set[str] = {topic_entity}
+        for relation in relation_path:
             next_nodes = set[str]()
             for node in nodes:
                 targets = self.edges.get(node, {}).get(relation, ())
@@ -54,18 +54,49 @@ class KnowledgeGraph:
                 break
         return nodes
 
-    def all_paths(self, topic: str, hops: int) -> dict[tuple[str, ...], set[str]]:
-        states: dict[tuple[str, ...], set[str]] = {(): {topic}}
+    def all_paths(self, topic_entity: str, hops: int) -> dict[tuple[str, ...], set[str]]:
+        states: dict[tuple[str, ...], set[str]] = {(): {topic_entity}}
         for _ in range(hops):
             next_states: dict[tuple[str, ...], set[str]] = defaultdict(set)
-            for path, nodes in states.items():
+            for relation_path, nodes in states.items():
                 for node in nodes:
                     for relation, targets in self.edges.get(node, {}).items():
-                        next_states[path + (relation,)].update(targets)
+                        next_states[relation_path + (relation,)].update(targets)
             states = next_states
             if not states:
                 break
         return states
+
+    def get_all_entities(self) -> set[str]:
+        return set(self.edges.keys())
+
+    def get_all_relations(self, include_inverse: bool = True) -> set[str]:
+        relations = {
+            relation
+            for node_relations in self.edges.values()
+            for relation in node_relations
+        }
+
+        if not include_inverse:
+            relations = {
+                relation for relation in relations
+                if not relation.startswith(INVERSE)
+            }
+
+        return relations
+
+    def get_all_triples(self, include_inverse: bool = True) -> set[tuple[str,str,str]]:
+        return {
+        (source, relation, target)
+        for source, relations in self.edges.items()
+        for relation, targets in relations.items()
+        if include_inverse or not relation.startswith(INVERSE)
+        for target in targets
+        }
+
+    def has_triple(self, triple: tuple[str,str,str]) -> bool:
+        source, relation, target = triple
+        return target in self.edges.get(source, {}).get(relation, set())
 
 def parse_question(question: str, answers: str) -> Example:
     match = ENTITY_REGEX.search(question)
