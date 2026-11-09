@@ -8,7 +8,7 @@ class ComplEx(nn.Module):
     """ComplEx knowledge graph embedding model for triple scoring.
 
     Learns complex-valued embeddings for entities and relations
-    and computes a compatibility score for each (head, relation,
+    and computes a compatibility ComplEx score for each (head, relation,
     tail) triple.
     """
 
