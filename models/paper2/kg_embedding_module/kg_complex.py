@@ -4,12 +4,30 @@ import random
 from base import KnowledgeGraph
 from collections.abc import Iterable
 
-class ComplEx(nn.Module):
+class kg_complEx(nn.Module):
     """ComplEx knowledge graph embedding model for triple scoring.
 
     Learns complex-valued embeddings for entities and relations
     and computes a compatibility ComplEx score for each (head, relation,
     tail) triple.
+
+    The model learns embeddings for entities and relations in the KG such that the raw ComplEx
+    score for a triple that exists in the KG is more than zero, and the score for a non-existent
+    triple is less than zero. Equivalently, when a sigmoid transformation is applied to the raw
+    ComplEx score, true triples should have sigmoid scores close to one and false triples should
+    have sigmoid scores close to zero.
+    
+    The trainable model parameters are the complex embeddings in self.entity_embeddings and
+    self.relation_embeddings. The model's input is a string triple (head entity, relation, tail entity) which is
+    abbreviated as (h, r, t), and the lookups for the embeddings of each entity/relation use a string to index mapping 
+    stored in this class' attributes. The target output is one for true triples, and zero for false triples.
+    
+    The calculated raw ComplEx score for a triple (h, r, t) is found with the self.forward(h, r, t)
+    method, and this score undergoes a sigmoid transformation (as described in the previous paragraph).
+    The loss function between the transformed score and the target output is binary cross entropy (BCE)
+    loss. The BCEWithLogitsLoss class handles the sigmoid and BCE loss at once. It also computes loss for
+    batch training.
+    
     """
 
     def __init__(
@@ -38,6 +56,7 @@ class ComplEx(nn.Module):
         super().__init__()
 
         self.kg = kg
+        self.embedding_dim = embedding_dim
 
         # Map entities and relations to unique integer IDs
         self.entity_to_idx = {
@@ -56,6 +75,7 @@ class ComplEx(nn.Module):
 
         nn.init.xavier_normal_(self.entity_embeddings.weight)
         nn.init.xavier_normal_(self.relation_embeddings.weight)
+    
 
 
     def forward(
@@ -63,6 +83,13 @@ class ComplEx(nn.Module):
         batch: Iterable[tuple[str, str, str]]
     ) -> torch.Tensor:
         """Compute raw ComplEx scores for a batch of string triples.
+
+        If there are 1000 entities and 10 relations, and we want to find the ComplEx score of the string
+        triple (h, r, t), then we call model.forward([(h, r, t)]). But we need a way to find the embeddings
+        of the two entities h and t, and the relation r. This requires entities and relations to be
+        mapped to a unique entity and relation index respectively, where this index is used to lookup the
+        embedding - this is mapping is created when initialising the class, and the lookup is conducted in this
+        method.
 
         Args:
             batch (Iterable[tuple[str, str, str]]): A collection of
@@ -76,12 +103,7 @@ class ComplEx(nn.Module):
                 compatibility between the head, relation and tail.
                 Scores are unbounded real values.
 
-        If there are 1000 entities and 10 relations, and we want to find the ComplEx score of the string
-        triple (s, r, t), then we call model.forward([(s, r, t)]). But we need a way to find the embeddings
-        of the two entities s and t, and the relation r. This requires entities and relations to be
-        mapped to a unique entity and relation index respectively, where this index is used to lookup the
-        embedding - this is mapping is created when initialising the class, and the lookup is conducted in this
-        method.
+       
         """
         batch = list(batch)
 
@@ -133,7 +155,7 @@ class ComplEx(nn.Module):
 
         Args:
             batch (Iterable[tuple[str, str, str]]): A collection of
-                (head, relation, tail) triples represented as strings.
+                (head entity, relation, tail entity) triples represented as strings.
                 Accepts a list, tuple, or set of triples. The size of this iterable
                 is batch_size.
 
@@ -156,23 +178,6 @@ class ComplEx(nn.Module):
         negatives_per_positive: int = 1
     ) -> list[float]:
         """Train ComplEx embeddings using knowledge graph triples.
-
-        The model learns embeddings for entities and relations in the KG such that the raw ComplEx
-        score for a triple that exists in the KG is more than zero, and the score for a non-existent
-        triple is less than zero. Equivalently, when a sigmoid transformation is applied to the raw
-        ComplEx score, true triples should have sigmoid scores close to one and false triples should
-        have sigmoid scores close to zero.
-
-        The trainable model parameters are the complex embeddings in self.entity_embeddings and
-        self.relation_embeddings. The model's input is a string triple (h, r, t), and the lookups for the
-        embeddings of each entity/relation use a string to index mapping stored in this class' attributes.
-        The target output is one for true triples, and zero for false triples.
-
-        The calculated raw ComplEx score for a triple (h, r, t) is found with the self.forward(h, r, t)
-        method, and this score undergoes a sigmoid transformation (as described in the previous paragraph).
-        The loss function between the transformed score and the target output is binary cross entropy (BCE)
-        loss. The BCEWithLogitsLoss class handles the sigmoid and BCE loss at once. It also computes loss for
-        batch training.
 
         Args:
             epochs (int): Number of training epochs.

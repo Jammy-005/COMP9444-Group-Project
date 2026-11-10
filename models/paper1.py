@@ -8,5 +8,5 @@ if __name__ == "__main__":
     if not kb_path.is_file():
         raise FileNotFoundError(f"kb file not found at path: kb_path={kb_path}")
     graph = KnowledgeGraph(kb_path)
-    training_data = load_qa("data", 1, "train")
+    training_data = load_qa(Path("data"), 1, "train")
     
