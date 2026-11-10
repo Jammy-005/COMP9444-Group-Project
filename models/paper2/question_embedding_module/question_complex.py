@@ -132,7 +132,7 @@ class question_complEx(nn.Module):
         # The first line below returns a tensor with dimensions (batch_size, sequence_length=64, hidden_size=768),
         # where for each question in the batch, and each integer input token id out of the 64 tokens in the
         # question, the real values at the 768 hidden nodes are given. These 768 real values are the embedding for
-        # one token from one question. We then average the embeddings for all non-padded tokens (where the attention
+        # one token from one question. We then average the embeddings for all non-padded tokens (i.e. where the attention
         # mask is 1), for every question in the batch. This gives a (batch_size, 768) dimensional question_embeddings
         # variable with the 768-dimensional embedding for all questions in the batch.
         roberta_last_hidden_states = self.roberta_model(input_ids, attention_mask=attention_mask).last_hidden_state
