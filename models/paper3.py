@@ -80,7 +80,7 @@ class PullNet(nn.Module):
         _, indices = torch.topk(similarities, min(num_facts, len(facts)))
         return [facts[int(indices[i])] for i in range(indices.numel())]
 
-    # G_q = (V, E), where V = V_entity ∪ V_fact (KB-only)
+    # G_q = (V, E), where V = V_entity U V_fact (KB-only)
     def _graph_cnn(self, entities: set[str], facts: set[tuple[str, str, str]], question_embedding: Tensor) -> dict[str, Tensor]:
         entities_embedding = {
             entity: self.entity_embeddings(
@@ -195,7 +195,7 @@ class PullNet(nn.Module):
                     entities.update((subject, object))
                     facts.add((subject, relation, object))
 
-            # 7. Teacher forcing: ensure shortest-path facts and entities are present
+            # 7. Ensure shortest-path facts and entities are present
             if supervise:
                 for entity, distance in shortest.items():
                     if distance != t:
