@@ -1,13 +1,13 @@
 
 from __future__ import annotations
 
+from torch.nn import functional as F
 import argparse
 import random
 from pathlib import Path
 from collections.abc import Sequence
 
 import torch
-from torch import Tensor
 
 from base import Example, KnowledgeGraph, load_qa
 from paper1 import VRN
@@ -39,6 +39,8 @@ def train(model: VRN, examples: Sequence[Example], optimizer: torch.optim.Optimi
 
 def test(model: VRN, examples: Sequence[Example], hops: int) -> float:
     model.eval()
+    test_loss = 0.0
+    evaluated = 0
     correct = 0
 
     with torch.no_grad():
@@ -46,8 +48,16 @@ def test(model: VRN, examples: Sequence[Example], hops: int) -> float:
             candidates, logits = model(example, hops)
             prediction = candidates[int(logits.argmax().item())]
             correct += int(prediction in example.answers)
-
-    return correct / len(examples)
+            answers = [i for i, entity in enumerate(candidates) if entity in example.answers]
+            if answers:
+                test_loss += F.log_softmax(logits, dim=0)[answers].mean().neg().item()
+                evaluated += 1
+    accuracy = correct / len(examples)
+    print('\nValidation set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'.format(
+        test_loss / evaluated if evaluated else float("nan"),
+        correct, len(examples), 100. * accuracy
+    ))
+    return accuracy
 
 
 def main() -> None:
