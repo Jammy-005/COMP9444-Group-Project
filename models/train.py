@@ -71,6 +71,7 @@ def main() -> None:
     parser.add_argument("--root", type=Path, default=Path("data"))
     parser.add_argument("--hops", type=int, default=1)
     parser.add_argument("--epochs", type=int, default=5)
+    parser.add_argument("--limit", type=int, default = 1000)
     parser.add_argument("--lr", type=float, default=0.001)
     parser.add_argument("--no_cuda", action="store_true", default=False)
     args = parser.parse_args()
@@ -79,6 +80,7 @@ def main() -> None:
     root = Path(args.root)
     hops = int(args.hops)
     epochs = int(args.epochs)
+    limit = int(args.limit)
     lr = float(args.lr)
 
     device = torch.device("cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu")
@@ -92,8 +94,9 @@ def main() -> None:
             raise ValueError("provided model is not supported")
 
     graph = KnowledgeGraph(root / "kb.txt")
-    training = load_qa(root, hops, "train")
-    validation = load_qa(root, hops, "dev")
+    training = load_qa(root, hops, "train")[:limit]
+    validation = load_qa(root, hops, "dev")[:limit]
+
 
     model = Model(graph, training).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
