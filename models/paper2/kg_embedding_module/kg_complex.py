@@ -5,22 +5,22 @@ from base import KnowledgeGraph
 from collections.abc import Iterable
 
 class kg_complEx(nn.Module):
-    """ComplEx knowledge graph embedding model for triple scoring.
+    """ComplEx knowledge graph (KG) embedding model for triple scoring.
 
     Learns complex-valued embeddings for entities and relations
     and computes a compatibility ComplEx score for each (head, relation,
-    tail) triple.
+    tail) KG triple.
 
     The model learns embeddings for entities and relations in the KG such that the raw ComplEx
-    score for a triple that exists in the KG is more than zero, and the score for a non-existent
-    triple is less than zero. Equivalently, when a sigmoid transformation is applied to the raw
-    ComplEx score, true triples should have sigmoid scores close to one and false triples should
+    score for a KG triple that exists in the KG is more than zero, and the score for a non-existent
+    KG triple is less than zero. Equivalently, when a sigmoid transformation is applied to the raw
+    ComplEx score, true KG triples should have sigmoid scores close to one and false triples should
     have sigmoid scores close to zero.
     
     The trainable model parameters are the complex embeddings in self.entity_embeddings and
     self.relation_embeddings. The model's input is a string triple (head entity, relation, tail entity) which is
     abbreviated as (h, r, t), and the lookups for the embeddings of each entity/relation use a string to index mapping 
-    stored in this class' attributes. The target output is one for true triples, and zero for false triples.
+    stored in this class' attributes. The target output is one for true KG triples, and zero for false triples.
     
     The calculated raw ComplEx score for a triple (h, r, t) is found with the self.forward(h, r, t)
     method, and this score undergoes a sigmoid transformation (as described in the previous paragraph).
@@ -82,7 +82,7 @@ class kg_complEx(nn.Module):
         self,
         batch: Iterable[tuple[str, str, str]]
     ) -> torch.Tensor:
-        """Compute raw ComplEx scores for a batch of string triples.
+        """Compute raw ComplEx scores for a batch of string KG triples.
 
         If there are 1000 entities and 10 relations, and we want to find the ComplEx score of the string
         triple (h, r, t), then we call model.forward([(h, r, t)]). But we need a way to find the embeddings
@@ -93,8 +93,8 @@ class kg_complEx(nn.Module):
 
         Args:
             batch (Iterable[tuple[str, str, str]]): A collection of
-            (head, relation, tail) triples represented as strings.
-            Accepts a list, tuple, or set of triples. The size of this iterable
+            (head, relation, tail) KG triples represented as strings.
+            Accepts a list, tuple, or set of KG triples. The size of this iterable
             is batch_size.        
 
         Returns:
@@ -112,7 +112,7 @@ class kg_complEx(nn.Module):
 
         device = self.entity_embeddings.weight.device
 
-        # Convert the list of string triples to a list of integer triples, which represent indices
+        # Convert the list of string KG triples to a list of integer triples, which represent indices
         indexed_batch = [
             (
                 self.entity_to_idx[h],
@@ -151,12 +151,12 @@ class kg_complEx(nn.Module):
         self,
         batch: Iterable[tuple[str, str, str]]
     ) -> torch.Tensor:
-        """Compute sigmoid-transformed scores for string triples.
+        """Compute sigmoid-transformed scores for string KG triples.
 
         Args:
             batch (Iterable[tuple[str, str, str]]): A collection of
-                (head entity, relation, tail entity) triples represented as strings.
-                Accepts a list, tuple, or set of triples. The size of this iterable
+                (head entity, relation, tail entity) KG triples represented as strings.
+                Accepts a list, tuple, or set of KG triples. The size of this iterable
                 is batch_size.
 
         Returns:
@@ -175,15 +175,15 @@ class kg_complEx(nn.Module):
         epochs: int = 100,
         batch_size: int = 128,
         learning_rate: float = 0.001,
-        negatives_per_positive: int = 1
+        negatives_per_positive: int = 3
     ) -> list[float]:
-        """Train ComplEx embeddings using knowledge graph triples.
+        """Train ComplEx embeddings using KG triples.
 
         Args:
             epochs (int): Number of training epochs.
-            batch_size (int): Number of positive triples per batch.
+            batch_size (int): Number of positive/correct KG triples per batch.
             learning_rate (float): Adam optimizer learning rate.
-            negatives_per_positive (int): Number of negative triples
+            negatives_per_positive (int): Number of negative/incorrect KG triples
                 sampled for each positive triple.
 
         Returns:
@@ -196,7 +196,7 @@ class kg_complEx(nn.Module):
         positive_triples = list(self.kg.get_all_triples())
 
         if not positive_triples:
-            raise ValueError("No trainable triples found")
+            raise ValueError("No trainable KG triples found")
 
         device = self.entity_embeddings.weight.device
         losses = []
@@ -214,7 +214,7 @@ class kg_complEx(nn.Module):
             for start in range(0, len(positive_triples), batch_size):
                 batch_positive = positive_triples[start:start + batch_size]
 
-                # Generate negative triples by corrupting tails, while keeping head and relation the
+                # Generate negative/incorrect KG triples by corrupting tails, while keeping head and relation the
                 # same
                 batch_negative = []
                 for h, r, _ in batch_positive:
@@ -231,7 +231,7 @@ class kg_complEx(nn.Module):
                     
                         batch_negative.append((h, r, new_t))
 
-                # Combine positive and negative triples, and do forward pass
+                # Combine positive and negative KG triples, and do forward pass
                 batch = batch_positive + batch_negative
                 scores = self.forward(batch)
 

@@ -1,10 +1,12 @@
 import torch
 import torch.nn as nn
 import random
+import copy
 from base import KnowledgeGraph, Example
 from collections.abc import Iterable
 from kg_embedding_module.kg_complex import kg_complEx
 from transformers import RobertaTokenizer, RobertaModel
+
 
 def pad_sequence(self, arr, max_len=128):
         num_to_add = max_len - len(arr)
@@ -63,12 +65,14 @@ class question_complEx(nn.Module):
         self.kg_complex = kg_complex
         self.question_training_data = question_training_data
 
+        # We use double the embedding dimensionality of the knowledge graph entities/relations since it is a 
+        # complex vector embedding
         self.linear_relu_stack = nn.Sequential(
             nn.Linear(768, second_layer_dim),
             nn.ReLU(),
             nn.Linear(second_layer_dim, third_layer_dim),
             nn.ReLU(),
-            nn.Linear(third_layer_dim, self.kg_complex.embedding_dim),
+            nn.Linear(third_layer_dim, 2 * self.kg_complex.embedding_dim),
         )
 
         self.tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
@@ -88,7 +92,7 @@ class question_complEx(nn.Module):
             batch (Iterable[tuple[str, str, str]]): A collection of
                 (topic entity, question, answer entity) triples represented as strings.
                 Accepts a list, tuple, or set of triples. The size of this iterable
-                is batch_size.        
+                is batch_size.     
         
         Returns:
             torch.Tensor: Raw compatibility scores with shape
@@ -106,7 +110,7 @@ class question_complEx(nn.Module):
 
         topic_entities, questions, answer_entities = map(list, zip(*batch))
 
-        # Convert the question into a 768-dimensional vector embedding
+        # Convert questions into a 768-dimensional vector embeddings
 
         # First, we tokenize the questions into tokens, then extract the numeric tokenID that
         # corresponds to each token in the vocabulary. Any padded tokens should not be considered
@@ -139,20 +143,159 @@ class question_complEx(nn.Module):
         mask = attention_mask.unsqueeze(-1).float()
         question_embeddings = torch.sum(roberta_last_hidden_states * mask, dim=1) / torch.clamp(mask.sum(dim=1), min=1e-9)
 
+        # The 768-dimensional embeddings for the questions are passed through four fully connected layers with ReLu
+        # activation, eventually reaching a complex embedding with dimensionality equal to the embeddings in the
+        # knowledge graph
+        question_embeddings = self.linear_relu_stack(question_embeddings)
+
+        # Now we get the embeddings of the topic and answer entities
+        topic_entity_indexed_batch = [
+            self.kg_complex.entity_to_idx[topic_entity]
+            for topic_entity in topic_entities
+        ]
+        
+        topic_entity_indices = torch.tensor(
+            topic_entity_indexed_batch, dtype=torch.long
+        )
+
+        answer_entity_indexed_batch = [
+            self.kg_complex.entity_to_idx[answer_entity]
+            for answer_entity in answer_entities
+        ]
                 
+        answer_entity_indices = torch.tensor(
+            answer_entity_indexed_batch, dtype=torch.long
+        )
+
+        head = self.kg_complex.entity_embeddings(topic_entity_indices[:])
+        tail = self.kg_complex.entity_embeddings(answer_entity_indices[:])
         
-        # h_re, h_im = torch.chunk(head, 2, dim=-1)
-        # r_re, r_im = torch.chunk(relation, 2, dim=-1)
-        # t_re, t_im = torch.chunk(tail, 2, dim=-1)
+        h_re, h_im = torch.chunk(head, 2, dim=-1)
+        r_re, r_im = torch.chunk(question_embeddings, 2, dim=-1)
+        t_re, t_im = torch.chunk(tail, 2, dim=-1)
         
-        # re_score = h_re * r_re - h_im * r_im
-        # im_score = h_re * r_im + h_im * r_re
+        re_score = h_re * r_re - h_im * r_im
+        im_score = h_re * r_im + h_im * r_re
         
-        # # In the ComplEx score formula, we use the conjugate of the tail entity's embedding, hence
-        # # the "+ im_score * t_im" below, not "- im_score * t_im"
-        # score = (
-        #     re_score * t_re + im_score * t_im
-        # ).sum(dim=-1)
+        # In the ComplEx score formula, we use the conjugate of the tail entity's embedding, hence
+        # the "+ im_score * t_im" below, not "- im_score * t_im"
+        score = (
+            re_score * t_re + im_score * t_im
+        ).sum(dim=-1)
         
         return torch.ones(3, 4)
 
+    def predict_proba(
+            self,
+            batch: Iterable[tuple[str, str, str]]
+        ) -> torch.Tensor:
+            """Compute sigmoid-transformed scores for a batch of question triples.
+            
+            Args:
+                batch (Iterable[tuple[str, str, str]]): A collection of
+                    (topic entity, question, answer entity) triples represented as strings.
+                    Accepts a list, tuple, or set of triples. The size of this iterable
+                    is batch_size.     
+            
+            Returns:
+                torch.Tensor: Sigmoid-transformed scores between 0 and 1,
+                    with shape (batch_size,). Higher values indicate
+                    greater predicted plausibility. These values are
+                    not necessarily calibrated probabilities.
+            """
+            return torch.sigmoid(
+                self.forward(batch)
+            )
+
+    def fit(
+            self,
+            epochs: int = 100,
+            batch_size: int = 128,
+            learning_rate: float = 0.001,
+            #negatives_per_positive: int = 3
+        ) -> list[float]:
+        """Train question embeddings using the provided list of question examples when initialising this class.
+    
+        Args:
+            epochs (int): Number of training epochs.
+            batch_size (int): Number of distinct question examples per batch
+            learning_rate (float): Adam optimizer learning rate.
+    
+        Returns:
+            list[float]: Average training loss for each epoch.
+        """
+
+        if epochs < 1 or batch_size < 1:
+            raise ValueError("Training parameters must be positive")
+
+        question_training_data = copy.deepcopy(self.question_training_data)
+        # Need to fix LOD violation
+        entities = set(sorted(self.kg_complex.kg.get_all_entities()))
+        
+        losses = []
+        
+        criterion = nn.BCEWithLogitsLoss()
+        optimizer = torch.optim.Adam(self.parameters(), lr=learning_rate)
+        
+        for epoch in range(epochs):
+            self.train()
+            random.shuffle(question_training_data)
+        
+            total_loss = 0.0
+            total_samples = 0
+        
+            for start in range(0, len(question_training_data), batch_size):
+                # Each example in the question training data can have multiple answers, and we treat each one as
+                # its own sample. The paper does not require a template in the question embedding module, so we
+                # leave out this field when constructing a batch.
+
+                batch_positive = [
+                    (example.question, example.topic, answer)
+                    for example in question_training_data[start:start + batch_size]
+                    for answer in example.answers
+                ]
+        
+                # Generate negative/incorrect question triples by corrupting the answer entity, while keeping head (topic)
+                # entity and question the same
+                # For each example in the question training data, we generate all possible incorrect answer entities and add them
+                # to the batch. This ensures the number of correct answers in example.answers for a given example does
+                # not determine the batch size, as we add num_entities minus len(examples.answers) number of incorrect/negative 
+                # samples to the batch for every question example. In the end, for each question example in the self.question_training_data
+                # attribute of this class, num_entities samples are created for training.
+                batch_negative = [
+                    (example.question, example.topic, answer)
+                    for example in question_training_data[start:start + batch_size]
+                    for answer in entities - example.answers
+                ]
+                
+                # Combine positive and negative question triples, and do forward pass
+                batch = batch_positive + batch_negative
+                scores = self.forward(batch)
+        
+                # Calculate loss           
+                labels = torch.tensor(
+                    [1.0] * len(batch_positive)
+                    + [0.0] * len(batch_negative),
+                    dtype=torch.float32,
+                )
+                loss = criterion(scores, labels)
+        
+                # Backpropagation
+                optimizer.zero_grad()
+                loss.backward()
+                optimizer.step()
+        
+                total_loss += loss.item() * len(batch)
+                total_samples += len(batch)
+        
+            avg_loss = total_loss / total_samples
+            losses.append(avg_loss)
+        
+            if (epoch + 1) % 10 == 0:
+                print(
+                    f"Epoch {epoch + 1}/{epochs}, "
+                    f"Loss: {avg_loss:.4f}"
+                )
+        
+        self.eval()
+        return losses
