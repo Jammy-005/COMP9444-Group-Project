@@ -22,7 +22,8 @@ class question_embedding_module(nn.Module):
         question_training_data: list[Example],
         first_hidden_layer_dim: int = 600,
         second_hidden_layer_dim: int = 450,
-        third_hidden_layer_dim: int = 300
+        third_hidden_layer_dim: int = 300,
+        dropout_rate: float = 0
     ) -> None:
         """Initialise the question embedding model.
 
@@ -52,7 +53,7 @@ class question_embedding_module(nn.Module):
             first_hidden_layer_dim (int): number of hidden nodes in the second layer (first hidden layer)
             second_hidden_layer_dim (int): number of hidden nodes in the third layer (second hidden layer)
             third_hidden_layer_dim (int): number of hidden nodes in the fourth layer (third hidden layer)
-
+            dropout_rate (int): Randomly switch off nodes with probability dropout_rate
         Returns:
             None: initialises
         
@@ -67,10 +68,13 @@ class question_embedding_module(nn.Module):
         self.linear_relu_stack = nn.Sequential(
             nn.Linear(768, first_hidden_layer_dim),
             nn.ReLU(),
+            nn.Dropout(dropout_rate),
             nn.Linear(first_hidden_layer_dim, second_hidden_layer_dim),
             nn.ReLU(),
+            nn.Dropout(dropout_rate),
             nn.Linear(second_hidden_layer_dim, third_hidden_layer_dim),
             nn.ReLU(),
+            nn.Dropout(dropout_rate),
             nn.Linear(third_hidden_layer_dim, 2 * self.kg_embedding_module.embedding_dim),
         )
 
@@ -217,14 +221,15 @@ class question_embedding_module(nn.Module):
             epochs: int = 100,
             batch_size: int = 128,
             learning_rate: float = 0.001,
-            #negatives_per_positive: int = 3
+            weight_decay: float = 0
         ) -> list[float]:
         """Train question embeddings using the provided list of question examples when initialising this class.
     
         Args:
-            epochs (int): Number of training epochs.
+            epochs (int): Number of training epochs
             batch_size (int): Number of distinct question examples per batch
-            learning_rate (float): Adam optimizer learning rate.
+            learning_rate (float): Adam optimizer learning rate
+            weight_decay (float): L2 regularization coefficient applied by the Adam optimizer
     
         Returns:
             list[float]: Average training loss for each epoch.
@@ -239,7 +244,7 @@ class question_embedding_module(nn.Module):
         losses = []
         
         criterion = nn.BCEWithLogitsLoss()
-        optimizer = torch.optim.Adam(self.parameters(), lr=learning_rate)
+        optimizer = torch.optim.Adam(self.parameters(), lr=learning_rate, weight_decay=weight_decay)
         
         for epoch in range(epochs):
             self.train()

@@ -21,7 +21,7 @@ class answer_selection_module():
     likely answer entity is returned.
     """
 
-    def init(self, kg_embedding_module: kg_embedding_module, question_embedding_module: question_embedding_module):
+    def __init__(self, kg_embedding_module: kg_embedding_module, question_embedding_module: question_embedding_module):
         """Initialise the ComplEx embedding model.
         
         Args:
