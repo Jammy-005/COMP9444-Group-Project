@@ -2,11 +2,10 @@ import torch
 import torch.nn as nn
 import random
 import copy
-from base import KnowledgeGraph, Example
+from base import Example
 from collections.abc import Iterable
 from kg_embedding_module import kg_embedding_module
 from transformers import RobertaTokenizer, RobertaModel
-
 
 class question_embedding_module(nn.Module):
     """Question embeddings learnt using the complEx scoring function. 

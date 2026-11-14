@@ -1,12 +1,7 @@
 import torch
-import torch.nn as nn
-import random
-import copy
-from base import KnowledgeGraph, Example
 from collections.abc import Iterable
 from kg_embedding_module import kg_embedding_module
 from question_embedding_module import question_embedding_module
-from transformers import RobertaTokenizer, RobertaModel
 
 class answer_selection_module():
     """Answer selection module, which uses learnt embeddings from the KG embedding module

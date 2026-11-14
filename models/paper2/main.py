@@ -4,7 +4,6 @@ import random
 import math
 from base import KnowledgeGraph, load_qa
 from pathlib import Path
-from itertools import product
 from kg_embedding_module import kg_embedding_module
 from question_embedding_module import question_embedding_module
 from answer_selection_module import answer_selection_module
