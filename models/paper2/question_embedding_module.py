@@ -4,17 +4,11 @@ import random
 import copy
 from base import KnowledgeGraph, Example
 from collections.abc import Iterable
-from kg_embedding_module.kg_complex import kg_complEx
+from kg_embedding_module import kg_embedding_module
 from transformers import RobertaTokenizer, RobertaModel
 
 
-def pad_sequence(self, arr, max_len=128):
-        num_to_add = max_len - len(arr)
-        for _ in range(num_to_add):
-            arr.append('<pad>')
-        return arr
-
-class question_complEx(nn.Module):
+class question_embedding_module(nn.Module):
     """Question embeddings learnt using the complEx scoring function. 
 
     Learns complex-valued embeddings for questions
@@ -24,59 +18,71 @@ class question_complEx(nn.Module):
 
     def __init__(
         self,
-        kg_complex: kg_complEx,
+        kg_embedding_module : kg_embedding_module,
         question_training_data: list[Example],
-        second_layer_dim: int = 500,
-        third_layer_dim: int = 300
+        first_hidden_layer_dim: int = 600,
+        second_hidden_layer_dim: int = 450,
+        third_hidden_layer_dim: int = 300
     ) -> None:
         """Initialise the question embedding model.
 
         This module embeds a natural language question q to a fixed dimension vector, where the 
         dimensionality is the same as the embeddings of the entities and relations supplied in the
-        kg_complEx model. This model constructs embeddings using a feed-forward neural network that
+        kg_embedding_module. This model constructs embeddings using a feed-forward neural network that
         first embeds the question q using RoBERTa (Liu et al., 2019) into a 768-dimensional vector. 
-        This is then passed through 4 fully connected linear layers with ReLU activation and finally
-        projected onto the complex space C. The model's input is a question triple (topic entity,
-        question, answer entity) abbreviated as (h, q, a), its output in self.forward() is a raw ComplEx
+        This is then passed through 3 fully connected layers, excluding the input layer, with ReLU
+        activation and finally projected onto the complex space C. The model's input is a question triple
+        (topic entity, question, answer entity) abbreviated as (h, q, a), its output in self.forward() is a raw ComplEx
         score measuring the likelihood that the question triple is correct (that is, the answer is correct
         for the question). The learnable model parameters are the weights in the linear layers which determine
         question embedding in complex space - the embeddings of the entitites are fixed and provided
         through the kg_complex embedding object parameter.
 
         Unlike the kg_complex class, questions are not static and we do not store embeddings like we do for
-        the static, given entities and relations in the knowledge graph. The question_complEx module instead
+        the static, given entities and relations in the knowledge graph. The question_embedding_module instead
         learns the process to produce an embedding for any question, including those it hasn't encountered
         before.
 
         Args:
-            kg_complex (kg_complEx embedding class): the trained embedding model for entities and relations,
+            kg_embedding_module (kg_embedding_module class): the trained embedding model for entities and relations,
                 containing the learned embeddings for all entities and relations in the knowledge graph
             question_training_data (list[Example]): a list of questions, their topic entity, the template and
                 possible answers. This tells the class what the right answers are to a certain question, which
                 determines the target output for a given question triple.
-            second_layer_dim (int): number of hidden nodes in the second layer (first hidden layer)
-            third_layer_dim (int): number of hidden nodes in the third layer (second hidden layer)
+            first_hidden_layer_dim (int): number of hidden nodes in the second layer (first hidden layer)
+            second_hidden_layer_dim (int): number of hidden nodes in the third layer (second hidden layer)
+            third_hidden_layer_dim (int): number of hidden nodes in the fourth layer (third hidden layer)
+
         Returns:
             None: initialises
         
         """
         super().__init__()
 
-        self.kg_complex = kg_complex
+        self.kg_embedding_module = kg_embedding_module
         self.question_training_data = question_training_data
 
         # We use double the embedding dimensionality of the knowledge graph entities/relations since it is a 
         # complex vector embedding
         self.linear_relu_stack = nn.Sequential(
-            nn.Linear(768, second_layer_dim),
+            nn.Linear(768, first_hidden_layer_dim),
             nn.ReLU(),
-            nn.Linear(second_layer_dim, third_layer_dim),
+            nn.Linear(first_hidden_layer_dim, second_hidden_layer_dim),
             nn.ReLU(),
-            nn.Linear(third_layer_dim, 2 * self.kg_complex.embedding_dim),
+            nn.Linear(second_hidden_layer_dim, third_hidden_layer_dim),
+            nn.ReLU(),
+            nn.Linear(third_hidden_layer_dim, 2 * self.kg_embedding_module.embedding_dim),
         )
 
         self.tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
-        self.roberta_model = RobertaModel.from_pretrained('roberta-based')
+        self.roberta_model = RobertaModel.from_pretrained('roberta-base')
+
+        # We freeze the parameters in the Roberta model and KG embedding module
+        # and do not fine-tune them
+        for param in self.roberta_model.parameters():
+            param.requires_grad = False
+        for param in self.kg_embedding_module.parameters():
+            param.requires_grad = False
 
 
     def forward(
@@ -101,17 +107,15 @@ class question_complEx(nn.Module):
                 Scores are unbounded real values.
         
         """
+        device = next(self.parameters()).device
         
         batch = list(batch)
         if not batch:
             raise ValueError("Batch cannot be empty")
-        
-        device = self.linear_relu_stack.weight.device
 
         topic_entities, questions, answer_entities = map(list, zip(*batch))
 
         # Convert questions into a 768-dimensional vector embeddings
-
         # First, we tokenize the questions into tokens, then extract the numeric tokenID that
         # corresponds to each token in the vocabulary. Any padded tokens should not be considered
         # by the RobertaModel, so we use an attention_mask which has entries that are either 0 or 1. 
@@ -124,12 +128,12 @@ class question_complEx(nn.Module):
             max_length=64,
             return_tensors="pt"
         )  
-        input_ids = questions_tokenized["input_ids"]
-        attention_mask = questions_tokenized["attention_mask"]
+        input_ids = questions_tokenized["input_ids"].to(device)
+        attention_mask = questions_tokenized["attention_mask"].to(device)
 
         # Then, we pass the input_ids of the tokenized questions into the RoBERTa model, along with the
         # attention_mask. The token sequence length (second dimension) of these two variables must be
-        # constant for all questions (first dimension), and in the last few lines we ensure it is
+        # constant for all questions (first dimension), and in the previous few lines we ensured it was
         # always 64. 
         # 
         # For each token in a question, the final hidden layer of the default RoBERTa model has 768 nodes.
@@ -139,7 +143,11 @@ class question_complEx(nn.Module):
         # one token from one question. We then average the embeddings for all non-padded tokens (i.e. where the attention
         # mask is 1), for every question in the batch. This gives a (batch_size, 768) dimensional question_embeddings
         # variable with the 768-dimensional embedding for all questions in the batch.
-        roberta_last_hidden_states = self.roberta_model(input_ids, attention_mask=attention_mask).last_hidden_state
+        with torch.no_grad():
+            roberta_last_hidden_states = self.roberta_model(
+                input_ids,
+                attention_mask=attention_mask
+            ).last_hidden_state
         mask = attention_mask.unsqueeze(-1).float()
         question_embeddings = torch.sum(roberta_last_hidden_states * mask, dim=1) / torch.clamp(mask.sum(dim=1), min=1e-9)
 
@@ -150,26 +158,23 @@ class question_complEx(nn.Module):
 
         # Now we get the embeddings of the topic and answer entities
         topic_entity_indexed_batch = [
-            self.kg_complex.entity_to_idx[topic_entity]
+            self.kg_embedding_module.entity_to_idx[topic_entity]
             for topic_entity in topic_entities
-        ]
-        
+        ]    
         topic_entity_indices = torch.tensor(
-            topic_entity_indexed_batch, dtype=torch.long
+            topic_entity_indexed_batch, dtype=torch.long, device=device
         )
-
         answer_entity_indexed_batch = [
-            self.kg_complex.entity_to_idx[answer_entity]
+            self.kg_embedding_module.entity_to_idx[answer_entity]
             for answer_entity in answer_entities
-        ]
-                
+        ]           
         answer_entity_indices = torch.tensor(
-            answer_entity_indexed_batch, dtype=torch.long
+            answer_entity_indexed_batch, dtype=torch.long, device=device
         )
+        head = self.kg_embedding_module.entity_embeddings(topic_entity_indices[:])
+        tail = self.kg_embedding_module.entity_embeddings(answer_entity_indices[:])
 
-        head = self.kg_complex.entity_embeddings(topic_entity_indices[:])
-        tail = self.kg_complex.entity_embeddings(answer_entity_indices[:])
-        
+        # Lastly, we compute the ComplEx scoring function
         h_re, h_im = torch.chunk(head, 2, dim=-1)
         r_re, r_im = torch.chunk(question_embeddings, 2, dim=-1)
         t_re, t_im = torch.chunk(tail, 2, dim=-1)
@@ -183,7 +188,7 @@ class question_complEx(nn.Module):
             re_score * t_re + im_score * t_im
         ).sum(dim=-1)
         
-        return torch.ones(3, 4)
+        return score
 
     def predict_proba(
             self,
@@ -229,8 +234,7 @@ class question_complEx(nn.Module):
             raise ValueError("Training parameters must be positive")
 
         question_training_data = copy.deepcopy(self.question_training_data)
-        # Need to fix LOD violation
-        entities = set(sorted(self.kg_complex.kg.get_all_entities()))
+        entities = self.kg_embedding_module.get_all_entities()
         
         losses = []
         
@@ -239,6 +243,7 @@ class question_complEx(nn.Module):
         
         for epoch in range(epochs):
             self.train()
+            self.roberta_model.eval()
             random.shuffle(question_training_data)
         
             total_loss = 0.0
@@ -250,7 +255,7 @@ class question_complEx(nn.Module):
                 # leave out this field when constructing a batch.
 
                 batch_positive = [
-                    (example.question, example.topic, answer)
+                    (example.topic, example.question, answer)
                     for example in question_training_data[start:start + batch_size]
                     for answer in example.answers
                 ]
@@ -263,7 +268,7 @@ class question_complEx(nn.Module):
                 # samples to the batch for every question example. In the end, for each question example in the self.question_training_data
                 # attribute of this class, num_entities samples are created for training.
                 batch_negative = [
-                    (example.question, example.topic, answer)
+                    (example.topic, example.question, answer)
                     for example in question_training_data[start:start + batch_size]
                     for answer in entities - example.answers
                 ]
@@ -277,6 +282,7 @@ class question_complEx(nn.Module):
                     [1.0] * len(batch_positive)
                     + [0.0] * len(batch_negative),
                     dtype=torch.float32,
+                    device=scores.device
                 )
                 loss = criterion(scores, labels)
         

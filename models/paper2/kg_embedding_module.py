@@ -4,7 +4,7 @@ import random
 from base import KnowledgeGraph
 from collections.abc import Iterable
 
-class kg_complEx(nn.Module):
+class kg_embedding_module(nn.Module):
     """ComplEx knowledge graph (KG) embedding model for triple scoring.
 
     Learns complex-valued embeddings for entities and relations
@@ -35,7 +35,7 @@ class kg_complEx(nn.Module):
         kg: KnowledgeGraph,
         embedding_dim: int = 100
     ) -> None:
-        """Initialise the ComplEx embedding model.
+        """Initialise the KG ComplEx embedding model.
 
         Args:
             kg (Knowledge Graph): the knowledge graph for the embeddings
@@ -51,8 +51,8 @@ class kg_complEx(nn.Module):
         Returns:
             None: Initialises entity and relation embedding layers and their string-id mappings.
 
-        
         """
+
         super().__init__()
 
         self.kg = kg
@@ -75,7 +75,6 @@ class kg_complEx(nn.Module):
 
         nn.init.xavier_normal_(self.entity_embeddings.weight)
         nn.init.xavier_normal_(self.relation_embeddings.weight)
-    
 
 
     def forward(
@@ -85,7 +84,7 @@ class kg_complEx(nn.Module):
         """Compute raw ComplEx scores for a batch of string KG triples.
 
         If there are 1000 entities and 10 relations, and we want to find the ComplEx score of the string
-        triple (h, r, t), then we call model.forward([(h, r, t)]). But we need a way to find the embeddings
+        KG triple (h, r, t), then we call model.forward([(h, r, t)]). But we need a way to find the embeddings
         of the two entities h and t, and the relation r. This requires entities and relations to be
         mapped to a unique entity and relation index respectively, where this index is used to lookup the
         embedding - this is mapping is created when initialising the class, and the lookup is conducted in this
@@ -263,3 +262,17 @@ class kg_complEx(nn.Module):
 
         self.eval()
         return losses
+
+    def get_all_entities(self) -> set[str]:
+        """
+        Returns:
+            set[str]: All entities in the knowledge graph supplied to this KG embedding class
+        """
+        return self.kg.get_all_entities()
+
+    def get_all_relations(self) -> set[str]:
+        """
+        Returns:
+            set[str]: All relations in the knowledge graph supplied to this KG embedding class
+        """
+        return self.kg.get_all_relations()

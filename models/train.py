@@ -97,7 +97,6 @@ def main() -> None:
     training = load_qa(root, hops, "train")[:limit]
     validation = load_qa(root, hops, "dev")[:limit]
 
-
     model = Model(graph, training).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
