@@ -39,7 +39,7 @@ sys.path.insert(0, str(MODELS_DIR))
 if __name__ == "__main__":
     # Setup Paper 2 model training and validation
     parser = argparse.ArgumentParser()
-    parser.add_argument("--root", type=Path, default=PROJECT_ROOT / "data"
+    parser.add_argument("--root", type=Path, default=PROJECT_ROOT / "data")
     parser.add_argument("--hops", type=int, default=1)
     parser.add_argument("--epochs", type=int, default=100)
     parser.add_argument("--limit", type=int, default = None)
