@@ -38,10 +38,11 @@ class question_embedding_module(nn.Module):
         question embedding in complex space - the embeddings of the entitites are fixed and provided
         through the kg_complex embedding object parameter.
 
-        Unlike the kg_complex class, questions are not static and we do not store embeddings like we do for
-        the static, given entities and relations in the knowledge graph. The question_embedding_module instead
+        Unlike the kg_complex class and its static, provided entities and relations, questions are not static and we
+        must be able to embed any question passed into the forward method. The question_embedding_module
         learns the process to produce an embedding for any question, including those it hasn't encountered
-        before.
+        before. However, because the RoBERTa model is fixed, we temporarily store question embeddings for questions
+        in self.question_training_data when fitting the model.
 
         Args:
             kg_embedding_module (kg_embedding_module class): the trained embedding model for entities and relations,
@@ -90,18 +91,23 @@ class question_embedding_module(nn.Module):
 
     def forward(
         self,
-        batch: Iterable[tuple[str, str, str]]
+        batch: Iterable[tuple[str, str, str]],
+        roberta_question_embeddings: torch.Tensor | None = None
     ) -> torch.Tensor:
         """Compute raw ComplEx scores for a batch of question triples.
 
-        If we want to find the ComplEx score of the question triple (h, r, t),
-        then we call model.forward([(h, r, t)]). Here, the batch_size is one.
+        If we want to find the ComplEx score of the question triple (h, q, a),
+        then we call model.forward([(h, q, a)]). Here, the batch_size is one.
         
         Args:
             batch (Iterable[tuple[str, str, str]]): A collection of
                 (topic entity, question, answer entity) triples represented as strings.
                 Accepts a list, tuple, or set of triples. The size of this iterable
-                is batch_size.     
+                is batch_size.
+            roberta_question_embeddings (torch.Tensor | None): A tensor of size (batch_size, 768)
+                that contains the RoBERTa question embeddings of each question in the batch.
+                This is useful if the question embeddings are pre-computed for the entire batch,
+                to avoid running the fixed/frozen RoBERTa model again.
         
         Returns:
             torch.Tensor: Raw compatibility scores with shape
@@ -118,46 +124,16 @@ class question_embedding_module(nn.Module):
 
         topic_entities, questions, answer_entities = map(list, zip(*batch))
 
-        # Convert questions into a 768-dimensional vector embeddings
-        # First, we tokenize the questions into tokens, then extract the numeric tokenID that
-        # corresponds to each token in the vocabulary. Any padded tokens should not be considered
-        # by the RobertaModel, so we use an attention_mask which has entries that are either 0 or 1. 
-        # input_ids and attention_mask are a (batch_size, 64) dimension tensors. We pad every question
-        # to 64 tokens to ensure consistency. 
-        questions_tokenized = self.tokenizer(
-            questions,
-            padding="max_length",
-            truncation=True,
-            max_length=64,
-            return_tensors="pt"
-        )  
-        input_ids = questions_tokenized["input_ids"].to(device)
-        attention_mask = questions_tokenized["attention_mask"].to(device)
-
-        # Then, we pass the input_ids of the tokenized questions into the RoBERTa model, along with the
-        # attention_mask. The token sequence length (second dimension) of these two variables must be
-        # constant for all questions (first dimension), and in the previous few lines we ensured it was
-        # always 64. 
-        # 
-        # For each token in a question, the final hidden layer of the default RoBERTa model has 768 nodes.
-        # The first line below returns a tensor with dimensions (batch_size, sequence_length=64, hidden_size=768),
-        # where for each question in the batch, and each integer input token id out of the 64 tokens in the
-        # question, the real values at the 768 hidden nodes are given. These 768 real values are the embedding for
-        # one token from one question. We then average the embeddings for all non-padded tokens (i.e. where the attention
-        # mask is 1), for every question in the batch. This gives a (batch_size, 768) dimensional question_embeddings
-        # variable with the 768-dimensional embedding for all questions in the batch.
-        with torch.no_grad():
-            roberta_last_hidden_states = self.roberta_model(
-                input_ids,
-                attention_mask=attention_mask
-            ).last_hidden_state
-        mask = attention_mask.unsqueeze(-1).float()
-        question_embeddings = torch.sum(roberta_last_hidden_states * mask, dim=1) / torch.clamp(mask.sum(dim=1), min=1e-9)
+        # Compute RoBERTa question embeddings if not provided to the forward method
+        if roberta_question_embeddings is None:
+            roberta_question_embeddings = self._convert_questions_roberta(questions, device)
+        else:
+            roberta_question_embeddings = roberta_question_embeddings.to(device)
 
         # The 768-dimensional embeddings for the questions are passed through three fully connected hidden layers
         # with ReLu activation, eventually reaching a complex embedding with dimensionality equal to the embeddings
         # in the knowledge graph
-        question_embeddings = self.linear_relu_stack(question_embeddings)
+        question_embeddings = self.linear_relu_stack(roberta_question_embeddings)
 
         # Now we get the embeddings of the topic and answer entities
         topic_entity_indexed_batch = [
@@ -239,7 +215,20 @@ class question_embedding_module(nn.Module):
 
         question_training_data = copy.deepcopy(self.question_training_data)
         entities = list(self.kg_embedding_module.get_all_entities())
-        
+
+        device = next(self.parameters()).device
+
+        # Compute the RoBERTa embeddings for all question strings once only
+        question_embeddings_dict = {}
+        unique_questions = list({example.question for example in question_training_data})
+        for start in range(0, len(unique_questions), 32):
+            questions = unique_questions[start:start + 32]
+            embeddings = self._convert_questions_roberta(
+                questions, device
+            )
+            for question, embedding in zip(questions, embeddings):
+                question_embeddings_dict[question] = embedding.cpu()
+                
         losses = []
         
         criterion = nn.BCEWithLogitsLoss()
@@ -288,7 +277,15 @@ class question_embedding_module(nn.Module):
                 
                 # Combine positive and negative question triples, and do forward pass
                 batch = batch_positive + batch_negative
-                scores = self.forward(batch)
+
+                roberta_embeddings = torch.stack([
+                    question_embeddings_dict[question]
+                    for _, question, _ in batch
+                ]).to(device)
+
+                scores = self.forward(
+                    batch,
+                    roberta_question_embeddings=roberta_embeddings)
         
                 # Calculate loss           
                 labels = torch.tensor(
@@ -318,3 +315,59 @@ class question_embedding_module(nn.Module):
         
         self.eval()
         return losses
+
+
+    def _convert_questions_roberta(
+            self, 
+            questions: list[str],
+            device: torch.device
+        ) -> torch.Tensor:
+        """Convert a batch of questions into 768-dimensional RoBERTa embeddings.
+
+        Uses a frozen RoBERTa model with mean pooling over non-padding tokens.
+
+        Args:
+            questions (list[str]): List of natural language questions.
+            device (torch.device): Device on which to perform computation.
+
+        Returns:
+            Tensor of shape (batch_size, 768) containing question embeddings
+        """
+
+        # First, we tokenize the questions into tokens, then extract the numeric tokenID that
+        # corresponds to each token in the vocabulary. Any padded tokens should not be considered
+        # by the RobertaModel, so we use an attention_mask which has entries that are either 0 or 1. 
+        # input_ids and attention_mask are a (batch_size, 64) dimension tensors. We pad every question
+        # to 64 tokens to ensure consistency. 
+        questions_tokenized = self.tokenizer(
+            questions,
+            padding=True,
+            truncation=True,
+            max_length=64,
+            return_tensors="pt"
+        )  
+        input_ids = questions_tokenized["input_ids"].to(device)
+        attention_mask = questions_tokenized["attention_mask"].to(device)
+        
+        # Then, we pass the input_ids of the tokenized questions into the RoBERTa model, along with the
+        # attention_mask. The token sequence length (second dimension) of these two variables must be
+        # constant for all questions (first dimension), and in the previous few lines we ensured it was
+        # always 64. 
+        # 
+        # For each token in a question, the final hidden layer of the default RoBERTa model has 768 nodes.
+        # The first line below returns a tensor with dimensions (batch_size, sequence_length=64, hidden_size=768),
+        # where for each question in the batch, and each integer input token id out of the 64 tokens in the
+        # question, the real values at the 768 hidden nodes are given. These 768 real values are the embedding for
+        # one token from one question. We then average the embeddings for all non-padded tokens (i.e. where the attention
+        # mask is 1), for every question in the batch. This gives a (batch_size, 768) dimensional question_embeddings
+        # variable with the 768-dimensional embedding for all questions in the batch.
+        with torch.no_grad():
+            self.roberta_model.eval()
+            roberta_last_hidden_states = self.roberta_model(
+                input_ids,
+                attention_mask=attention_mask
+            ).last_hidden_state
+        mask = attention_mask.unsqueeze(-1).float()
+        question_embeddings = torch.sum(roberta_last_hidden_states * mask, dim=1) / torch.clamp(mask.sum(dim=1), min=1e-9)
+
+        return question_embeddings
