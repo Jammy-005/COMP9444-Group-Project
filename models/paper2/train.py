@@ -3,8 +3,13 @@ import torch
 import argparse
 import random
 import math
-from base import KnowledgeGraph, load_qa
 from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+MODELS_DIR = PROJECT_ROOT / "models"
+sys.path.insert(0, str(MODELS_DIR))
+
+from base import KnowledgeGraph, load_qa
 from kg_embedding_module import kg_embedding_module
 from question_embedding_module import question_embedding_module
 from answer_selection_module import answer_selection_module
@@ -31,10 +36,6 @@ Description:
 
     Selects and prints the best hyperparameters based on validation accuracy.
 """
-
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-MODELS_DIR = PROJECT_ROOT / "models"
-sys.path.insert(0, str(MODELS_DIR))
 
 if __name__ == "__main__":
     # Setup Paper 2 model training and validation
@@ -73,13 +74,11 @@ if __name__ == "__main__":
 
     # Hyperparameter search space
     embedding_dims = (20, 200)
-    kgem_learning_rates = (1e-5, 1e-2)
-    qem_learning_rates = (1e-5, 1e-2)
     batch_sizes = (32, 256)
-    negative_samples = (1, 15)
-    dropout_rates = (0.0, 0.5)
-    weight_decays = (1e-8, 1e-3)
-
+    kgem_learning_rates = (1e-5, 1e-2)
+    kgem_negative_samples = (1, 15)
+    qem_learning_rates = (1e-5, 1e-2)
+    qem_negative_samples = (1, 15)
     hidden_dims = [
         (1024, 768, 512),
         (768, 512, 256),
@@ -97,16 +96,16 @@ if __name__ == "__main__":
         # Sample hyperparameters from the search space
         embedding_dim = random.randint(*embedding_dims)
         batch_size = random.randint(*batch_sizes)
-        kgem_negatives = random.randint(*negative_samples)
-        qem_negatives = random.randint(*negative_samples)
         kgem_learning_rate = 10 ** random.uniform(
             math.log10(kgem_learning_rates[0]),
             math.log10(kgem_learning_rates[1])
         )
+        kgem_negatives = random.randint(*kgem_negative_samples)
         qem_learning_rate = 10 ** random.uniform(
             math.log10(qem_learning_rates[0]),
             math.log10(qem_learning_rates[1])
         )
+        qem_negatives = random.randint(*qem_negative_samples)
         hidden = random.choice(hidden_dims)
         dropout_rate = random.uniform(*dropout_rates)
         weight_decay = 10 ** random.uniform(
@@ -117,14 +116,14 @@ if __name__ == "__main__":
         print(f"\nTrial {trial + 1}/{args.trials}")
         print(
             f"Embedding dimension: {embedding_dim}, "
-            f"KG learning rate: {kgem_learning_rate:.6g}, "
-            f"Question learning rate: {qem_learning_rate:.6g}, "
             f"Batch size: {batch_size}, "
+            f"KG learning rate: {kgem_learning_rate:.6g}, "
             f"Negatives per positive KG triple: {kgem_negatives}, "
+            f"Question learning rate: {qem_learning_rate:.6g}, "
             f"Negatives per positive question triple: {qem_negatives}, "
             f"Hidden layer dimensions in question embedding module: {hidden}",
-            f"Dropout: {dropout_rate:.3f}, "
-            f"Weight decay: {weight_decay:.6g}"
+            f"Dropout in question embedding module: {dropout_rate:.3f}, "
+            f"Weight decay in question embedding module: {weight_decay:.6g}"
         )
 
         # Train KG embedding module
