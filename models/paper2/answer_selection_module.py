@@ -9,21 +9,21 @@ class answer_selection_module():
     
     Answer selection involves the ComplEx scoring function, where for a fixed topic entity
     string h and question string q, we pass the question triple (h, q, a) into the
-    question_complex.predict_proba(), for all possible answer entities in the knowledge graph.
-    We use predict_proba() to give us a clean number between 0 to 1 for each question triple,
-    that we can interpret as the triple's probability of correctness, but this is equivalent to
-    question_complex.forward() because the sigmoid function is always increasing. Finally, the most
-    likely answer entity is returned.
+    question_embedding_module.predict_proba(), for all possible answer entities a in the knowledge graph.
+    We use predict_proba() to give us a number between 0 to 1 for each question triple, that
+    we can interpret as the triple's probability of correctness, but this is equivalent to
+    question_embedding_module.forward() because the sigmoid function is always increasing. Finally,
+    the most likely answer entity is returned.
     """
 
     def __init__(self, kg_embedding_module: kg_embedding_module, question_embedding_module: question_embedding_module):
         """Initialise the ComplEx embedding model.
         
         Args:
-            kg_complex (kg_complEx embedding class): the trained embedding model for entities and relations,
-                containing the learned embeddings for all entities and relations in the knowledge graph
-            question_complex (question_complEx embedding class): the trained question embedding module containing
-                the learnt 4-layer neural network to convert question strings into complex vector embeddings
+            kg_embedding_module (kg_embedding_module class): the trained embedding model for entities and
+                relations, containing the learned embeddings for all entities and relations in the knowledge graph
+            question_embedding_module (question_embedding_module class): the trained question embedding module
+                containing the learnt 4-layer neural network to convert question strings into complex vector embeddings
         
         Returns:
             None: Initialises the learnt embedding classes/models
@@ -47,7 +47,7 @@ class answer_selection_module():
                 of the returned list is batch_size.
                 
         """
-        entities = sorted(self.kg_embedding_module.get_all_entities())
+        entities = list(self.kg_embedding_module.get_all_entities())
         answers = []
 
         for topic_entity, question in batch:

@@ -54,7 +54,7 @@ class question_embedding_module(nn.Module):
             third_hidden_layer_dim (int): number of hidden nodes in the fourth layer (third hidden layer)
             dropout_rate (int): Randomly switch off nodes with probability dropout_rate
         Returns:
-            None: initialises
+            None
         
         """
         super().__init__()
@@ -154,9 +154,9 @@ class question_embedding_module(nn.Module):
         mask = attention_mask.unsqueeze(-1).float()
         question_embeddings = torch.sum(roberta_last_hidden_states * mask, dim=1) / torch.clamp(mask.sum(dim=1), min=1e-9)
 
-        # The 768-dimensional embeddings for the questions are passed through four fully connected layers with ReLu
-        # activation, eventually reaching a complex embedding with dimensionality equal to the embeddings in the
-        # knowledge graph
+        # The 768-dimensional embeddings for the questions are passed through three fully connected hidden layers
+        # with ReLu activation, eventually reaching a complex embedding with dimensionality equal to the embeddings
+        # in the knowledge graph
         question_embeddings = self.linear_relu_stack(question_embeddings)
 
         # Now we get the embeddings of the topic and answer entities
@@ -211,9 +211,7 @@ class question_embedding_module(nn.Module):
                     greater predicted plausibility. These values are
                     not necessarily calibrated probabilities.
             """
-            return torch.sigmoid(
-                self.forward(batch)
-            )
+            return torch.sigmoid(self.forward(batch))
 
     def fit(
             self,
@@ -226,7 +224,7 @@ class question_embedding_module(nn.Module):
     
         Args:
             epochs (int): Number of training epochs
-            batch_size (int): Number of distinct question examples per batch
+            batch_size (int): Number of distinct questions per batch
             learning_rate (float): Adam optimizer learning rate
             weight_decay (float): L2 regularization coefficient applied by the Adam optimizer
     
@@ -254,9 +252,9 @@ class question_embedding_module(nn.Module):
             total_samples = 0
         
             for start in range(0, len(question_training_data), batch_size):
-                # Each example in the question training data can have multiple answers, and we treat each one as
-                # its own sample. The paper does not require a template in the question embedding module, so we
-                # leave out this field when constructing a batch.
+                # Each example in the question training data can have multiple answers, and we treat each question
+                # (topic-question-answer) triple its own sample. Paper 2 does not require a template in the question
+                # embedding module, so we leave out this field when constructing a batch.
 
                 batch_positive = [
                     (example.topic, example.question, answer)

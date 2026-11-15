@@ -58,7 +58,8 @@ class kg_embedding_module(nn.Module):
         self.kg = kg
         self.embedding_dim = embedding_dim
 
-        # Map entities and relations to unique integer IDs
+        # Map entities and relations to unique integer IDs; we sort the sets for consistency in
+        # ids across different created objects of this class, provided the KG is the same
         self.entity_to_idx = {
             entity: i for i, entity in enumerate(sorted(kg.get_all_entities()))
         }
@@ -164,10 +165,8 @@ class kg_embedding_module(nn.Module):
                 greater predicted plausibility. These values are
                 not necessarily calibrated probabilities.
         """
-        return torch.sigmoid(
-            self.forward(batch)
-        )
-
+        return torch.sigmoid(self.forward(batch))
+    
 
     def fit(
         self,
@@ -191,7 +190,7 @@ class kg_embedding_module(nn.Module):
         if epochs < 1 or batch_size < 1 or negatives_per_positive < 1:
             raise ValueError("Training parameters must be positive")
 
-        entities = sorted(self.kg.get_all_entities())
+        entities = list(self.kg.get_all_entities())
         positive_triples = list(self.kg.get_all_triples())
 
         if not positive_triples:
