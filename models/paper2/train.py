@@ -66,11 +66,18 @@ if __name__ == "__main__":
     graph = KnowledgeGraph(kb_path)
     training = load_qa(root, hops, "train")
     validation = load_qa(root, hops, "dev")
-    test = load_qa(root, hops, "test")
     if limit is not None:
         training = training[:limit]
         validation = validation[:limit]
-        test = test[:limit]
+
+    cache_dir = PROJECT_ROOT / "models" / "paper2" / "cache"
+    cache = torch.load(
+        cache_dir / f"{hops}-hop.pt",
+        map_location="cpu",
+        weights_only=True
+    )
+    roberta_question_embeddings = cache["roberta_question_embeddings"]
+    question_to_idx = cache["question_to_idx"]
 
     # Hyperparameter search space
     embedding_dims = (20, 200)
@@ -145,6 +152,8 @@ if __name__ == "__main__":
         question_model = question_embedding_module(
             kg_embedding_module=kg_model,
             question_training_data=training,
+            question_to_idx=question_to_idx,
+            roberta_question_embeddings=roberta_question_embeddings,
             first_hidden_layer_dim=hidden[0],
             second_hidden_layer_dim=hidden[1],
             third_hidden_layer_dim=hidden[2],

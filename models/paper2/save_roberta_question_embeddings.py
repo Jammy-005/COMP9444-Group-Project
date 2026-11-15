@@ -1,4 +1,4 @@
-"""Precompute and save RoBERTa embeddings for 1-hop training questions.
+"""Precompute and save RoBERTa embeddings for 1-hop training, validation and test questions.
 
 Place this script alongside train.py in models/paper2, then run:
     python save_roberta_question_embeddings.py
@@ -26,7 +26,7 @@ def main() -> None:
     parser.add_argument(
         "--output",
         type=Path,
-        default=PROJECT_ROOT / "models" / "paper2" / "robert_question_embeddings" / "1-hop_train",
+        default=PROJECT_ROOT / "models" / "paper2" / "cache" / "1-hop.pt",
     )
     parser.add_argument("--batch-size", type=int, default=32)
     parser.add_argument("--no-cuda", action="store_true")
@@ -40,27 +40,36 @@ def main() -> None:
     )
 
     training = load_qa(args.root, 1, "train")
-    unique_questions = list(dict.fromkeys(example.question for example in training))
-    print(f"Loaded {len(training):,} examples, {len(unique_questions):,} unique questions")
-    print(f"Computing RoBERTa embeddings on {device}...")
+    validation = load_qa(args.root, 1, "dev")
+    test = load_qa(args.root, 1, "test")
 
-    embeddings, question_to_idx = question_embedding_module.convert_questions_roberta(
-        questions=unique_questions,
-        device=device,
-        batch_size=args.batch_size,
-        verbose=True,
+    questions = list(dict.fromkeys(
+        example.question
+        for dataset in (training, validation, test)
+        for example in dataset
+    ))
+
+    roberta_question_embeddings, question_to_idx = (
+        question_embedding_module.convert_questions_roberta(
+            questions=questions,
+            device=device,
+            batch_size=args.batch_size,
+            verbose=True
+        )
     )
 
-    args.output.parent.mkdir(parents=True, exist_ok=True)
+    cache_path = args.output
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+
     torch.save(
         {
-            "roberta_question_embeddings": embeddings.cpu(),
-            "question_to_idx": question_to_idx,
+            "roberta_question_embeddings": roberta_question_embeddings,
+            "question_to_idx": question_to_idx
         },
-        args.output,
+        cache_path
     )
-    print(f"Saved {embeddings.shape[0]:,} embeddings of dimension "
-          f"{embeddings.shape[1]} to: {args.output}")
+    print(f"Saved {roberta_question_embeddings.shape[0]:,} embeddings of dimension "
+          f"{roberta_question_embeddings.shape[1]} to: {args.output}")
 
 
 if __name__ == "__main__":

@@ -120,8 +120,10 @@ class question_embedding_module(nn.Module):
                 This is useful if the question embeddings are pre-computed for the entire batch,
                 to avoid running the fixed/frozen RoBERTa model again.
             
-            If either of the latter two parameters are None, this method will compute the RoBERTa question
-            embeddings and question_to_idx dictionary on its own.
+            If either of the latter two parameters are None, this method will attempt to source them from the
+            class' parameters. If at least one of them is still None, or if there is a question in the batch that
+            isn't a key in the question_to_idx dictionary, then the method will compute the RoBERTa question embeddings
+            and question_to_idx dictionary on its own.
         
         Returns:
             torch.Tensor: Raw compatibility scores with shape
@@ -138,9 +140,15 @@ class question_embedding_module(nn.Module):
 
         topic_entities, questions, answer_entities = map(list, zip(*batch))
 
-        # Compute RoBERTa question embeddings if not provided to the forward method
-        if roberta_question_embeddings is None or question_to_idx is None:
-            roberta_question_embeddings, question_to_idx = self.convert_questions_roberta(questions, device)
+        if question_to_idx is None and roberta_question_embeddings is None:
+            question_to_idx = self.question_to_idx
+            roberta_question_embeddings = self.roberta_question_embeddings
+        if (question_to_idx is None
+            or roberta_question_embeddings is None
+            or any(question not in question_to_idx for question in questions)
+            ):
+            roberta_question_embeddings, question_to_idx = (
+                self.convert_questions_roberta(questions, device))
         
         # Look up the row indices for all questions in the batch
         assert roberta_question_embeddings is not None
@@ -209,8 +217,10 @@ class question_embedding_module(nn.Module):
                     This is useful if the question embeddings are pre-computed for the entire batch,
                     to avoid running the fixed/frozen RoBERTa model again.
                             
-                If either of the latter two parameters are None, the forward method compute the RoBERTa question
-                embeddings and question_to_idx dictionary on its own. 
+                If either of the latter two parameters are None, the forward method will attempt to source them from the
+                class' parameters. If at least one of them is still None, or if there is a question in the batch that
+                isn't a key in the question_to_idx dictionary, then the forward method will compute the RoBERTa question embeddings
+                and question_to_idx dictionary on its own.
             
             Returns:
                 torch.Tensor: Sigmoid-transformed scores between 0 and 1,
