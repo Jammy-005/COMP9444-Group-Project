@@ -68,10 +68,10 @@ class kg_embedding_module(nn.Module):
         }
 
         self.entity_embeddings = nn.Embedding(
-            len(self.entity_to_idx), 2 * embedding_dim
+            len(self.entity_to_idx), 2 * embedding_dim, sparse=True
         )
         self.relation_embeddings = nn.Embedding(
-            len(self.relation_to_idx), 2 * embedding_dim
+            len(self.relation_to_idx), 2 * embedding_dim, sparse=True
         )
 
         nn.init.xavier_normal_(self.entity_embeddings.weight)
@@ -200,7 +200,7 @@ class kg_embedding_module(nn.Module):
         losses = []
 
         criterion = nn.BCEWithLogitsLoss()
-        optimizer = torch.optim.Adam(self.parameters(), lr=learning_rate)
+        optimizer = torch.optim.SparseAdam(self.parameters(), lr=learning_rate)
 
         print("Beginning KG embedding module fitting")
         for epoch in range(epochs):
@@ -225,7 +225,7 @@ class kg_embedding_module(nn.Module):
                         attempt = 0
                         while self.kg.has_triple((h, r, new_t)):
                             if attempt > 100:
-                                raise ValueError("Could not generate false triple!")
+                                raise ValueError("Could not generate false KG triple!")
                             new_t = random.choice(entities)
                             attempt += 1
                     

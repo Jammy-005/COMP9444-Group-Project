@@ -218,7 +218,8 @@ class question_embedding_module(nn.Module):
             epochs: int = 100,
             batch_size: int = 128,
             learning_rate: float = 0.001,
-            weight_decay: float = 0
+            weight_decay: float = 0,
+            negatives_per_positive: int = 3
         ) -> list[float]:
         """Train question embeddings using the provided list of question examples when initialising this class.
     
@@ -227,7 +228,8 @@ class question_embedding_module(nn.Module):
             batch_size (int): Number of distinct questions per batch
             learning_rate (float): Adam optimizer learning rate
             weight_decay (float): L2 regularization coefficient applied by the Adam optimizer
-    
+            negatives_per_positive (int): Number of negative/incorrect question triples
+                            sampled for each positive triple.
         Returns:
             list[float]: Average training loss for each epoch.
         """
@@ -236,7 +238,7 @@ class question_embedding_module(nn.Module):
             raise ValueError("Training parameters must be positive")
 
         question_training_data = copy.deepcopy(self.question_training_data)
-        entities = self.kg_embedding_module.get_all_entities()
+        entities = list(self.kg_embedding_module.get_all_entities())
         
         losses = []
         
@@ -257,25 +259,32 @@ class question_embedding_module(nn.Module):
                 # Each example in the question training data can have multiple answers, and we treat each question
                 # (topic-question-answer) triple its own sample. Paper 2 does not require a template in the question
                 # embedding module, so we leave out this field when constructing a batch.
-
+                batch_examples = question_training_data[start:start + batch_size]
                 batch_positive = [
                     (example.topic, example.question, answer)
-                    for example in question_training_data[start:start + batch_size]
+                    for example in batch_examples
                     for answer in example.answers
                 ]
         
                 # Generate negative/incorrect question triples by corrupting the answer entity, while keeping head (topic)
                 # entity and question the same
-                # For each example in the question training data, we generate all possible incorrect answer entities and add them
-                # to the batch. This ensures the number of correct answers in example.answers for a given example does
-                # not determine the batch size, as we add num_entities minus len(examples.answers) number of incorrect/negative 
-                # samples to the batch for every question example. In the end, for each question example in the self.question_training_data
-                # attribute of this class, num_entities samples are created for training.
-                batch_negative = [
-                    (example.topic, example.question, answer)
-                    for example in question_training_data[start:start + batch_size]
-                    for answer in entities - example.answers
-                ]
+                batch_negative = []
+                for example in batch_examples:
+                    num_negatives = len(example.answers) * negatives_per_positive
+
+                    for _ in range(num_negatives):
+                        attempt = 0
+                        while True:
+                            if attempt > 100:
+                                raise ValueError("Could not generate false question triple!")
+                            answer = random.choice(entities)
+                            attempt += 1
+                            if answer not in example.answers:
+                                break
+
+                        batch_negative.append(
+                            (example.topic, example.question, answer)
+                        )
                 
                 # Combine positive and negative question triples, and do forward pass
                 batch = batch_positive + batch_negative

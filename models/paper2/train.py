@@ -97,7 +97,8 @@ if __name__ == "__main__":
         # Sample hyperparameters from the search space
         embedding_dim = random.randint(*embedding_dims)
         batch_size = random.randint(*batch_sizes)
-        negatives = random.randint(*negative_samples)
+        kgem_negatives = random.randint(*negative_samples)
+        qem_negatives = random.randint(*negative_samples)
         kgem_learning_rate = 10 ** random.uniform(
             math.log10(kgem_learning_rates[0]),
             math.log10(kgem_learning_rates[1])
@@ -119,14 +120,14 @@ if __name__ == "__main__":
             f"KG learning rate: {kgem_learning_rate:.6g}, "
             f"Question learning rate: {qem_learning_rate:.6g}, "
             f"Batch size: {batch_size}, "
-            f"Negatives per positive KG triple: {negatives}, "
+            f"Negatives per positive KG triple: {kgem_negatives}, "
+            f"Negatives per positive question triple: {qem_negatives}, "
             f"Hidden layer dimensions in question embedding module: {hidden}",
             f"Dropout: {dropout_rate:.3f}, "
             f"Weight decay: {weight_decay:.6g}"
         )
 
         # Train KG embedding module
-        print("Training KG embedding module")
         kg_model = kg_embedding_module(
             kg=graph,
             embedding_dim=embedding_dim
@@ -136,25 +137,25 @@ if __name__ == "__main__":
             epochs=epochs,
             batch_size=batch_size,
             learning_rate=kgem_learning_rate,
-            negatives_per_positive=negatives,
+            negatives_per_positive=kgem_negatives,
         )
 
         # Train question embedding module
-        print("Training question embedding module")
         question_model = question_embedding_module(
             kg_embedding_module=kg_model,
             question_training_data=training,
             first_hidden_layer_dim=hidden[0],
             second_hidden_layer_dim=hidden[1],
             third_hidden_layer_dim=hidden[2],
-            dropout_rate=dropout_rate
+            dropout_rate=dropout_rate,
         ).to(device)
 
         question_model.fit(
             epochs=epochs,
             batch_size=batch_size,
             learning_rate=qem_learning_rate,
-            weight_decay=weight_decay
+            weight_decay=weight_decay,
+            negatives_per_positive=qem_negatives
         )
 
         # Validation, using the answer selection module
@@ -184,10 +185,11 @@ if __name__ == "__main__":
                 "kg embedding module learning_rate": kgem_learning_rate,
                 "question embedding module learning_rate": qem_learning_rate,
                 "batch_size": batch_size,
-                "negatives per positive KG triple": negatives,
+                "negatives per positive KG triple": kgem_negatives,
                 "question embedding module hidden_dimensions": hidden,
                 "dropout_rate": dropout_rate,
-                "weight_decay": weight_decay
+                "weight_decay": weight_decay,
+                "negatives per positive question triple": qem_negatives 
             }
 
     print("\nBest hyperparameters:")
