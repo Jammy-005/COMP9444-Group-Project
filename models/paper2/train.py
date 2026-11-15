@@ -1,8 +1,8 @@
+import sys
 import torch
 import argparse
 import random
 import math
-import sys
 from base import KnowledgeGraph, load_qa
 from pathlib import Path
 from kg_embedding_module import kg_embedding_module
