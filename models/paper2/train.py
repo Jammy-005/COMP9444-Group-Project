@@ -47,7 +47,7 @@ if __name__ == "__main__":
     root = Path(args.root)
     hops = int(args.hops)
     epochs = int(args.epochs)
-    limit = int(args.limit)
+    limit = args.limit
         
     random.seed(42)
     torch.manual_seed(42)
