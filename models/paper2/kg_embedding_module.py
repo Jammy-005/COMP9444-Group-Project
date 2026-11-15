@@ -187,6 +187,8 @@ class kg_embedding_module(nn.Module):
         Returns:
             list[float]: Average training loss for each epoch.
         """
+        print("Beginning KG embedding module fitting")
+        
         if epochs < 1 or batch_size < 1 or negatives_per_positive < 1:
             raise ValueError("Training parameters must be positive")
 
@@ -202,7 +204,6 @@ class kg_embedding_module(nn.Module):
         criterion = nn.BCEWithLogitsLoss()
         optimizer = torch.optim.SparseAdam(self.parameters(), lr=learning_rate)
 
-        print("Beginning KG embedding module fitting")
         for epoch in range(epochs):
             print(f"Beginning epoch {epoch + 1}")
             self.train()

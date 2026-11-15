@@ -17,7 +17,7 @@ from answer_selection_module import answer_selection_module
 """
 Usage:
     python train.py
-    python train.py --root data --hops 1 --epochs 100 --limit 1000
+    python train.py --root data --hops 1 --epochs 100 --limit 1000 --trials 10
     python train.py --hops 2 --epochs 50 --limit 5000
     python train.py --no_cuda
 
