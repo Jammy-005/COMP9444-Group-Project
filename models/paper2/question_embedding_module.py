@@ -242,8 +242,10 @@ class question_embedding_module(nn.Module):
         
         criterion = nn.BCEWithLogitsLoss()
         optimizer = torch.optim.Adam(self.parameters(), lr=learning_rate, weight_decay=weight_decay)
-        
+
+        print("Beginning question embedding module fitting")
         for epoch in range(epochs):
+            print(f"Beginning epoch {epoch + 1}")
             self.train()
             self.roberta_model.eval()
             random.shuffle(question_training_data)

@@ -202,7 +202,9 @@ class kg_embedding_module(nn.Module):
         criterion = nn.BCEWithLogitsLoss()
         optimizer = torch.optim.Adam(self.parameters(), lr=learning_rate)
 
+        print("Beginning KG embedding module fitting")
         for epoch in range(epochs):
+            print(f"Beginning epoch {epoch + 1}")
             self.train()
             random.shuffle(positive_triples)
 
