@@ -88,6 +88,8 @@ if __name__ == "__main__":
         (512, 256, 128),
         (300, 200, 100)
     ]
+    dropout_rates = (0.0, 0.5)
+    weight_decays = (1e-8, 1e-3)
 
     best_accuracy = 0
     best_params = None
@@ -121,7 +123,7 @@ if __name__ == "__main__":
             f"Negatives per positive KG triple: {kgem_negatives}, "
             f"Question learning rate: {qem_learning_rate:.6g}, "
             f"Negatives per positive question triple: {qem_negatives}, "
-            f"Hidden layer dimensions in question embedding module: {hidden}",
+            f"Hidden layer dimensions in question embedding module: {hidden}, "
             f"Dropout in question embedding module: {dropout_rate:.3f}, "
             f"Weight decay in question embedding module: {weight_decay:.6g}"
         )
