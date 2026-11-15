@@ -37,7 +37,7 @@ if __name__ == "__main__":
     parser.add_argument("--root", type=Path, default=Path("data"))
     parser.add_argument("--hops", type=int, default=1)
     parser.add_argument("--epochs", type=int, default=100)
-    parser.add_argument("--limit", type=int, default = 1000)
+    parser.add_argument("--limit", type=int, default = None)
     parser.add_argument("--trials", type=int, default=30,
                     help="Number of random hyperparameter configurations to evaluate")
     parser.add_argument("--no_cuda", action="store_true", default=False)
@@ -58,9 +58,13 @@ if __name__ == "__main__":
     if not kb_path.is_file():
         raise FileNotFoundError(f"kb file not found at path: kb_path={kb_path}")
     graph = KnowledgeGraph(kb_path)
-    training = load_qa(root, hops, "train")[:limit]
-    validation = load_qa(root, hops, "dev")[:limit]
-    test = load_qa(root, hops, "test")[:limit]
+    training = load_qa(root, hops, "train")
+    validation = load_qa(root, hops, "dev")
+    test = load_qa(root, hops, "test")
+    if limit is not None:
+        training = training[:limit]
+        validation = validation[:limit]
+        test = test[:limit]
 
     # Hyperparameter search space
     embedding_dims = (20, 200)
