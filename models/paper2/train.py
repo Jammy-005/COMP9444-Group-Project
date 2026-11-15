@@ -2,6 +2,7 @@ import torch
 import argparse
 import random
 import math
+import sys
 from base import KnowledgeGraph, load_qa
 from pathlib import Path
 from kg_embedding_module import kg_embedding_module
@@ -31,10 +32,14 @@ Description:
     Selects and prints the best hyperparameters based on validation accuracy.
 """
 
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+MODELS_DIR = PROJECT_ROOT / "models"
+sys.path.insert(0, str(MODELS_DIR))
+
 if __name__ == "__main__":
     # Setup Paper 2 model training and validation
     parser = argparse.ArgumentParser()
-    parser.add_argument("--root", type=Path, default=Path("data"))
+    parser.add_argument("--root", type=Path, default=PROJECT_ROOT / "data"
     parser.add_argument("--hops", type=int, default=1)
     parser.add_argument("--epochs", type=int, default=100)
     parser.add_argument("--limit", type=int, default = None)
@@ -54,7 +59,7 @@ if __name__ == "__main__":
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(42)
     
-    kb_path = Path("data/kb.txt")
+    kb_path = PROJECT_ROOT / "data" / "kb.txt"
     if not kb_path.is_file():
         raise FileNotFoundError(f"kb file not found at path: kb_path={kb_path}")
     graph = KnowledgeGraph(kb_path)
