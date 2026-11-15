@@ -117,6 +117,7 @@ if __name__ == "__main__":
         )
 
         # Train KG embedding module
+        print("Training KG embedding module")
         kg_model = kg_embedding_module(
             kg=graph,
             embedding_dim=embedding_dim
@@ -130,6 +131,7 @@ if __name__ == "__main__":
         )
 
         # Train question embedding module
+        print("Training question embedding module")
         question_model = question_embedding_module(
             kg_embedding_module=kg_model,
             question_training_data=training,
