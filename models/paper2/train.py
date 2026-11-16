@@ -177,6 +177,7 @@ if __name__ == "__main__":
         correct = 0
         total = len(validation)
         # The sampled batch_size is not important for non-training purposes
+        print("Beginning validation set performance testing")
         for start in range(0, total, 32):
             batch = validation[start:start + 32]
 
