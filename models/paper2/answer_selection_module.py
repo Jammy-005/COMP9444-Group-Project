@@ -48,19 +48,26 @@ class answer_selection_module():
                 
         """
         entities = list(self.kg_embedding_module.get_all_entities())
-        answers = []
+        batch = list(batch)
 
-        for topic_entity, question in batch:
-            candidates = [
-                (topic_entity, question, answer_entity)
-                for answer_entity in entities
-            ]
+        # Generate candidates for every question
+        candidates = [
+            (topic, question, entity)
+            for topic, question in batch
+            for entity in entities
+        ]
 
-            probabilities = self.question_embedding_module.predict_proba(candidates)
+        # Predict scores in one batch
+        probabilities = self.question_embedding_module.predict_proba(
+            candidates
+        )
 
-            best_index = int(torch.argmax(probabilities).item())
-            answers.append(entities[best_index])
+        # Reshape scores into (number of questions, number of entities)
+        probabilities = probabilities.reshape(len(batch), len(entities))
 
-        return answers
+        # Find the highest-scoring entity for each question
+        best_indices = torch.argmax(probabilities, dim=1).tolist()
+
+        return [entities[index] for index in best_indices]
 
         

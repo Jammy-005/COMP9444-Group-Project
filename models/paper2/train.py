@@ -175,32 +175,44 @@ if __name__ == "__main__":
         )
 
         correct = 0
-        for example in validation:
-            prediction = answer_selector.select_answer(
-                [(example.topic, example.question)]
-            )[0]
+        total = len(validation)
+        # The sampled batch_size is not important for non-training purposes
+        for start in range(0, total, 32):
+            batch = validation[start:start + 32]
 
-            # Any correct answer entity in the example's set of possible answers will do
-            correct += int(prediction in example.answers)
+            predictions = answer_selector.select_answer(
+                [(example.topic, example.question) for example in batch]
+            )
 
-        accuracy = correct / len(validation)
+            for prediction, example in zip(predictions, batch):
+                correct += int(prediction in example.answers)
 
-        print(f"Validation accuracy: {accuracy:.4f}")
+            processed = min(start + 32, total)
+
+            print(
+                f"Progress: {processed}/{total} "
+                f"({processed / total * 100:.1f}%) | "
+                f"Accuracy: {correct / processed:.4f}"
+            )
+
+        accuracy = correct / total
+
+        print(f"\nFinal validation accuracy: {accuracy:.4f}")
 
         if accuracy > best_accuracy:
             best_accuracy = accuracy
 
-            best_params = {
-                "embedding_dimension": embedding_dim,
-                "kg embedding module learning_rate": kgem_learning_rate,
-                "question embedding module learning_rate": qem_learning_rate,
-                "batch_size": batch_size,
-                "negatives per positive KG triple": kgem_negatives,
-                "question embedding module hidden_dimensions": hidden,
-                "dropout_rate": dropout_rate,
-                "weight_decay": weight_decay,
-                "negatives per positive question triple": qem_negatives 
-            }
+        best_params = {
+            "embedding_dimension": embedding_dim,
+            "kg embedding module learning_rate": kgem_learning_rate,
+            "question embedding module learning_rate": qem_learning_rate,
+            "batch_size": batch_size,
+            "negatives per positive KG triple": kgem_negatives,
+            "question embedding module hidden_dimensions": hidden,
+            "dropout_rate": dropout_rate,
+            "weight_decay": weight_decay,
+            "negatives per positive question triple": qem_negatives 
+        }
 
     print("\nBest hyperparameters:")
     print(best_params)
