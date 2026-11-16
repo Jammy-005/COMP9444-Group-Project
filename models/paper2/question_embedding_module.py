@@ -147,6 +147,7 @@ class question_embedding_module(nn.Module):
             or roberta_question_embeddings is None
             or any(question not in question_to_idx for question in questions)
             ):
+            print("Code should never go here in qem")
             roberta_question_embeddings, question_to_idx = (
                 self.convert_questions_roberta(questions, device))
         
