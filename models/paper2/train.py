@@ -17,8 +17,8 @@ from answer_selection_module import answer_selection_module
 """
 Usage:
     python train.py
-    python train.py --root data --hops 1 --epochs 100 --limit 1000 --trials 10
-    python train.py --hops 2 --epochs 50 --limit 5000
+    python train.py --root data --hops 1 --epochs 100 --train 1000 --val 500 --trials 10
+    python train.py --hops 2 --epochs 50 --test 3000
     python train.py --no_cuda
 
 Description:
@@ -29,6 +29,7 @@ Description:
         - KG entity/relation and question complex embedding dimensions
         - Learning rates for both the KG and question embedding modules
         - Batch sizes
+        - Number of train and validation questions
         - Negative samples per positive KG triple in the KG embedding module
         - Question encoder hidden layer dimensions
         - Question encoder weight decay
@@ -44,7 +45,7 @@ if __name__ == "__main__":
     parser.add_argument("--hops", type=int, default=1)
     parser.add_argument("--epochs", type=int, default=100)
     parser.add_argument("--train", type=int, default = None)
-    parser.add_argument("--test", type=int, default = None)
+    parser.add_argument("--val", type=int, default = None)
     parser.add_argument("--trials", type=int, default=30,
                     help="Number of random hyperparameter configurations to evaluate")
     parser.add_argument("--no_cuda", action="store_true", default=False)
@@ -55,7 +56,7 @@ if __name__ == "__main__":
     hops = int(args.hops)
     epochs = int(args.epochs)
     train = args.train
-    test = args.test
+    val = args.val
 
     random.seed(42)
     torch.manual_seed(42)
@@ -71,8 +72,8 @@ if __name__ == "__main__":
 
     if train is not None and train <= len(training):
         training = random.sample(training, train)
-    if test is not None and test <= len(validation):
-        validation = random.sample(validation, test)
+    if val is not None and val <= len(validation):
+        validation = random.sample(validation, val)
 
     cache_dir = PROJECT_ROOT / "models" / "paper2" / "cache"
     cache = torch.load(
