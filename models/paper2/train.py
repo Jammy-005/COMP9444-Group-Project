@@ -43,7 +43,8 @@ if __name__ == "__main__":
     parser.add_argument("--root", type=Path, default=PROJECT_ROOT / "data")
     parser.add_argument("--hops", type=int, default=1)
     parser.add_argument("--epochs", type=int, default=100)
-    parser.add_argument("--limit", type=int, default = None)
+    parser.add_argument("--train", type=int, default = None)
+    parser.add_argument("--test", type=int, default = None)
     parser.add_argument("--trials", type=int, default=30,
                     help="Number of random hyperparameter configurations to evaluate")
     parser.add_argument("--no_cuda", action="store_true", default=False)
@@ -53,22 +54,25 @@ if __name__ == "__main__":
     root = Path(args.root)
     hops = int(args.hops)
     epochs = int(args.epochs)
-    limit = args.limit
-        
+    train = args.train
+    test = args.test
+
     random.seed(42)
     torch.manual_seed(42)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(42)
-    
+
     kb_path = PROJECT_ROOT / "data" / "kb.txt"
     if not kb_path.is_file():
         raise FileNotFoundError(f"kb file not found at path: kb_path={kb_path}")
     graph = KnowledgeGraph(kb_path)
     training = load_qa(root, hops, "train")
     validation = load_qa(root, hops, "dev")
-    if limit is not None:
-        training = training[:limit]
-        validation = validation[:limit]
+
+    if train is not None and train <= len(training):
+        training = random.sample(training, train)
+    if test is not None and test <= len(validation):
+        validation = random.sample(validation, test)
 
     cache_dir = PROJECT_ROOT / "models" / "paper2" / "cache"
     cache = torch.load(
