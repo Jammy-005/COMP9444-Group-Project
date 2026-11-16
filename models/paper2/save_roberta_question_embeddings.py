@@ -26,7 +26,7 @@ def main() -> None:
     parser.add_argument(
         "--output",
         type=Path,
-        default=PROJECT_ROOT / "models" / "paper2" / "cache" / "1-hop.pt",
+        default=PROJECT_ROOT / "models" / "paper2" / "cache" / "3-hop.pt",
     )
     parser.add_argument("--batch-size", type=int, default=32)
     parser.add_argument("--no-cuda", action="store_true")
@@ -39,9 +39,9 @@ def main() -> None:
         "cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu"
     )
 
-    training = load_qa(args.root, 1, "train")
-    validation = load_qa(args.root, 1, "dev")
-    test = load_qa(args.root, 1, "test")
+    training = load_qa(args.root, 3, "train")
+    validation = load_qa(args.root, 3, "dev")
+    test = load_qa(args.root, 3, "test")
 
     questions = list(dict.fromkeys(
         example.question
