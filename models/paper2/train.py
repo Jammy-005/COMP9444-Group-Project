@@ -82,9 +82,9 @@ if __name__ == "__main__":
     # Hyperparameter search space
     embedding_dims = (20, 200)
     batch_sizes = (32, 256)
-    kgem_learning_rates = (1e-5, 1e-2)
+    kgem_learning_rates = (1e-4, 1e-2)
     kgem_negative_samples = (1, 15)
-    qem_learning_rates = (1e-5, 1e-2)
+    qem_learning_rates = (1e-4, 1e-2)
     qem_negative_samples = (1, 15)
     hidden_dims = [
         (1024, 768, 512),
