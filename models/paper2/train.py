@@ -210,17 +210,17 @@ if __name__ == "__main__":
         if accuracy > best_accuracy:
             best_accuracy = accuracy
 
-        best_params = {
-            "embedding_dimension": embedding_dim,
-            "kg embedding module learning_rate": kgem_learning_rate,
-            "question embedding module learning_rate": qem_learning_rate,
-            "batch_size": batch_size,
-            "negatives per positive KG triple": kgem_negatives,
-            "question embedding module hidden_dimensions": hidden,
-            "dropout_rate": dropout_rate,
-            "weight_decay": weight_decay,
-            "negatives per positive question triple": qem_negatives 
-        }
+            best_params = {
+                "embedding_dimension": embedding_dim,
+                "kg embedding module learning_rate": kgem_learning_rate,
+                "question embedding module learning_rate": qem_learning_rate,
+                "batch_size": batch_size,
+                "negatives per positive KG triple": kgem_negatives,
+                "question embedding module hidden_dimensions": hidden,
+                "dropout_rate": dropout_rate,
+                "weight_decay": weight_decay,
+                "negatives per positive question triple": qem_negatives 
+            }
 
     print("\nBest hyperparameters:")
     print(best_params)
