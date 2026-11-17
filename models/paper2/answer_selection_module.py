@@ -9,10 +9,10 @@ class answer_selection_module():
     
     Answer selection involves the ComplEx scoring function, where for a fixed topic entity
     string h and question string q, we pass the question triple (h, q, a) into the
-    question_embedding_module.predict_proba(), for all possible answer entities a in the knowledge graph.
-    We use predict_proba() to give us a number between 0 to 1 for each question triple, that
+    question_embedding_module.forward(), for all possible answer entities a in the knowledge graph.
+    (((We use predict_proba() to give us a number between 0 to 1 for each question triple, that
     we can interpret as the triple's probability of correctness, but this is equivalent to
-    question_embedding_module.forward() because the sigmoid function is always increasing. Finally,
+    question_embedding_module.forward() because the sigmoid function is always increasing))). Finally,
     the most likely answer entity is returned.
     """
 
@@ -58,7 +58,7 @@ class answer_selection_module():
         ]
 
         # Predict scores in one batch
-        probabilities = self.question_embedding_module.predict_proba(
+        probabilities = self.question_embedding_module.forward(
             candidates
         )
 
