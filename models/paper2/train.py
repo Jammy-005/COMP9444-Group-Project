@@ -198,16 +198,17 @@ if __name__ == "__main__":
             )
 
             for prediction, example in zip(predictions, batch):
-                batch_correct = int(prediction in example.answers)
-                correct += batch_correct
+                example_correct = int(prediction in example.answers)
+                batch_correct += example_correct
+                correct += example_correct
 
             processed = min(start + 32, total)
 
             print(
                 f"Progress: {processed}/{total} "
                 f"({processed / total * 100:.1f}%) | "
-                f"Total Accuracy: {correct / processed:.4f}"
-                f"Batch Accuracy: {batch_correct / 32}"
+                f"Total Accuracy: {correct / processed:.4f} | "
+                f"Batch Accuracy: {batch_correct / len(batch)}"
             )
 
         accuracy = correct / total
