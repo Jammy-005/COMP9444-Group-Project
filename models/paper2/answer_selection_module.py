@@ -32,41 +32,57 @@ class answer_selection_module():
         self.kg_embedding_module = kg_embedding_module
         self.question_embedding_module = question_embedding_module
 
+    @torch.inference_mode()
     def select_answer(self, batch: Iterable[tuple[str, str]]) -> list[str]:
-        """Selects the answer for each question in the batch Iterable, using the method described
-        at the top of this class
+        pairs = list(batch)
+        if not pairs:
+            return []
 
-        Args:
-            batch (Iterable[tuple[str, str]]): A collection of
-                (topic entity, question) tuples represented as strings.
-                Accepts a list, tuple, or set of tuples. The size of this iterable
-                is batch_size.
-                
-        Returns:
-            list[str]: A list containing the predicted answer entity for each question. The length
-                of the returned list is batch_size.
-                
-        """
-        entities = list(self.kg_embedding_module.get_all_entities())
-        batch = list(batch)
+        kg = self.kg_embedding_module
+        qem = self.question_embedding_module
+        qem.eval()
 
-        # Generate candidates for every question
-        candidates = [
-            (topic, question, entity)
-            for topic, question in batch
-            for entity in entities
-        ]
+        question_to_idx = qem.question_to_idx
+        roberta = qem.roberta_question_embeddings
 
-        # Predict scores in one batch
-        probabilities = self.question_embedding_module.predict_proba(
-            candidates
+        if question_to_idx is None or roberta is None:
+            raise ValueError("Precomputed question embeddings required")
+
+        device = kg.entity_embeddings.weight.device
+
+        # Embed each question exactly once.
+        question_indices = torch.tensor(
+            [question_to_idx[question] for _, question in pairs],
+            dtype=torch.long,
+            device=roberta.device,
+        )
+        question_embeddings = qem.linear_relu_stack(
+            roberta[question_indices].to(device)
         )
 
-        # Reshape scores into (number of questions, number of entities)
-        probabilities = probabilities.reshape(len(batch), len(entities))
+        # Look up the topic entities.
+        topic_indices = torch.tensor(
+            [kg.entity_to_idx[topic] for topic, _ in pairs],
+            dtype=torch.long,
+            device=device,
+        )
+        heads = kg.entity_embeddings(topic_indices)
 
-        # Find the highest-scoring entity for each question
-        best_indices = torch.argmax(probabilities, dim=1).tolist()
+        # All possible answer entities.
+        tails = kg.entity_embeddings.weight
+
+        h_re, h_im = heads.chunk(2, dim=-1)
+        r_re, r_im = question_embeddings.chunk(2, dim=-1)
+        t_re, t_im = tails.chunk(2, dim=-1)
+
+        # Same ComplEx scores, calculated using matrix multiplication.
+        scores = (
+            (h_re * r_re - h_im * r_im) @ t_re.T
+            + (h_re * r_im + h_im * r_re) @ t_im.T
+        )
+
+        best_indices = scores.argmax(dim=1).tolist()
+        entities = list(kg.entity_to_idx)
 
         return [entities[index] for index in best_indices]
 
