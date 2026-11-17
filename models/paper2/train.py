@@ -190,6 +190,7 @@ if __name__ == "__main__":
         # The sampled batch_size is not important for non-training purposes
         print("Beginning validation set performance testing")
         for start in range(0, total, 32):
+            batch_correct = 0
             batch = validation[start:start + 32]
 
             predictions = answer_selector.select_answer_fast(
@@ -197,14 +198,16 @@ if __name__ == "__main__":
             )
 
             for prediction, example in zip(predictions, batch):
-                correct += int(prediction in example.answers)
+                batch_correct = int(prediction in example.answers)
+                correct += batch_correct
 
             processed = min(start + 32, total)
 
             print(
                 f"Progress: {processed}/{total} "
                 f"({processed / total * 100:.1f}%) | "
-                f"Accuracy: {correct / processed:.4f}"
+                f"Total Accuracy: {correct / processed:.4f}"
+                f"Batch Accuracy: {batch_correct / 32}"
             )
 
         accuracy = correct / total
