@@ -17,7 +17,7 @@ from answer_selection_module import answer_selection_module
 """
 Usage:
     python train.py
-    python train.py --root data --hops 1 --epochs 100 --train 1000 --val 500 --trials 10
+    python train.py --root data --hops 1 --kgem_epochs 100 --qem_epochs 50 --train 1000 --val 500 --trials 10
     python train.py --hops 2 --epochs 50 --test 3000
     python train.py --no_cuda
 
@@ -43,7 +43,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=PROJECT_ROOT / "data")
     parser.add_argument("--hops", type=int, default=1)
-    parser.add_argument("--epochs", type=int, default=100)
+    parser.add_argument("--kgem_epochs", type=int, default=100)
+    parser.add_argument("--qem_epochs", type=int, default=100)
     parser.add_argument("--train", type=int, default = None)
     parser.add_argument("--val", type=int, default = None)
     parser.add_argument("--trials", type=int, default=30,
@@ -54,7 +55,8 @@ if __name__ == "__main__":
 
     root = Path(args.root)
     hops = int(args.hops)
-    epochs = int(args.epochs)
+    kgem_epochs = int(args.kgem_epochs)
+    qem_epochs = int(args.qem_epochs)
     train = args.train
     val = args.val
 
@@ -147,7 +149,7 @@ if __name__ == "__main__":
         ).to(device)
 
         kg_model.fit(
-            epochs=epochs,
+            epochs=kgem_epochs,
             batch_size=batch_size,
             learning_rate=kgem_learning_rate,
             negatives_per_positive=kgem_negatives,
@@ -166,7 +168,7 @@ if __name__ == "__main__":
         ).to(device)
 
         question_model.fit(
-            epochs=epochs,
+            epochs=qem_epochs,
             batch_size=batch_size,
             learning_rate=qem_learning_rate,
             weight_decay=weight_decay,
