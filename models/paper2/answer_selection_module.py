@@ -70,4 +70,81 @@ class answer_selection_module():
 
         return [entities[index] for index in best_indices]
 
-        
+    def select_answer_fast(self, batch: Iterable[tuple[str, str]]) -> list[str]:
+
+        batch = list(batch)
+
+        if not batch:
+            return []
+
+        qem = self.question_embedding_module
+        kg = self.kg_embedding_module
+
+        qem.eval()
+
+        device = next(qem.parameters()).device
+
+        topics, questions = zip(*batch)
+
+        # Ensure all questions have precomputed RoBERTa embeddings
+        assert qem.question_to_idx is not None
+        assert qem.roberta_question_embeddings is not None
+        missing = set(questions) - qem.question_to_idx.keys()
+
+        if missing:
+            raise ValueError(
+                f"{len(missing)} questions missing from RoBERTa cache"
+            )
+
+        # Retrieve each question embedding only once
+        question_indices = torch.tensor(
+            [qem.question_to_idx[q] for q in questions],
+            dtype=torch.long,
+            device=qem.roberta_question_embeddings.device
+        )
+
+        with torch.inference_mode():
+
+            roberta_embeddings = (
+                qem.roberta_question_embeddings[question_indices].to(device)
+            )
+
+            # Generate complex question embeddings
+            r = qem.linear_relu_stack(roberta_embeddings)
+
+            # Retrieve topic entity embeddings
+            topic_indices = torch.tensor(
+                [kg.entity_to_idx[t] for t in topics],
+                dtype=torch.long,
+                device=device
+            )
+
+            h = kg.entity_embeddings(topic_indices)
+
+            # Retrieve ALL candidate entity embeddings
+            all_entities = kg.entity_embeddings.weight
+
+            # Split into real and imaginary components
+            h_re, h_im = torch.chunk(h, 2, dim=-1)
+            r_re, r_im = torch.chunk(r, 2, dim=-1)
+
+            t_re, t_im = torch.chunk(all_entities, 2, dim=-1)
+
+            # ComplEx scoring
+            re_score = h_re * r_re - h_im * r_im
+            im_score = h_re * r_im + h_im * r_re
+
+            # Score every candidate entity using matrix multiplication
+            scores = (
+                re_score @ t_re.T
+                + im_score @ t_im.T
+            )
+
+            # Select the highest-scoring entity
+            best_indices = torch.argmax(scores, dim=1).tolist()
+
+        # Maintain correspondence between entity indices and entity names
+        entities = list(kg.entity_to_idx.keys())
+
+        return [entities[index] for index in best_indices]
+            

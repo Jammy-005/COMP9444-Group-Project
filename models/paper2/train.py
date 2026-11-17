@@ -74,8 +74,12 @@ if __name__ == "__main__":
 
     if train is not None and train <= len(training):
         training = random.sample(training, train)
+    else:
+        training = random.sample(training, len(training))
     if val is not None and val <= len(validation):
         validation = random.sample(validation, val)
+    else:
+        validation = random.sample(validation, len(validation))
 
     cache_dir = PROJECT_ROOT / "models" / "paper2" / "cache"
     cache = torch.load(
@@ -188,7 +192,7 @@ if __name__ == "__main__":
         for start in range(0, total, 32):
             batch = validation[start:start + 32]
 
-            predictions = answer_selector.select_answer(
+            predictions = answer_selector.select_answer_fast(
                 [(example.topic, example.question) for example in batch]
             )
 
