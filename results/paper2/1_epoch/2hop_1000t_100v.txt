@@ -1,0 +1,423 @@
+Trial 1/30
+Embedding dimension: 134, Batch size: 234, KG learning rate: 0.000108265, Negatives per positive KG triple: 5, Question learning rate: 0.000277455, Negatives per positive question triple: 12, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.153, Weight decay in question embedding module: 8.08682e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0000
+
+Trial 2/30
+Embedding dimension: 135, Batch size: 144, KG learning rate: 0.00294363, Negatives per positive KG triple: 7, Question learning rate: 0.00110254, Negatives per positive question triple: 15, Hidden layer dimensions in question embedding module: (768, 550, 400), Dropout in question embedding module: 0.158, Weight decay inquestion embedding module: 6.74547e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0208 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0200 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0200
+
+Trial 3/30
+Embedding dimension: 62, Batch size: 109, KG learning rate: 0.000207243, Negatives per positive KG triple: 4, Question learning rate: 0.000497524, Negatives perpositive question triple: 8, Hidden layer dimensions in question embedding module: (300, 200, 100), Dropout in question embedding module: 0.026, Weight decay inquestion embedding module: 3.4299e-08
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0300 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0300
+
+Trial 4/30
+Embedding dimension: 147, Batch size: 221, KG learning rate: 0.00281786, Negatives per positive KG triple: 15, Question learning rate: 0.000134366, Negatives per positive question triple: 9, Hidden layer dimensions in question embedding module: (600, 400, 200), Dropout in question embedding module: 0.403, Weight decay in question embedding module: 7.68729e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0938 | Batch Accuracy: 0.09375
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.03125
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0400 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0400
+
+Trial 5/30
+Embedding dimension: 99, Batch size: 144, KG learning rate: 0.000994474, Negatives per positive KG triple: 1, Question learning rate: 0.00162346, Negatives per positive question triple: 7, Hidden layer dimensions in question embedding module: (600, 400, 200), Dropout in question embedding module: 0.313, Weight decay in question embedding module: 8.69933e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0938 | Batch Accuracy: 0.09375
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.0625
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.03125
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0600 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0600
+
+Trial 6/30
+Embedding dimension: 149, Batch size: 246, KG learning rate: 0.000245748, Negatives per positive KG triple: 12, Question learning rate: 0.00025014, Negatives per positive question triple: 15, Hidden layer dimensions in question embedding module: (300, 200, 100), Dropout in question embedding module: 0.104, Weight decay in question embedding module: 0.000135238
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.0
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0104 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0100 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0100
+
+Trial 7/30
+Embedding dimension: 117, Batch size: 177, KG learning rate: 0.000289853, Negatives per positive KG triple: 14, Question learning rate: 0.000123236, Negatives per positive question triple: 13, Hidden layer dimensions in question embedding module: (1024, 768, 512), Dropout in question embedding module: 0.039, Weight decay in question embedding module: 2.42037e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0938 | Batch Accuracy: 0.09375
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.03125
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0400 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0400
+
+Trial 8/30
+Embedding dimension: 124, Batch size: 108, KG learning rate: 0.003282, Negatives per positive KG triple: 15, Question learning rate: 0.00730052, Negatives per positive question triple: 15, Hidden layer dimensions in question embedding module: (300, 200, 100), Dropout in question embedding module: 0.370, Weight decay in question embedding module: 2.19158e-07
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.09375
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.03125
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0600 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0600
+
+Trial 9/30
+Embedding dimension: 66, Batch size: 85, KG learning rate: 0.00444049, Negatives per positive KG triple: 15, Question learning rate: 0.00191049, Negatives per positive question triple: 5, Hidden layer dimensions in question embedding module: (300, 200, 100), Dropout in question embedding module: 0.395, Weight decay in question embedding module: 9.26295e-07
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0300 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0300
+
+Trial 10/30
+Embedding dimension: 128, Batch size: 227, KG learning rate: 0.00028089, Negatives per positive KG triple: 1, Question learning rate: 0.000272713, Negatives perpositive question triple: 10, Hidden layer dimensions in question embedding module: (1024, 768, 512), Dropout in question embedding module: 0.230, Weight decay in question embedding module: 5.51468e-08
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.0
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0104 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0100 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0100
+
+Trial 11/30
+Embedding dimension: 47, Batch size: 139, KG learning rate: 0.00503761, Negatives per positive KG triple: 2, Question learning rate: 0.000451146, Negatives per positive question triple: 3, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.348, Weight decay in question embedding module: 3.36578e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0000
+
+Trial 12/30
+Embedding dimension: 34, Batch size: 196, KG learning rate: 0.000373355, Negatives per positive KG triple: 10, Question learning rate: 0.000120407, Negatives per positive question triple: 14, Hidden layer dimensions in question embedding module: (768, 550, 400), Dropout in question embedding module: 0.180, Weight decay in question embedding module: 6.7732e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.0
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0104 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0100 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0100
+
+Trial 13/30
+Embedding dimension: 143, Batch size: 88, KG learning rate: 0.000272225, Negatives per positive KG triple: 14, Question learning rate: 0.000566507, Negatives per positive question triple: 4, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.346, Weight decay in question embedding module: 2.37663e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0938 | Batch Accuracy: 0.09375
+Progress: 64/100 (64.0%) | Total Accuracy: 0.1094 | Batch Accuracy: 0.125
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0729 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0700 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0700
+
+Trial 14/30
+Embedding dimension: 72, Batch size: 152, KG learning rate: 0.000391716, Negatives per positive KG triple: 3, Question learning rate: 0.000600082, Negatives perpositive question triple: 12, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.251, Weight decay in question embedding module: 7.21577e-08
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.1250 | Batch Accuracy: 0.125
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0938 | Batch Accuracy: 0.0625
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0600 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0600
+
+Trial 15/30
+Embedding dimension: 93, Batch size: 248, KG learning rate: 0.000708592, Negatives per positive KG triple: 12, Question learning rate: 0.00255684, Negatives perpositive question triple: 7, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.331, Weight decay inquestion embedding module: 1.04384e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0208 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0200 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0200
+
+Trial 16/30
+Embedding dimension: 171, Batch size: 109, KG learning rate: 0.00354894, Negatives per positive KG triple: 2, Question learning rate: 0.00053968, Negatives per positive question triple: 8, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.265, Weight decay in question embedding module: 7.5361e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.03125
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.03125
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0400 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0400
+
+Trial 17/30
+Embedding dimension: 90, Batch size: 241, KG learning rate: 0.000683005, Negatives per positive KG triple: 12, Question learning rate: 0.00118636, Negatives perpositive question triple: 6, Hidden layer dimensions in question embedding module: (512, 256, 128), Dropout in question embedding module: 0.357, Weight decay inquestion embedding module: 7.46472e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0938 | Batch Accuracy: 0.09375
+Progress: 64/100 (64.0%) | Total Accuracy: 0.1094 | Batch Accuracy: 0.125
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0729 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0700 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0700
+
+Trial 18/30
+Embedding dimension: 32, Batch size: 217, KG learning rate: 0.000776945, Negatives per positive KG triple: 7, Question learning rate: 0.00194496, Negatives per positive question triple: 4, Hidden layer dimensions in question embedding module: (512, 256, 128), Dropout in question embedding module: 0.343, Weight decay in question embedding module: 8.0109e-07
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0938 | Batch Accuracy: 0.09375
+Progress: 64/100 (64.0%) | Total Accuracy: 0.1094 | Batch Accuracy: 0.125
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0729 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0700 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0700
+
+Trial 19/30
+Embedding dimension: 104, Batch size: 97, KG learning rate: 0.00117325, Negatives per positive KG triple: 4, Question learning rate: 0.000209279, Negatives per positive question triple: 14, Hidden layer dimensions in question embedding module: (600, 400, 200), Dropout in question embedding module: 0.296, Weight decay inquestion embedding module: 3.83562e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.09375
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0500
+
+Trial 20/30
+Embedding dimension: 138, Batch size: 245, KG learning rate: 0.00323119, Negatives per positive KG triple: 9, Question learning rate: 0.000109115, Negatives perpositive question triple: 1, Hidden layer dimensions in question embedding module: (300, 200, 100), Dropout in question embedding module: 0.470, Weight decay inquestion embedding module: 8.46014e-08
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0000
+
+Trial 21/30
+Embedding dimension: 52, Batch size: 236, KG learning rate: 0.000173908, Negatives per positive KG triple: 2, Question learning rate: 0.0029215, Negatives per positive question triple: 4, Hidden layer dimensions in question embedding module: (300, 200, 100), Dropout in question embedding module: 0.229, Weight decay in question embedding module: 0.000105383
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0000
+
+Trial 22/30
+Embedding dimension: 139, Batch size: 219, KG learning rate: 0.00020484, Negatives per positive KG triple: 14, Question learning rate: 0.00404272, Negatives perpositive question triple: 3, Hidden layer dimensions in question embedding module: (1024, 768, 512), Dropout in question embedding module: 0.393, Weight decay in question embedding module: 0.000100354
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0938 | Batch Accuracy: 0.09375
+Progress: 64/100 (64.0%) | Total Accuracy: 0.1094 | Batch Accuracy: 0.125
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0833 | Batch Accuracy: 0.03125
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0800 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0800
+
+Trial 23/30
+Embedding dimension: 81, Batch size: 134, KG learning rate: 0.000774993, Negatives per positive KG triple: 10, Question learning rate: 0.000883422, Negatives per positive question triple: 10, Hidden layer dimensions in question embedding module: (300, 200, 100), Dropout in question embedding module: 0.374, Weight decay in question embedding module: 6.57819e-07
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0938 | Batch Accuracy: 0.09375
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.03125
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.03125
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0500
+
+Trial 24/30
+Embedding dimension: 179, Batch size: 185, KG learning rate: 0.00194409, Negatives per positive KG triple: 7, Question learning rate: 0.00437096, Negatives per positive question triple: 15, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.253, Weight decay inquestion embedding module: 2.82306e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.03125
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0300 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0300
+
+Trial 25/30
+Embedding dimension: 133, Batch size: 213, KG learning rate: 0.00207384, Negatives per positive KG triple: 1, Question learning rate: 0.00262154, Negatives per positive question triple: 2, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.291, Weight decay in question embedding module: 4.67771e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.0625
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0300 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0300
+
+Trial 26/30
+Embedding dimension: 75, Batch size: 117, KG learning rate: 0.00509104, Negatives per positive KG triple: 3, Question learning rate: 0.000260043, Negatives per positive question triple: 13, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.065, Weight decay inquestion embedding module: 1.47346e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.03125
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0104 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0100 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0100
+
+Trial 27/30
+Embedding dimension: 88, Batch size: 246, KG learning rate: 0.00841855, Negatives per positive KG triple: 3, Question learning rate: 0.00172754, Negatives per positive question triple: 15, Hidden layer dimensions in question embedding module: (300, 200, 100), Dropout in question embedding module: 0.170, Weight decay in question embedding module: 3.01388e-07
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.0
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0104 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0100 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0100
+
+Trial 28/30
+Embedding dimension: 49, Batch size: 175, KG learning rate: 0.00018168, Negatives per positive KG triple: 2, Question learning rate: 0.000140493, Negatives per positive question triple: 10, Hidden layer dimensions in question embedding module: (600, 400, 200), Dropout in question embedding module: 0.402, Weight decay inquestion embedding module: 4.1386e-08
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.03125
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0104 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0100 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0100
+
+Trial 29/30
+Embedding dimension: 43, Batch size: 245, KG learning rate: 0.00110186, Negatives per positive KG triple: 3, Question learning rate: 0.00213468, Negatives per positive question triple: 4, Hidden layer dimensions in question embedding module: (768, 500, 300), Dropout in question embedding module: 0.120, Weight decay in question embedding module: 1.00332e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.09375
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0500
+
+Trial 30/30
+Embedding dimension: 30, Batch size: 64, KG learning rate: 0.00016924, Negatives per positive KG triple: 1, Question learning rate: 0.00148209, Negatives per positive question triple: 7, Hidden layer dimensions in question embedding module: (300, 200, 100), Dropout in question embedding module: 0.405, Weight decay in question embedding module: 1.15454e-08
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/100 (32.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 64/100 (64.0%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.09375
+Progress: 96/100 (96.0%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.03125
+Progress: 100/100 (100.0%) | Total Accuracy: 0.0400 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0400
+
+Best hyperparameters:
+{'embedding_dimension': 139, 'kg embedding module learning_rate': 0.00020484017099871863, 'question embedding module learning_rate': 0.004042719603523899, 'batch_size': 219, 'negatives per positive KG triple': 14, 'question embedding module hidden_dimensions': (1024, 768, 512), 'dropout_rate': 0.3928308980190227, 'weight_decay': 0.0001003537978646356, 'negatives per positive question triple': 3}
+Best validation accuracy: 0.0800

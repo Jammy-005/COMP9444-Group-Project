@@ -1,0 +1,1934 @@
+Trial 1/10
+Embedding dimension: 177, Batch size: 116, KG learning rate: 0.00113379, Negatives per positive KG triple: 2, Question learning rate: 0.00835394, Negatives per positive question triple: 9, Hidden layer dimensions in question embedding module: (512, 256, 128), Dropout in question embedding module: 0.455, Weight decay in question embedding module: 0.395, Weight decay in question embedding module: 4.04794e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning epoch 2
+Beginning epoch 3
+Beginning epoch 4
+Beginning epoch 5
+Beginning epoch 6
+Beginning epoch 7
+Beginning epoch 8
+Beginning epoch 9
+Beginning epoch 10
+Epoch 10/30, Loss: 0.1625
+Beginning epoch 11
+Beginning epoch 12
+Beginning epoch 13
+Beginning epoch 14
+Beginning epoch 15
+Beginning epoch 16
+Beginning epoch 17
+Beginning epoch 18
+Beginning epoch 19
+Beginning epoch 20
+Epoch 20/30, Loss: 0.1104
+Beginning epoch 21
+Beginning epoch 22
+Beginning epoch 23
+Beginning epoch 24
+Beginning epoch 25
+Beginning epoch 26
+Beginning epoch 27
+Beginning epoch 28
+Beginning epoch 29
+Beginning epoch 30
+Epoch 30/30, Loss: 0.0698
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning epoch 2
+Beginning epoch 3
+Beginning epoch 4
+Beginning epoch 5
+Beginning epoch 6
+Beginning epoch 7
+Beginning epoch 8
+Beginning epoch 9
+Beginning epoch 10
+Epoch 10/30, Loss: 0.0371
+Beginning epoch 11
+Beginning epoch 12
+Beginning epoch 13
+Beginning epoch 14
+Beginning epoch 15
+Beginning epoch 16
+Beginning epoch 17
+Beginning epoch 18
+Beginning epoch 19
+Beginning epoch 20
+Epoch 20/30, Loss: 0.0331
+Beginning epoch 21
+Beginning epoch 22
+Beginning epoch 23
+Beginning epoch 24
+Beginning epoch 25
+Beginning epoch 26
+Beginning epoch 27
+Beginning epoch 28
+Beginning epoch 29
+Beginning epoch 30
+Epoch 30/30, Loss: 0.0323
+Beginning validation set performance testing
+Progress: 32/9992 (0.3%) | Total Accuracy: 0.4062 | Batch Accuracy: 0.40625
+Progress: 64/9992 (0.6%) | Total Accuracy: 0.4375 | Batch Accuracy: 0.46875
+Progress: 96/9992 (1.0%) | Total Accuracy: 0.4375 | Batch Accuracy: 0.4375
+Progress: 128/9992 (1.3%) | Total Accuracy: 0.4297 | Batch Accuracy: 0.40625
+Progress: 160/9992 (1.6%) | Total Accuracy: 0.4188 | Batch Accuracy: 0.375
+Progress: 192/9992 (1.9%) | Total Accuracy: 0.4219 | Batch Accuracy: 0.4375
+Progress: 224/9992 (2.2%) | Total Accuracy: 0.4196 | Batch Accuracy: 0.40625
+Progress: 256/9992 (2.6%) | Total Accuracy: 0.4180 | Batch Accuracy: 0.40625
+Progress: 288/9992 (2.9%) | Total Accuracy: 0.4097 | Batch Accuracy: 0.34375
+Progress: 320/9992 (3.2%) | Total Accuracy: 0.4188 | Batch Accuracy: 0.5
+Progress: 352/9992 (3.5%) | Total Accuracy: 0.4233 | Batch Accuracy: 0.46875
+Progress: 384/9992 (3.8%) | Total Accuracy: 0.4193 | Batch Accuracy: 0.375
+Progress: 416/9992 (4.2%) | Total Accuracy: 0.4207 | Batch Accuracy: 0.4375
+Progress: 448/9992 (4.5%) | Total Accuracy: 0.4152 | Batch Accuracy: 0.34375
+Progress: 480/9992 (4.8%) | Total Accuracy: 0.4021 | Batch Accuracy: 0.21875
+Progress: 512/9992 (5.1%) | Total Accuracy: 0.3945 | Batch Accuracy: 0.28125
+Progress: 544/9992 (5.4%) | Total Accuracy: 0.3989 | Batch Accuracy: 0.46875
+Progress: 576/9992 (5.8%) | Total Accuracy: 0.3976 | Batch Accuracy: 0.375
+Progress: 608/9992 (6.1%) | Total Accuracy: 0.4079 | Batch Accuracy: 0.59375
+Progress: 640/9992 (6.4%) | Total Accuracy: 0.4094 | Batch Accuracy: 0.4375
+Progress: 672/9992 (6.7%) | Total Accuracy: 0.4077 | Batch Accuracy: 0.375
+Progress: 704/9992 (7.0%) | Total Accuracy: 0.4034 | Batch Accuracy: 0.3125
+Progress: 736/9992 (7.4%) | Total Accuracy: 0.4062 | Batch Accuracy: 0.46875
+Progress: 768/9992 (7.7%) | Total Accuracy: 0.4036 | Batch Accuracy: 0.34375
+Progress: 800/9992 (8.0%) | Total Accuracy: 0.4012 | Batch Accuracy: 0.34375
+Progress: 832/9992 (8.3%) | Total Accuracy: 0.4014 | Batch Accuracy: 0.40625
+Progress: 864/9992 (8.6%) | Total Accuracy: 0.4016 | Batch Accuracy: 0.40625
+Progress: 896/9992 (9.0%) | Total Accuracy: 0.4051 | Batch Accuracy: 0.5
+Progress: 928/9992 (9.3%) | Total Accuracy: 0.4095 | Batch Accuracy: 0.53125
+Progress: 960/9992 (9.6%) | Total Accuracy: 0.4073 | Batch Accuracy: 0.34375
+Progress: 992/9992 (9.9%) | Total Accuracy: 0.4042 | Batch Accuracy: 0.3125
+Progress: 1024/9992 (10.2%) | Total Accuracy: 0.4023 | Batch Accuracy: 0.34375
+Progress: 1056/9992 (10.6%) | Total Accuracy: 0.4025 | Batch Accuracy: 0.40625
+Progress: 1088/9992 (10.9%) | Total Accuracy: 0.4044 | Batch Accuracy: 0.46875
+Progress: 1120/9992 (11.2%) | Total Accuracy: 0.4071 | Batch Accuracy: 0.5
+Progress: 1152/9992 (11.5%) | Total Accuracy: 0.4071 | Batch Accuracy: 0.40625
+Progress: 1184/9992 (11.8%) | Total Accuracy: 0.4037 | Batch Accuracy: 0.28125
+Progress: 1216/9992 (12.2%) | Total Accuracy: 0.4030 | Batch Accuracy: 0.375
+Progress: 1248/9992 (12.5%) | Total Accuracy: 0.4062 | Batch Accuracy: 0.53125
+Progress: 1280/9992 (12.8%) | Total Accuracy: 0.4031 | Batch Accuracy: 0.28125
+Progress: 1312/9992 (13.1%) | Total Accuracy: 0.4002 | Batch Accuracy: 0.28125
+Progress: 1344/9992 (13.5%) | Total Accuracy: 0.4025 | Batch Accuracy: 0.5
+Progress: 1376/9992 (13.8%) | Total Accuracy: 0.4033 | Batch Accuracy: 0.4375
+Progress: 1408/9992 (14.1%) | Total Accuracy: 0.4006 | Batch Accuracy: 0.28125
+Progress: 1440/9992 (14.4%) | Total Accuracy: 0.3993 | Batch Accuracy: 0.34375
+Progress: 1472/9992 (14.7%) | Total Accuracy: 0.4001 | Batch Accuracy: 0.4375
+Progress: 1504/9992 (15.1%) | Total Accuracy: 0.4009 | Batch Accuracy: 0.4375
+Progress: 1536/9992 (15.4%) | Total Accuracy: 0.4023 | Batch Accuracy: 0.46875
+Progress: 1568/9992 (15.7%) | Total Accuracy: 0.4037 | Batch Accuracy: 0.46875
+Progress: 1600/9992 (16.0%) | Total Accuracy: 0.4000 | Batch Accuracy: 0.21875
+Progress: 1632/9992 (16.3%) | Total Accuracy: 0.4032 | Batch Accuracy: 0.5625
+Progress: 1664/9992 (16.7%) | Total Accuracy: 0.4026 | Batch Accuracy: 0.375
+Progress: 1696/9992 (17.0%) | Total Accuracy: 0.4009 | Batch Accuracy: 0.3125
+Progress: 1728/9992 (17.3%) | Total Accuracy: 0.4016 | Batch Accuracy: 0.4375
+Progress: 1760/9992 (17.6%) | Total Accuracy: 0.4011 | Batch Accuracy: 0.375
+Progress: 1792/9992 (17.9%) | Total Accuracy: 0.4012 | Batch Accuracy: 0.40625
+Progress: 1824/9992 (18.3%) | Total Accuracy: 0.3997 | Batch Accuracy: 0.3125
+Progress: 1856/9992 (18.6%) | Total Accuracy: 0.3992 | Batch Accuracy: 0.375
+Progress: 1888/9992 (18.9%) | Total Accuracy: 0.4010 | Batch Accuracy: 0.5
+Progress: 1920/9992 (19.2%) | Total Accuracy: 0.4005 | Batch Accuracy: 0.375
+Progress: 1952/9992 (19.5%) | Total Accuracy: 0.4032 | Batch Accuracy: 0.5625
+Progress: 1984/9992 (19.9%) | Total Accuracy: 0.4022 | Batch Accuracy: 0.34375
+Progress: 2016/9992 (20.2%) | Total Accuracy: 0.4028 | Batch Accuracy: 0.4375
+Progress: 2048/9992 (20.5%) | Total Accuracy: 0.4033 | Batch Accuracy: 0.4375
+Progress: 2080/9992 (20.8%) | Total Accuracy: 0.4019 | Batch Accuracy: 0.3125
+Progress: 2112/9992 (21.1%) | Total Accuracy: 0.4025 | Batch Accuracy: 0.4375
+Progress: 2144/9992 (21.5%) | Total Accuracy: 0.4007 | Batch Accuracy: 0.28125
+Progress: 2176/9992 (21.8%) | Total Accuracy: 0.3994 | Batch Accuracy: 0.3125
+Progress: 2208/9992 (22.1%) | Total Accuracy: 0.3986 | Batch Accuracy: 0.34375
+Progress: 2240/9992 (22.4%) | Total Accuracy: 0.3969 | Batch Accuracy: 0.28125
+Progress: 2272/9992 (22.7%) | Total Accuracy: 0.3957 | Batch Accuracy: 0.3125
+Progress: 2304/9992 (23.1%) | Total Accuracy: 0.3950 | Batch Accuracy: 0.34375
+Progress: 2336/9992 (23.4%) | Total Accuracy: 0.3960 | Batch Accuracy: 0.46875
+Progress: 2368/9992 (23.7%) | Total Accuracy: 0.3953 | Batch Accuracy: 0.34375
+Progress: 2400/9992 (24.0%) | Total Accuracy: 0.3950 | Batch Accuracy: 0.375
+Progress: 2432/9992 (24.3%) | Total Accuracy: 0.3964 | Batch Accuracy: 0.5
+Progress: 2464/9992 (24.7%) | Total Accuracy: 0.3977 | Batch Accuracy: 0.5
+Progress: 2496/9992 (25.0%) | Total Accuracy: 0.3958 | Batch Accuracy: 0.25
+Progress: 2528/9992 (25.3%) | Total Accuracy: 0.3975 | Batch Accuracy: 0.53125
+Progress: 2560/9992 (25.6%) | Total Accuracy: 0.3984 | Batch Accuracy: 0.46875
+Progress: 2592/9992 (25.9%) | Total Accuracy: 0.4001 | Batch Accuracy: 0.53125
+Progress: 2624/9992 (26.3%) | Total Accuracy: 0.3986 | Batch Accuracy: 0.28125
+Progress: 2656/9992 (26.6%) | Total Accuracy: 0.3983 | Batch Accuracy: 0.375
+Progress: 2688/9992 (26.9%) | Total Accuracy: 0.3996 | Batch Accuracy: 0.5
+Progress: 2720/9992 (27.2%) | Total Accuracy: 0.3993 | Batch Accuracy: 0.375
+Progress: 2752/9992 (27.5%) | Total Accuracy: 0.3993 | Batch Accuracy: 0.40625
+Progress: 2784/9992 (27.9%) | Total Accuracy: 0.4001 | Batch Accuracy: 0.46875
+Progress: 2816/9992 (28.2%) | Total Accuracy: 0.3991 | Batch Accuracy: 0.3125
+Progress: 2848/9992 (28.5%) | Total Accuracy: 0.3985 | Batch Accuracy: 0.34375
+Progress: 2880/9992 (28.8%) | Total Accuracy: 0.3990 | Batch Accuracy: 0.4375
+Progress: 2912/9992 (29.1%) | Total Accuracy: 0.4001 | Batch Accuracy: 0.5
+Progress: 2944/9992 (29.5%) | Total Accuracy: 0.3995 | Batch Accuracy: 0.34375
+Progress: 2976/9992 (29.8%) | Total Accuracy: 0.3978 | Batch Accuracy: 0.25
+Progress: 3008/9992 (30.1%) | Total Accuracy: 0.3976 | Batch Accuracy: 0.375
+Progress: 3040/9992 (30.4%) | Total Accuracy: 0.3980 | Batch Accuracy: 0.4375
+Progress: 3072/9992 (30.7%) | Total Accuracy: 0.3981 | Batch Accuracy: 0.40625
+Progress: 3104/9992 (31.1%) | Total Accuracy: 0.3972 | Batch Accuracy: 0.3125
+Progress: 3136/9992 (31.4%) | Total Accuracy: 0.3986 | Batch Accuracy: 0.53125
+Progress: 3168/9992 (31.7%) | Total Accuracy: 0.3984 | Batch Accuracy: 0.375
+Progress: 3200/9992 (32.0%) | Total Accuracy: 0.3984 | Batch Accuracy: 0.40625
+Progress: 3232/9992 (32.3%) | Total Accuracy: 0.3973 | Batch Accuracy: 0.28125
+Progress: 3264/9992 (32.7%) | Total Accuracy: 0.3977 | Batch Accuracy: 0.4375
+Progress: 3296/9992 (33.0%) | Total Accuracy: 0.3971 | Batch Accuracy: 0.34375
+Progress: 3328/9992 (33.3%) | Total Accuracy: 0.3987 | Batch Accuracy: 0.5625
+Progress: 3360/9992 (33.6%) | Total Accuracy: 0.3985 | Batch Accuracy: 0.375
+Progress: 3392/9992 (33.9%) | Total Accuracy: 0.3980 | Batch Accuracy: 0.34375
+Progress: 3424/9992 (34.3%) | Total Accuracy: 0.3992 | Batch Accuracy: 0.53125
+Progress: 3456/9992 (34.6%) | Total Accuracy: 0.4008 | Batch Accuracy: 0.5625
+Progress: 3488/9992 (34.9%) | Total Accuracy: 0.4014 | Batch Accuracy: 0.46875
+Progress: 3520/9992 (35.2%) | Total Accuracy: 0.4017 | Batch Accuracy: 0.4375
+Progress: 3552/9992 (35.5%) | Total Accuracy: 0.4015 | Batch Accuracy: 0.375
+Progress: 3584/9992 (35.9%) | Total Accuracy: 0.4004 | Batch Accuracy: 0.28125
+Progress: 3616/9992 (36.2%) | Total Accuracy: 0.4004 | Batch Accuracy: 0.40625
+Progress: 3648/9992 (36.5%) | Total Accuracy: 0.4010 | Batch Accuracy: 0.46875
+Progress: 3680/9992 (36.8%) | Total Accuracy: 0.4005 | Batch Accuracy: 0.34375
+Progress: 3712/9992 (37.1%) | Total Accuracy: 0.4014 | Batch Accuracy: 0.5
+Progress: 3744/9992 (37.5%) | Total Accuracy: 0.4012 | Batch Accuracy: 0.375
+Progress: 3776/9992 (37.8%) | Total Accuracy: 0.4017 | Batch Accuracy: 0.46875
+Progress: 3808/9992 (38.1%) | Total Accuracy: 0.4013 | Batch Accuracy: 0.34375
+Progress: 3840/9992 (38.4%) | Total Accuracy: 0.4018 | Batch Accuracy: 0.46875
+Progress: 3872/9992 (38.8%) | Total Accuracy: 0.4019 | Batch Accuracy: 0.40625
+Progress: 3904/9992 (39.1%) | Total Accuracy: 0.4022 | Batch Accuracy: 0.4375
+Progress: 3936/9992 (39.4%) | Total Accuracy: 0.4012 | Batch Accuracy: 0.28125
+Progress: 3968/9992 (39.7%) | Total Accuracy: 0.4012 | Batch Accuracy: 0.40625
+Progress: 4000/9992 (40.0%) | Total Accuracy: 0.4012 | Batch Accuracy: 0.40625
+Progress: 4032/9992 (40.4%) | Total Accuracy: 0.4013 | Batch Accuracy: 0.40625
+Progress: 4064/9992 (40.7%) | Total Accuracy: 0.4013 | Batch Accuracy: 0.40625
+Progress: 4096/9992 (41.0%) | Total Accuracy: 0.4016 | Batch Accuracy: 0.4375
+Progress: 4128/9992 (41.3%) | Total Accuracy: 0.4016 | Batch Accuracy: 0.40625
+Progress: 4160/9992 (41.6%) | Total Accuracy: 0.4014 | Batch Accuracy: 0.375
+Progress: 4192/9992 (42.0%) | Total Accuracy: 0.4000 | Batch Accuracy: 0.21875
+Progress: 4224/9992 (42.3%) | Total Accuracy: 0.3996 | Batch Accuracy: 0.34375
+Progress: 4256/9992 (42.6%) | Total Accuracy: 0.3994 | Batch Accuracy: 0.375
+Progress: 4288/9992 (42.9%) | Total Accuracy: 0.3993 | Batch Accuracy: 0.375
+Progress: 4320/9992 (43.2%) | Total Accuracy: 0.3995 | Batch Accuracy: 0.4375
+Progress: 4352/9992 (43.6%) | Total Accuracy: 0.3996 | Batch Accuracy: 0.40625
+Progress: 4384/9992 (43.9%) | Total Accuracy: 0.4003 | Batch Accuracy: 0.5
+Progress: 4416/9992 (44.2%) | Total Accuracy: 0.4004 | Batch Accuracy: 0.40625
+Progress: 4448/9992 (44.5%) | Total Accuracy: 0.3997 | Batch Accuracy: 0.3125
+Progress: 4480/9992 (44.8%) | Total Accuracy: 0.3993 | Batch Accuracy: 0.34375
+Progress: 4512/9992 (45.2%) | Total Accuracy: 0.3985 | Batch Accuracy: 0.28125
+Progress: 4544/9992 (45.5%) | Total Accuracy: 0.3996 | Batch Accuracy: 0.5625
+Progress: 4576/9992 (45.8%) | Total Accuracy: 0.3997 | Batch Accuracy: 0.40625
+Progress: 4608/9992 (46.1%) | Total Accuracy: 0.4010 | Batch Accuracy: 0.59375
+Progress: 4640/9992 (46.4%) | Total Accuracy: 0.4011 | Batch Accuracy: 0.40625
+Progress: 4672/9992 (46.8%) | Total Accuracy: 0.4024 | Batch Accuracy: 0.59375
+Progress: 4704/9992 (47.1%) | Total Accuracy: 0.4028 | Batch Accuracy: 0.46875
+Progress: 4736/9992 (47.4%) | Total Accuracy: 0.4035 | Batch Accuracy: 0.5
+Progress: 4768/9992 (47.7%) | Total Accuracy: 0.4031 | Batch Accuracy: 0.34375
+Progress: 4800/9992 (48.0%) | Total Accuracy: 0.4023 | Batch Accuracy: 0.28125
+Progress: 4832/9992 (48.4%) | Total Accuracy: 0.4025 | Batch Accuracy: 0.4375
+Progress: 4864/9992 (48.7%) | Total Accuracy: 0.4023 | Batch Accuracy: 0.375
+Progress: 4896/9992 (49.0%) | Total Accuracy: 0.4018 | Batch Accuracy: 0.3125
+Progress: 4928/9992 (49.3%) | Total Accuracy: 0.4014 | Batch Accuracy: 0.34375
+Progress: 4960/9992 (49.6%) | Total Accuracy: 0.4018 | Batch Accuracy: 0.46875
+Progress: 4992/9992 (50.0%) | Total Accuracy: 0.4016 | Batch Accuracy: 0.375
+Progress: 5024/9992 (50.3%) | Total Accuracy: 0.4017 | Batch Accuracy: 0.40625
+Progress: 5056/9992 (50.6%) | Total Accuracy: 0.4019 | Batch Accuracy: 0.4375
+Progress: 5088/9992 (50.9%) | Total Accuracy: 0.4027 | Batch Accuracy: 0.53125
+Progress: 5120/9992 (51.2%) | Total Accuracy: 0.4031 | Batch Accuracy: 0.46875
+Progress: 5152/9992 (51.6%) | Total Accuracy: 0.4035 | Batch Accuracy: 0.46875
+Progress: 5184/9992 (51.9%) | Total Accuracy: 0.4035 | Batch Accuracy: 0.40625
+Progress: 5216/9992 (52.2%) | Total Accuracy: 0.4043 | Batch Accuracy: 0.53125
+Progress: 5248/9992 (52.5%) | Total Accuracy: 0.4036 | Batch Accuracy: 0.28125
+Progress: 5280/9992 (52.8%) | Total Accuracy: 0.4044 | Batch Accuracy: 0.53125
+Progress: 5312/9992 (53.2%) | Total Accuracy: 0.4044 | Batch Accuracy: 0.40625
+Progress: 5344/9992 (53.5%) | Total Accuracy: 0.4048 | Batch Accuracy: 0.46875
+Progress: 5376/9992 (53.8%) | Total Accuracy: 0.4046 | Batch Accuracy: 0.375
+Progress: 5408/9992 (54.1%) | Total Accuracy: 0.4053 | Batch Accuracy: 0.53125
+Progress: 5440/9992 (54.4%) | Total Accuracy: 0.4048 | Batch Accuracy: 0.3125
+Progress: 5472/9992 (54.8%) | Total Accuracy: 0.4039 | Batch Accuracy: 0.25
+Progress: 5504/9992 (55.1%) | Total Accuracy: 0.4041 | Batch Accuracy: 0.4375
+Progress: 5536/9992 (55.4%) | Total Accuracy: 0.4030 | Batch Accuracy: 0.21875
+Progress: 5568/9992 (55.7%) | Total Accuracy: 0.4028 | Batch Accuracy: 0.375
+Progress: 5600/9992 (56.0%) | Total Accuracy: 0.4029 | Batch Accuracy: 0.40625
+Progress: 5632/9992 (56.4%) | Total Accuracy: 0.4034 | Batch Accuracy: 0.5
+Progress: 5664/9992 (56.7%) | Total Accuracy: 0.4038 | Batch Accuracy: 0.46875
+Progress: 5696/9992 (57.0%) | Total Accuracy: 0.4033 | Batch Accuracy: 0.3125
+Progress: 5728/9992 (57.3%) | Total Accuracy: 0.4029 | Batch Accuracy: 0.34375
+Progress: 5760/9992 (57.6%) | Total Accuracy: 0.4033 | Batch Accuracy: 0.46875
+Progress: 5792/9992 (58.0%) | Total Accuracy: 0.4035 | Batch Accuracy: 0.4375
+Progress: 5824/9992 (58.3%) | Total Accuracy: 0.4025 | Batch Accuracy: 0.21875
+Progress: 5856/9992 (58.6%) | Total Accuracy: 0.4022 | Batch Accuracy: 0.34375
+Progress: 5888/9992 (58.9%) | Total Accuracy: 0.4029 | Batch Accuracy: 0.53125
+Progress: 5920/9992 (59.2%) | Total Accuracy: 0.4019 | Batch Accuracy: 0.21875
+Progress: 5952/9992 (59.6%) | Total Accuracy: 0.4017 | Batch Accuracy: 0.375
+Progress: 5984/9992 (59.9%) | Total Accuracy: 0.4019 | Batch Accuracy: 0.4375
+Progress: 6016/9992 (60.2%) | Total Accuracy: 0.4019 | Batch Accuracy: 0.40625
+Progress: 6048/9992 (60.5%) | Total Accuracy: 0.4015 | Batch Accuracy: 0.3125
+Progress: 6080/9992 (60.8%) | Total Accuracy: 0.4010 | Batch Accuracy: 0.3125
+Progress: 6112/9992 (61.2%) | Total Accuracy: 0.4012 | Batch Accuracy: 0.4375
+Progress: 6144/9992 (61.5%) | Total Accuracy: 0.4001 | Batch Accuracy: 0.1875
+Progress: 6176/9992 (61.8%) | Total Accuracy: 0.3998 | Batch Accuracy: 0.34375
+Progress: 6208/9992 (62.1%) | Total Accuracy: 0.4000 | Batch Accuracy: 0.4375
+Progress: 6240/9992 (62.4%) | Total Accuracy: 0.3998 | Batch Accuracy: 0.375
+Progress: 6272/9992 (62.8%) | Total Accuracy: 0.4005 | Batch Accuracy: 0.53125
+Progress: 6304/9992 (63.1%) | Total Accuracy: 0.4001 | Batch Accuracy: 0.3125
+Progress: 6336/9992 (63.4%) | Total Accuracy: 0.4004 | Batch Accuracy: 0.46875
+Progress: 6368/9992 (63.7%) | Total Accuracy: 0.4008 | Batch Accuracy: 0.46875
+Progress: 6400/9992 (64.1%) | Total Accuracy: 0.4012 | Batch Accuracy: 0.5
+Progress: 6432/9992 (64.4%) | Total Accuracy: 0.4016 | Batch Accuracy: 0.46875
+Progress: 6464/9992 (64.7%) | Total Accuracy: 0.4010 | Batch Accuracy: 0.28125
+Progress: 6496/9992 (65.0%) | Total Accuracy: 0.4012 | Batch Accuracy: 0.4375
+Progress: 6528/9992 (65.3%) | Total Accuracy: 0.4017 | Batch Accuracy: 0.5
+Progress: 6560/9992 (65.7%) | Total Accuracy: 0.4018 | Batch Accuracy: 0.4375
+Progress: 6592/9992 (66.0%) | Total Accuracy: 0.4026 | Batch Accuracy: 0.5625
+Progress: 6624/9992 (66.3%) | Total Accuracy: 0.4022 | Batch Accuracy: 0.3125
+Progress: 6656/9992 (66.6%) | Total Accuracy: 0.4026 | Batch Accuracy: 0.5
+Progress: 6688/9992 (66.9%) | Total Accuracy: 0.4028 | Batch Accuracy: 0.4375
+Progress: 6720/9992 (67.3%) | Total Accuracy: 0.4031 | Batch Accuracy: 0.46875
+Progress: 6752/9992 (67.6%) | Total Accuracy: 0.4033 | Batch Accuracy: 0.4375
+Progress: 6784/9992 (67.9%) | Total Accuracy: 0.4033 | Batch Accuracy: 0.40625
+Progress: 6816/9992 (68.2%) | Total Accuracy: 0.4033 | Batch Accuracy: 0.40625
+Progress: 6848/9992 (68.5%) | Total Accuracy: 0.4035 | Batch Accuracy: 0.4375
+Progress: 6880/9992 (68.9%) | Total Accuracy: 0.4031 | Batch Accuracy: 0.3125
+Progress: 6912/9992 (69.2%) | Total Accuracy: 0.4035 | Batch Accuracy: 0.5
+Progress: 6944/9992 (69.5%) | Total Accuracy: 0.4032 | Batch Accuracy: 0.34375
+Progress: 6976/9992 (69.8%) | Total Accuracy: 0.4032 | Batch Accuracy: 0.40625
+Progress: 7008/9992 (70.1%) | Total Accuracy: 0.4031 | Batch Accuracy: 0.375
+Progress: 7040/9992 (70.5%) | Total Accuracy: 0.4033 | Batch Accuracy: 0.4375
+Progress: 7072/9992 (70.8%) | Total Accuracy: 0.4033 | Batch Accuracy: 0.40625
+Progress: 7104/9992 (71.1%) | Total Accuracy: 0.4033 | Batch Accuracy: 0.40625
+Progress: 7136/9992 (71.4%) | Total Accuracy: 0.4037 | Batch Accuracy: 0.5
+Progress: 7168/9992 (71.7%) | Total Accuracy: 0.4042 | Batch Accuracy: 0.5
+Progress: 7200/9992 (72.1%) | Total Accuracy: 0.4043 | Batch Accuracy: 0.4375
+Progress: 7232/9992 (72.4%) | Total Accuracy: 0.4038 | Batch Accuracy: 0.28125
+Progress: 7264/9992 (72.7%) | Total Accuracy: 0.4038 | Batch Accuracy: 0.40625
+Progress: 7296/9992 (73.0%) | Total Accuracy: 0.4030 | Batch Accuracy: 0.21875
+Progress: 7328/9992 (73.3%) | Total Accuracy: 0.4023 | Batch Accuracy: 0.25
+Progress: 7360/9992 (73.7%) | Total Accuracy: 0.4016 | Batch Accuracy: 0.25
+Progress: 7392/9992 (74.0%) | Total Accuracy: 0.4014 | Batch Accuracy: 0.34375
+Progress: 7424/9992 (74.3%) | Total Accuracy: 0.4010 | Batch Accuracy: 0.3125
+Progress: 7456/9992 (74.6%) | Total Accuracy: 0.4009 | Batch Accuracy: 0.375
+Progress: 7488/9992 (74.9%) | Total Accuracy: 0.4001 | Batch Accuracy: 0.21875
+Progress: 7520/9992 (75.3%) | Total Accuracy: 0.4000 | Batch Accuracy: 0.375
+Progress: 7552/9992 (75.6%) | Total Accuracy: 0.3998 | Batch Accuracy: 0.34375
+Progress: 7584/9992 (75.9%) | Total Accuracy: 0.4003 | Batch Accuracy: 0.53125
+Progress: 7616/9992 (76.2%) | Total Accuracy: 0.4007 | Batch Accuracy: 0.5
+Progress: 7648/9992 (76.5%) | Total Accuracy: 0.4008 | Batch Accuracy: 0.40625
+Progress: 7680/9992 (76.9%) | Total Accuracy: 0.4013 | Batch Accuracy: 0.53125
+Progress: 7712/9992 (77.2%) | Total Accuracy: 0.4012 | Batch Accuracy: 0.375
+Progress: 7744/9992 (77.5%) | Total Accuracy: 0.4015 | Batch Accuracy: 0.46875
+Progress: 7776/9992 (77.8%) | Total Accuracy: 0.4020 | Batch Accuracy: 0.53125
+Progress: 7808/9992 (78.1%) | Total Accuracy: 0.4018 | Batch Accuracy: 0.34375
+Progress: 7840/9992 (78.5%) | Total Accuracy: 0.4017 | Batch Accuracy: 0.375
+Progress: 7872/9992 (78.8%) | Total Accuracy: 0.4013 | Batch Accuracy: 0.3125
+Progress: 7904/9992 (79.1%) | Total Accuracy: 0.4014 | Batch Accuracy: 0.4375
+Progress: 7936/9992 (79.4%) | Total Accuracy: 0.4016 | Batch Accuracy: 0.4375
+Progress: 7968/9992 (79.7%) | Total Accuracy: 0.4016 | Batch Accuracy: 0.40625
+Progress: 8000/9992 (80.1%) | Total Accuracy: 0.4019 | Batch Accuracy: 0.46875
+Progress: 8032/9992 (80.4%) | Total Accuracy: 0.4011 | Batch Accuracy: 0.21875
+Progress: 8064/9992 (80.7%) | Total Accuracy: 0.4010 | Batch Accuracy: 0.375
+Progress: 8096/9992 (81.0%) | Total Accuracy: 0.4003 | Batch Accuracy: 0.21875
+Progress: 8128/9992 (81.3%) | Total Accuracy: 0.4003 | Batch Accuracy: 0.40625
+Progress: 8160/9992 (81.7%) | Total Accuracy: 0.4000 | Batch Accuracy: 0.3125
+Progress: 8192/9992 (82.0%) | Total Accuracy: 0.3998 | Batch Accuracy: 0.34375
+Progress: 8224/9992 (82.3%) | Total Accuracy: 0.3994 | Batch Accuracy: 0.3125
+Progress: 8256/9992 (82.6%) | Total Accuracy: 0.3997 | Batch Accuracy: 0.46875
+Progress: 8288/9992 (82.9%) | Total Accuracy: 0.3997 | Batch Accuracy: 0.40625
+Progress: 8320/9992 (83.3%) | Total Accuracy: 0.4002 | Batch Accuracy: 0.53125
+Progress: 8352/9992 (83.6%) | Total Accuracy: 0.3998 | Batch Accuracy: 0.28125
+Progress: 8384/9992 (83.9%) | Total Accuracy: 0.3999 | Batch Accuracy: 0.4375
+Progress: 8416/9992 (84.2%) | Total Accuracy: 0.3998 | Batch Accuracy: 0.375
+Progress: 8448/9992 (84.5%) | Total Accuracy: 0.4000 | Batch Accuracy: 0.4375
+Progress: 8480/9992 (84.9%) | Total Accuracy: 0.4008 | Batch Accuracy: 0.625
+Progress: 8512/9992 (85.2%) | Total Accuracy: 0.4011 | Batch Accuracy: 0.46875
+Progress: 8544/9992 (85.5%) | Total Accuracy: 0.4010 | Batch Accuracy: 0.375
+Progress: 8576/9992 (85.8%) | Total Accuracy: 0.4017 | Batch Accuracy: 0.59375
+Progress: 8608/9992 (86.1%) | Total Accuracy: 0.4017 | Batch Accuracy: 0.40625
+Progress: 8640/9992 (86.5%) | Total Accuracy: 0.4017 | Batch Accuracy: 0.40625
+Progress: 8672/9992 (86.8%) | Total Accuracy: 0.4011 | Batch Accuracy: 0.21875
+Progress: 8704/9992 (87.1%) | Total Accuracy: 0.4013 | Batch Accuracy: 0.46875
+Progress: 8736/9992 (87.4%) | Total Accuracy: 0.4013 | Batch Accuracy: 0.40625
+Progress: 8768/9992 (87.8%) | Total Accuracy: 0.4013 | Batch Accuracy: 0.40625
+Progress: 8800/9992 (88.1%) | Total Accuracy: 0.4014 | Batch Accuracy: 0.40625
+Progress: 8832/9992 (88.4%) | Total Accuracy: 0.4019 | Batch Accuracy: 0.5625
+Progress: 8864/9992 (88.7%) | Total Accuracy: 0.4019 | Batch Accuracy: 0.375
+Progress: 8896/9992 (89.0%) | Total Accuracy: 0.4015 | Batch Accuracy: 0.3125
+Progress: 8928/9992 (89.4%) | Total Accuracy: 0.4012 | Batch Accuracy: 0.3125
+Progress: 8960/9992 (89.7%) | Total Accuracy: 0.4016 | Batch Accuracy: 0.5
+Progress: 8992/9992 (90.0%) | Total Accuracy: 0.4021 | Batch Accuracy: 0.5625
+Progress: 9024/9992 (90.3%) | Total Accuracy: 0.4025 | Batch Accuracy: 0.5
+Progress: 9056/9992 (90.6%) | Total Accuracy: 0.4029 | Batch Accuracy: 0.53125
+Progress: 9088/9992 (91.0%) | Total Accuracy: 0.4032 | Batch Accuracy: 0.46875
+Progress: 9120/9992 (91.3%) | Total Accuracy: 0.4032 | Batch Accuracy: 0.40625
+Progress: 9152/9992 (91.6%) | Total Accuracy: 0.4034 | Batch Accuracy: 0.46875
+Progress: 9184/9992 (91.9%) | Total Accuracy: 0.4031 | Batch Accuracy: 0.3125
+Progress: 9216/9992 (92.2%) | Total Accuracy: 0.4033 | Batch Accuracy: 0.46875
+Progress: 9248/9992 (92.6%) | Total Accuracy: 0.4038 | Batch Accuracy: 0.53125
+Progress: 9280/9992 (92.9%) | Total Accuracy: 0.4040 | Batch Accuracy: 0.46875
+Progress: 9312/9992 (93.2%) | Total Accuracy: 0.4040 | Batch Accuracy: 0.40625
+Progress: 9344/9992 (93.5%) | Total Accuracy: 0.4038 | Batch Accuracy: 0.34375
+Progress: 9376/9992 (93.8%) | Total Accuracy: 0.4037 | Batch Accuracy: 0.375
+Progress: 9408/9992 (94.2%) | Total Accuracy: 0.4036 | Batch Accuracy: 0.375
+Progress: 9440/9992 (94.5%) | Total Accuracy: 0.4035 | Batch Accuracy: 0.375
+Progress: 9472/9992 (94.8%) | Total Accuracy: 0.4038 | Batch Accuracy: 0.5
+Progress: 9504/9992 (95.1%) | Total Accuracy: 0.4036 | Batch Accuracy: 0.34375
+Progress: 9536/9992 (95.4%) | Total Accuracy: 0.4032 | Batch Accuracy: 0.28125
+Progress: 9568/9992 (95.8%) | Total Accuracy: 0.4036 | Batch Accuracy: 0.53125
+Progress: 9600/9992 (96.1%) | Total Accuracy: 0.4033 | Batch Accuracy: 0.3125
+Progress: 9632/9992 (96.4%) | Total Accuracy: 0.4033 | Batch Accuracy: 0.40625
+Progress: 9664/9992 (96.7%) | Total Accuracy: 0.4034 | Batch Accuracy: 0.40625
+Progress: 9696/9992 (97.0%) | Total Accuracy: 0.4038 | Batch Accuracy: 0.53125
+Progress: 9728/9992 (97.4%) | Total Accuracy: 0.4040 | Batch Accuracy: 0.46875
+Progress: 9760/9992 (97.7%) | Total Accuracy: 0.4040 | Batch Accuracy: 0.40625
+Progress: 9792/9992 (98.0%) | Total Accuracy: 0.4042 | Batch Accuracy: 0.46875
+Progress: 9824/9992 (98.3%) | Total Accuracy: 0.4042 | Batch Accuracy: 0.40625
+Progress: 9856/9992 (98.6%) | Total Accuracy: 0.4042 | Batch Accuracy: 0.40625
+Progress: 9888/9992 (99.0%) | Total Accuracy: 0.4046 | Batch Accuracy: 0.53125
+Progress: 9920/9992 (99.3%) | Total Accuracy: 0.4044 | Batch Accuracy: 0.34375
+Progress: 9952/9992 (99.6%) | Total Accuracy: 0.4045 | Batch Accuracy: 0.4375
+Progress: 9984/9992 (99.9%) | Total Accuracy: 0.4043 | Batch Accuracy: 0.34375
+Progress: 9992/9992 (100.0%) | Total Accuracy: 0.4044 | Batch Accuracy: 0.5
+
+Final validation accuracy: 0.4044
+
+Trial 2/10
+Embedding dimension: 142, Batch size: 41, KG learning rate: 0.00517745, Negatives per positive KG triple: 11, Question learning rate: 0.00499966, Negatives per positive question triple: 11, Hidden layer dimensions in question embedding module: (768, 550, 400), Dropout in question embedding module: 0.211, Weight decay in question embedding module: 8.03467e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning epoch 2
+Beginning epoch 3
+Beginning epoch 4
+Beginning epoch 5
+Beginning epoch 6
+Beginning epoch 7
+Beginning epoch 8
+Beginning epoch 9
+Beginning epoch 10
+Epoch 10/30, Loss: 0.0014
+Beginning epoch 11
+Beginning epoch 12
+Beginning epoch 13
+Beginning epoch 14
+Beginning epoch 15
+Beginning epoch 16
+Beginning epoch 17
+Beginning epoch 18
+Beginning epoch 19
+Beginning epoch 20
+Epoch 20/30, Loss: 0.0013
+Beginning epoch 21
+Beginning epoch 22
+Beginning epoch 23
+Beginning epoch 24
+Beginning epoch 25
+Beginning epoch 26
+Beginning epoch 27
+Beginning epoch 28
+Beginning epoch 29
+Beginning epoch 30
+Epoch 30/30, Loss: 0.0013
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning epoch 2
+Beginning epoch 3
+Beginning epoch 4
+Beginning epoch 5
+Beginning epoch 6
+Beginning epoch 7
+Beginning epoch 8
+Beginning epoch 9
+Beginning epoch 10
+Epoch 10/30, Loss: 0.0182
+Beginning epoch 11
+Beginning epoch 12
+Beginning epoch 13
+Beginning epoch 14
+Beginning epoch 15
+Beginning epoch 16
+Beginning epoch 17
+Beginning epoch 18
+Beginning epoch 19
+Beginning epoch 20
+Epoch 20/30, Loss: 0.0183
+Beginning epoch 21
+Beginning epoch 22
+Beginning epoch 23
+Beginning epoch 24
+Beginning epoch 25
+Beginning epoch 26
+Beginning epoch 27
+Beginning epoch 28
+Beginning epoch 29
+Beginning epoch 30
+Epoch 30/30, Loss: 0.0172
+Beginning validation set performance testing
+Progress: 32/9992 (0.3%) | Total Accuracy: 0.7188 | Batch Accuracy: 0.71875
+Progress: 64/9992 (0.6%) | Total Accuracy: 0.6406 | Batch Accuracy: 0.5625
+Progress: 96/9992 (1.0%) | Total Accuracy: 0.6042 | Batch Accuracy: 0.53125
+Progress: 128/9992 (1.3%) | Total Accuracy: 0.5781 | Batch Accuracy: 0.5
+Progress: 160/9992 (1.6%) | Total Accuracy: 0.5500 | Batch Accuracy: 0.4375
+Progress: 192/9992 (1.9%) | Total Accuracy: 0.5417 | Batch Accuracy: 0.5
+Progress: 224/9992 (2.2%) | Total Accuracy: 0.5402 | Batch Accuracy: 0.53125
+Progress: 256/9992 (2.6%) | Total Accuracy: 0.5391 | Batch Accuracy: 0.53125
+Progress: 288/9992 (2.9%) | Total Accuracy: 0.5486 | Batch Accuracy: 0.625
+Progress: 320/9992 (3.2%) | Total Accuracy: 0.5437 | Batch Accuracy: 0.5
+Progress: 352/9992 (3.5%) | Total Accuracy: 0.5483 | Batch Accuracy: 0.59375
+Progress: 384/9992 (3.8%) | Total Accuracy: 0.5521 | Batch Accuracy: 0.59375
+Progress: 416/9992 (4.2%) | Total Accuracy: 0.5601 | Batch Accuracy: 0.65625
+Progress: 448/9992 (4.5%) | Total Accuracy: 0.5513 | Batch Accuracy: 0.4375
+Progress: 480/9992 (4.8%) | Total Accuracy: 0.5458 | Batch Accuracy: 0.46875
+Progress: 512/9992 (5.1%) | Total Accuracy: 0.5508 | Batch Accuracy: 0.625
+Progress: 544/9992 (5.4%) | Total Accuracy: 0.5478 | Batch Accuracy: 0.5
+Progress: 576/9992 (5.8%) | Total Accuracy: 0.5434 | Batch Accuracy: 0.46875
+Progress: 608/9992 (6.1%) | Total Accuracy: 0.5329 | Batch Accuracy: 0.34375
+Progress: 640/9992 (6.4%) | Total Accuracy: 0.5297 | Batch Accuracy: 0.46875
+Progress: 672/9992 (6.7%) | Total Accuracy: 0.5372 | Batch Accuracy: 0.6875
+Progress: 704/9992 (7.0%) | Total Accuracy: 0.5398 | Batch Accuracy: 0.59375
+Progress: 736/9992 (7.4%) | Total Accuracy: 0.5435 | Batch Accuracy: 0.625
+Progress: 768/9992 (7.7%) | Total Accuracy: 0.5443 | Batch Accuracy: 0.5625
+Progress: 800/9992 (8.0%) | Total Accuracy: 0.5387 | Batch Accuracy: 0.40625
+Progress: 832/9992 (8.3%) | Total Accuracy: 0.5397 | Batch Accuracy: 0.5625
+Progress: 864/9992 (8.6%) | Total Accuracy: 0.5405 | Batch Accuracy: 0.5625
+Progress: 896/9992 (9.0%) | Total Accuracy: 0.5424 | Batch Accuracy: 0.59375
+Progress: 928/9992 (9.3%) | Total Accuracy: 0.5409 | Batch Accuracy: 0.5
+Progress: 960/9992 (9.6%) | Total Accuracy: 0.5385 | Batch Accuracy: 0.46875
+Progress: 992/9992 (9.9%) | Total Accuracy: 0.5373 | Batch Accuracy: 0.5
+Progress: 1024/9992 (10.2%) | Total Accuracy: 0.5391 | Batch Accuracy: 0.59375
+Progress: 1056/9992 (10.6%) | Total Accuracy: 0.5417 | Batch Accuracy: 0.625
+Progress: 1088/9992 (10.9%) | Total Accuracy: 0.5404 | Batch Accuracy: 0.5
+Progress: 1120/9992 (11.2%) | Total Accuracy: 0.5366 | Batch Accuracy: 0.40625
+Progress: 1152/9992 (11.5%) | Total Accuracy: 0.5339 | Batch Accuracy: 0.4375
+Progress: 1184/9992 (11.8%) | Total Accuracy: 0.5355 | Batch Accuracy: 0.59375
+Progress: 1216/9992 (12.2%) | Total Accuracy: 0.5354 | Batch Accuracy: 0.53125
+Progress: 1248/9992 (12.5%) | Total Accuracy: 0.5369 | Batch Accuracy: 0.59375
+Progress: 1280/9992 (12.8%) | Total Accuracy: 0.5367 | Batch Accuracy: 0.53125
+Progress: 1312/9992 (13.1%) | Total Accuracy: 0.5343 | Batch Accuracy: 0.4375
+Progress: 1344/9992 (13.5%) | Total Accuracy: 0.5335 | Batch Accuracy: 0.5
+Progress: 1376/9992 (13.8%) | Total Accuracy: 0.5327 | Batch Accuracy: 0.5
+Progress: 1408/9992 (14.1%) | Total Accuracy: 0.5291 | Batch Accuracy: 0.375
+Progress: 1440/9992 (14.4%) | Total Accuracy: 0.5278 | Batch Accuracy: 0.46875
+Progress: 1472/9992 (14.7%) | Total Accuracy: 0.5333 | Batch Accuracy: 0.78125
+Progress: 1504/9992 (15.1%) | Total Accuracy: 0.5339 | Batch Accuracy: 0.5625
+Progress: 1536/9992 (15.4%) | Total Accuracy: 0.5378 | Batch Accuracy: 0.71875
+Progress: 1568/9992 (15.7%) | Total Accuracy: 0.5376 | Batch Accuracy: 0.53125
+Progress: 1600/9992 (16.0%) | Total Accuracy: 0.5350 | Batch Accuracy: 0.40625
+Progress: 1632/9992 (16.3%) | Total Accuracy: 0.5368 | Batch Accuracy: 0.625
+Progress: 1664/9992 (16.7%) | Total Accuracy: 0.5367 | Batch Accuracy: 0.53125
+Progress: 1696/9992 (17.0%) | Total Accuracy: 0.5342 | Batch Accuracy: 0.40625
+Progress: 1728/9992 (17.3%) | Total Accuracy: 0.5365 | Batch Accuracy: 0.65625
+Progress: 1760/9992 (17.6%) | Total Accuracy: 0.5375 | Batch Accuracy: 0.59375
+Progress: 1792/9992 (17.9%) | Total Accuracy: 0.5374 | Batch Accuracy: 0.53125
+Progress: 1824/9992 (18.3%) | Total Accuracy: 0.5389 | Batch Accuracy: 0.625
+Progress: 1856/9992 (18.6%) | Total Accuracy: 0.5415 | Batch Accuracy: 0.6875
+Progress: 1888/9992 (18.9%) | Total Accuracy: 0.5408 | Batch Accuracy: 0.5
+Progress: 1920/9992 (19.2%) | Total Accuracy: 0.5401 | Batch Accuracy: 0.5
+Progress: 1952/9992 (19.5%) | Total Accuracy: 0.5389 | Batch Accuracy: 0.46875
+Progress: 1984/9992 (19.9%) | Total Accuracy: 0.5393 | Batch Accuracy: 0.5625
+Progress: 2016/9992 (20.2%) | Total Accuracy: 0.5412 | Batch Accuracy: 0.65625
+Progress: 2048/9992 (20.5%) | Total Accuracy: 0.5410 | Batch Accuracy: 0.53125
+Progress: 2080/9992 (20.8%) | Total Accuracy: 0.5437 | Batch Accuracy: 0.71875
+Progress: 2112/9992 (21.1%) | Total Accuracy: 0.5440 | Batch Accuracy: 0.5625
+Progress: 2144/9992 (21.5%) | Total Accuracy: 0.5443 | Batch Accuracy: 0.5625
+Progress: 2176/9992 (21.8%) | Total Accuracy: 0.5437 | Batch Accuracy: 0.5
+Progress: 2208/9992 (22.1%) | Total Accuracy: 0.5435 | Batch Accuracy: 0.53125
+Progress: 2240/9992 (22.4%) | Total Accuracy: 0.5442 | Batch Accuracy: 0.59375
+Progress: 2272/9992 (22.7%) | Total Accuracy: 0.5440 | Batch Accuracy: 0.53125
+Progress: 2304/9992 (23.1%) | Total Accuracy: 0.5425 | Batch Accuracy: 0.4375
+Progress: 2336/9992 (23.4%) | Total Accuracy: 0.5415 | Batch Accuracy: 0.46875
+Progress: 2368/9992 (23.7%) | Total Accuracy: 0.5427 | Batch Accuracy: 0.625
+Progress: 2400/9992 (24.0%) | Total Accuracy: 0.5446 | Batch Accuracy: 0.6875
+Progress: 2432/9992 (24.3%) | Total Accuracy: 0.5461 | Batch Accuracy: 0.65625
+Progress: 2464/9992 (24.7%) | Total Accuracy: 0.5455 | Batch Accuracy: 0.5
+Progress: 2496/9992 (25.0%) | Total Accuracy: 0.5461 | Batch Accuracy: 0.59375
+Progress: 2528/9992 (25.3%) | Total Accuracy: 0.5479 | Batch Accuracy: 0.6875
+Progress: 2560/9992 (25.6%) | Total Accuracy: 0.5484 | Batch Accuracy: 0.59375
+Progress: 2592/9992 (25.9%) | Total Accuracy: 0.5498 | Batch Accuracy: 0.65625
+Progress: 2624/9992 (26.3%) | Total Accuracy: 0.5514 | Batch Accuracy: 0.6875
+Progress: 2656/9992 (26.6%) | Total Accuracy: 0.5508 | Batch Accuracy: 0.5
+Progress: 2688/9992 (26.9%) | Total Accuracy: 0.5502 | Batch Accuracy: 0.5
+Progress: 2720/9992 (27.2%) | Total Accuracy: 0.5496 | Batch Accuracy: 0.5
+Progress: 2752/9992 (27.5%) | Total Accuracy: 0.5494 | Batch Accuracy: 0.53125
+Progress: 2784/9992 (27.9%) | Total Accuracy: 0.5489 | Batch Accuracy: 0.5
+Progress: 2816/9992 (28.2%) | Total Accuracy: 0.5494 | Batch Accuracy: 0.59375
+Progress: 2848/9992 (28.5%) | Total Accuracy: 0.5495 | Batch Accuracy: 0.5625
+Progress: 2880/9992 (28.8%) | Total Accuracy: 0.5490 | Batch Accuracy: 0.5
+Progress: 2912/9992 (29.1%) | Total Accuracy: 0.5484 | Batch Accuracy: 0.5
+Progress: 2944/9992 (29.5%) | Total Accuracy: 0.5486 | Batch Accuracy: 0.5625
+Progress: 2976/9992 (29.8%) | Total Accuracy: 0.5484 | Batch Accuracy: 0.53125
+Progress: 3008/9992 (30.1%) | Total Accuracy: 0.5482 | Batch Accuracy: 0.53125
+Progress: 3040/9992 (30.4%) | Total Accuracy: 0.5480 | Batch Accuracy: 0.53125
+Progress: 3072/9992 (30.7%) | Total Accuracy: 0.5485 | Batch Accuracy: 0.59375
+Progress: 3104/9992 (31.1%) | Total Accuracy: 0.5496 | Batch Accuracy: 0.65625
+Progress: 3136/9992 (31.4%) | Total Accuracy: 0.5504 | Batch Accuracy: 0.625
+Progress: 3168/9992 (31.7%) | Total Accuracy: 0.5502 | Batch Accuracy: 0.53125
+Progress: 3200/9992 (32.0%) | Total Accuracy: 0.5494 | Batch Accuracy: 0.46875
+Progress: 3232/9992 (32.3%) | Total Accuracy: 0.5489 | Batch Accuracy: 0.5
+Progress: 3264/9992 (32.7%) | Total Accuracy: 0.5490 | Batch Accuracy: 0.5625
+Progress: 3296/9992 (33.0%) | Total Accuracy: 0.5495 | Batch Accuracy: 0.59375
+Progress: 3328/9992 (33.3%) | Total Accuracy: 0.5499 | Batch Accuracy: 0.59375
+Progress: 3360/9992 (33.6%) | Total Accuracy: 0.5503 | Batch Accuracy: 0.59375
+Progress: 3392/9992 (33.9%) | Total Accuracy: 0.5507 | Batch Accuracy: 0.59375
+Progress: 3424/9992 (34.3%) | Total Accuracy: 0.5517 | Batch Accuracy: 0.65625
+Progress: 3456/9992 (34.6%) | Total Accuracy: 0.5509 | Batch Accuracy: 0.46875
+Progress: 3488/9992 (34.9%) | Total Accuracy: 0.5507 | Batch Accuracy: 0.53125
+Progress: 3520/9992 (35.2%) | Total Accuracy: 0.5506 | Batch Accuracy: 0.53125
+Progress: 3552/9992 (35.5%) | Total Accuracy: 0.5512 | Batch Accuracy: 0.625
+Progress: 3584/9992 (35.9%) | Total Accuracy: 0.5505 | Batch Accuracy: 0.46875
+Progress: 3616/9992 (36.2%) | Total Accuracy: 0.5509 | Batch Accuracy: 0.59375
+Progress: 3648/9992 (36.5%) | Total Accuracy: 0.5513 | Batch Accuracy: 0.59375
+Progress: 3680/9992 (36.8%) | Total Accuracy: 0.5500 | Batch Accuracy: 0.40625
+Progress: 3712/9992 (37.1%) | Total Accuracy: 0.5490 | Batch Accuracy: 0.4375
+Progress: 3744/9992 (37.5%) | Total Accuracy: 0.5486 | Batch Accuracy: 0.5
+Progress: 3776/9992 (37.8%) | Total Accuracy: 0.5485 | Batch Accuracy: 0.53125
+Progress: 3808/9992 (38.1%) | Total Accuracy: 0.5488 | Batch Accuracy: 0.59375
+Progress: 3840/9992 (38.4%) | Total Accuracy: 0.5492 | Batch Accuracy: 0.59375
+Progress: 3872/9992 (38.8%) | Total Accuracy: 0.5491 | Batch Accuracy: 0.53125
+Progress: 3904/9992 (39.1%) | Total Accuracy: 0.5492 | Batch Accuracy: 0.5625
+Progress: 3936/9992 (39.4%) | Total Accuracy: 0.5480 | Batch Accuracy: 0.40625
+Progress: 3968/9992 (39.7%) | Total Accuracy: 0.5484 | Batch Accuracy: 0.59375
+Progress: 4000/9992 (40.0%) | Total Accuracy: 0.5475 | Batch Accuracy: 0.4375
+Progress: 4032/9992 (40.4%) | Total Accuracy: 0.5466 | Batch Accuracy: 0.4375
+Progress: 4064/9992 (40.7%) | Total Accuracy: 0.5470 | Batch Accuracy: 0.59375
+Progress: 4096/9992 (41.0%) | Total Accuracy: 0.5469 | Batch Accuracy: 0.53125
+Progress: 4128/9992 (41.3%) | Total Accuracy: 0.5470 | Batch Accuracy: 0.5625
+Progress: 4160/9992 (41.6%) | Total Accuracy: 0.5464 | Batch Accuracy: 0.46875
+Progress: 4192/9992 (42.0%) | Total Accuracy: 0.5463 | Batch Accuracy: 0.53125
+Progress: 4224/9992 (42.3%) | Total Accuracy: 0.5450 | Batch Accuracy: 0.375
+Progress: 4256/9992 (42.6%) | Total Accuracy: 0.5453 | Batch Accuracy: 0.59375
+Progress: 4288/9992 (42.9%) | Total Accuracy: 0.5452 | Batch Accuracy: 0.53125
+Progress: 4320/9992 (43.2%) | Total Accuracy: 0.5461 | Batch Accuracy: 0.65625
+Progress: 4352/9992 (43.6%) | Total Accuracy: 0.5457 | Batch Accuracy: 0.5
+Progress: 4384/9992 (43.9%) | Total Accuracy: 0.5452 | Batch Accuracy: 0.46875
+Progress: 4416/9992 (44.2%) | Total Accuracy: 0.5448 | Batch Accuracy: 0.5
+Progress: 4448/9992 (44.5%) | Total Accuracy: 0.5452 | Batch Accuracy: 0.59375
+Progress: 4480/9992 (44.8%) | Total Accuracy: 0.5451 | Batch Accuracy: 0.53125
+Progress: 4512/9992 (45.2%) | Total Accuracy: 0.5452 | Batch Accuracy: 0.5625
+Progress: 4544/9992 (45.5%) | Total Accuracy: 0.5449 | Batch Accuracy: 0.5
+Progress: 4576/9992 (45.8%) | Total Accuracy: 0.5448 | Batch Accuracy: 0.53125
+Progress: 4608/9992 (46.1%) | Total Accuracy: 0.5445 | Batch Accuracy: 0.5
+Progress: 4640/9992 (46.4%) | Total Accuracy: 0.5440 | Batch Accuracy: 0.46875
+Progress: 4672/9992 (46.8%) | Total Accuracy: 0.5435 | Batch Accuracy: 0.46875
+Progress: 4704/9992 (47.1%) | Total Accuracy: 0.5438 | Batch Accuracy: 0.59375
+Progress: 4736/9992 (47.4%) | Total Accuracy: 0.5439 | Batch Accuracy: 0.5625
+Progress: 4768/9992 (47.7%) | Total Accuracy: 0.5447 | Batch Accuracy: 0.65625
+Progress: 4800/9992 (48.0%) | Total Accuracy: 0.5437 | Batch Accuracy: 0.40625
+Progress: 4832/9992 (48.4%) | Total Accuracy: 0.5435 | Batch Accuracy: 0.5
+Progress: 4864/9992 (48.7%) | Total Accuracy: 0.5436 | Batch Accuracy: 0.5625
+Progress: 4896/9992 (49.0%) | Total Accuracy: 0.5441 | Batch Accuracy: 0.625
+Progress: 4928/9992 (49.3%) | Total Accuracy: 0.5444 | Batch Accuracy: 0.59375
+Progress: 4960/9992 (49.6%) | Total Accuracy: 0.5452 | Batch Accuracy: 0.65625
+Progress: 4992/9992 (50.0%) | Total Accuracy: 0.5447 | Batch Accuracy: 0.46875
+Progress: 5024/9992 (50.3%) | Total Accuracy: 0.5436 | Batch Accuracy: 0.375
+Progress: 5056/9992 (50.6%) | Total Accuracy: 0.5439 | Batch Accuracy: 0.59375
+Progress: 5088/9992 (50.9%) | Total Accuracy: 0.5440 | Batch Accuracy: 0.5625
+Progress: 5120/9992 (51.2%) | Total Accuracy: 0.5437 | Batch Accuracy: 0.5
+Progress: 5152/9992 (51.6%) | Total Accuracy: 0.5441 | Batch Accuracy: 0.59375
+Progress: 5184/9992 (51.9%) | Total Accuracy: 0.5430 | Batch Accuracy: 0.375
+Progress: 5216/9992 (52.2%) | Total Accuracy: 0.5431 | Batch Accuracy: 0.5625
+Progress: 5248/9992 (52.5%) | Total Accuracy: 0.5427 | Batch Accuracy: 0.46875
+Progress: 5280/9992 (52.8%) | Total Accuracy: 0.5434 | Batch Accuracy: 0.65625
+Progress: 5312/9992 (53.2%) | Total Accuracy: 0.5439 | Batch Accuracy: 0.625
+Progress: 5344/9992 (53.5%) | Total Accuracy: 0.5443 | Batch Accuracy: 0.625
+Progress: 5376/9992 (53.8%) | Total Accuracy: 0.5443 | Batch Accuracy: 0.53125
+Progress: 5408/9992 (54.1%) | Total Accuracy: 0.5436 | Batch Accuracy: 0.4375
+Progress: 5440/9992 (54.4%) | Total Accuracy: 0.5428 | Batch Accuracy: 0.40625
+Progress: 5472/9992 (54.8%) | Total Accuracy: 0.5426 | Batch Accuracy: 0.5
+Progress: 5504/9992 (55.1%) | Total Accuracy: 0.5436 | Batch Accuracy: 0.71875
+Progress: 5536/9992 (55.4%) | Total Accuracy: 0.5435 | Batch Accuracy: 0.53125
+Progress: 5568/9992 (55.7%) | Total Accuracy: 0.5440 | Batch Accuracy: 0.625
+Progress: 5600/9992 (56.0%) | Total Accuracy: 0.5445 | Batch Accuracy: 0.625
+Progress: 5632/9992 (56.4%) | Total Accuracy: 0.5446 | Batch Accuracy: 0.5625
+Progress: 5664/9992 (56.7%) | Total Accuracy: 0.5448 | Batch Accuracy: 0.59375
+Progress: 5696/9992 (57.0%) | Total Accuracy: 0.5453 | Batch Accuracy: 0.625
+Progress: 5728/9992 (57.3%) | Total Accuracy: 0.5443 | Batch Accuracy: 0.375
+Progress: 5760/9992 (57.6%) | Total Accuracy: 0.5443 | Batch Accuracy: 0.53125
+Progress: 5792/9992 (58.0%) | Total Accuracy: 0.5437 | Batch Accuracy: 0.4375
+Progress: 5824/9992 (58.3%) | Total Accuracy: 0.5436 | Batch Accuracy: 0.53125
+Progress: 5856/9992 (58.6%) | Total Accuracy: 0.5439 | Batch Accuracy: 0.59375
+Progress: 5888/9992 (58.9%) | Total Accuracy: 0.5435 | Batch Accuracy: 0.46875
+Progress: 5920/9992 (59.2%) | Total Accuracy: 0.5432 | Batch Accuracy: 0.5
+Progress: 5952/9992 (59.6%) | Total Accuracy: 0.5432 | Batch Accuracy: 0.53125
+Progress: 5984/9992 (59.9%) | Total Accuracy: 0.5428 | Batch Accuracy: 0.46875
+Progress: 6016/9992 (60.2%) | Total Accuracy: 0.5424 | Batch Accuracy: 0.46875
+Progress: 6048/9992 (60.5%) | Total Accuracy: 0.5418 | Batch Accuracy: 0.4375
+Progress: 6080/9992 (60.8%) | Total Accuracy: 0.5411 | Batch Accuracy: 0.40625
+Progress: 6112/9992 (61.2%) | Total Accuracy: 0.5419 | Batch Accuracy: 0.6875
+Progress: 6144/9992 (61.5%) | Total Accuracy: 0.5420 | Batch Accuracy: 0.5625
+Progress: 6176/9992 (61.8%) | Total Accuracy: 0.5418 | Batch Accuracy: 0.5
+Progress: 6208/9992 (62.1%) | Total Accuracy: 0.5416 | Batch Accuracy: 0.5
+Progress: 6240/9992 (62.4%) | Total Accuracy: 0.5421 | Batch Accuracy: 0.65625
+Progress: 6272/9992 (62.8%) | Total Accuracy: 0.5419 | Batch Accuracy: 0.5
+Progress: 6304/9992 (63.1%) | Total Accuracy: 0.5427 | Batch Accuracy: 0.6875
+Progress: 6336/9992 (63.4%) | Total Accuracy: 0.5428 | Batch Accuracy: 0.5625
+Progress: 6368/9992 (63.7%) | Total Accuracy: 0.5426 | Batch Accuracy: 0.5
+Progress: 6400/9992 (64.1%) | Total Accuracy: 0.5427 | Batch Accuracy: 0.5625
+Progress: 6432/9992 (64.4%) | Total Accuracy: 0.5431 | Batch Accuracy: 0.625
+Progress: 6464/9992 (64.7%) | Total Accuracy: 0.5432 | Batch Accuracy: 0.5625
+Progress: 6496/9992 (65.0%) | Total Accuracy: 0.5431 | Batch Accuracy: 0.53125
+Progress: 6528/9992 (65.3%) | Total Accuracy: 0.5427 | Batch Accuracy: 0.46875
+Progress: 6560/9992 (65.7%) | Total Accuracy: 0.5427 | Batch Accuracy: 0.53125
+Progress: 6592/9992 (66.0%) | Total Accuracy: 0.5429 | Batch Accuracy: 0.59375
+Progress: 6624/9992 (66.3%) | Total Accuracy: 0.5427 | Batch Accuracy: 0.5
+Progress: 6656/9992 (66.6%) | Total Accuracy: 0.5431 | Batch Accuracy: 0.625
+Progress: 6688/9992 (66.9%) | Total Accuracy: 0.5431 | Batch Accuracy: 0.53125
+Progress: 6720/9992 (67.3%) | Total Accuracy: 0.5430 | Batch Accuracy: 0.53125
+Progress: 6752/9992 (67.6%) | Total Accuracy: 0.5431 | Batch Accuracy: 0.5625
+Progress: 6784/9992 (67.9%) | Total Accuracy: 0.5426 | Batch Accuracy: 0.4375
+Progress: 6816/9992 (68.2%) | Total Accuracy: 0.5431 | Batch Accuracy: 0.65625
+Progress: 6848/9992 (68.5%) | Total Accuracy: 0.5425 | Batch Accuracy: 0.40625
+Progress: 6880/9992 (68.9%) | Total Accuracy: 0.5424 | Batch Accuracy: 0.53125
+Progress: 6912/9992 (69.2%) | Total Accuracy: 0.5433 | Batch Accuracy: 0.71875
+Progress: 6944/9992 (69.5%) | Total Accuracy: 0.5433 | Batch Accuracy: 0.5625
+Progress: 6976/9992 (69.8%) | Total Accuracy: 0.5439 | Batch Accuracy: 0.65625
+Progress: 7008/9992 (70.1%) | Total Accuracy: 0.5445 | Batch Accuracy: 0.6875
+Progress: 7040/9992 (70.5%) | Total Accuracy: 0.5443 | Batch Accuracy: 0.5
+Progress: 7072/9992 (70.8%) | Total Accuracy: 0.5444 | Batch Accuracy: 0.5625
+Progress: 7104/9992 (71.1%) | Total Accuracy: 0.5443 | Batch Accuracy: 0.53125
+Progress: 7136/9992 (71.4%) | Total Accuracy: 0.5440 | Batch Accuracy: 0.46875
+Progress: 7168/9992 (71.7%) | Total Accuracy: 0.5439 | Batch Accuracy: 0.53125
+Progress: 7200/9992 (72.1%) | Total Accuracy: 0.5442 | Batch Accuracy: 0.59375
+Progress: 7232/9992 (72.4%) | Total Accuracy: 0.5434 | Batch Accuracy: 0.375
+Progress: 7264/9992 (72.7%) | Total Accuracy: 0.5431 | Batch Accuracy: 0.46875
+Progress: 7296/9992 (73.0%) | Total Accuracy: 0.5429 | Batch Accuracy: 0.5
+Progress: 7328/9992 (73.3%) | Total Accuracy: 0.5424 | Batch Accuracy: 0.4375
+Progress: 7360/9992 (73.7%) | Total Accuracy: 0.5425 | Batch Accuracy: 0.5625
+Progress: 7392/9992 (74.0%) | Total Accuracy: 0.5427 | Batch Accuracy: 0.59375
+Progress: 7424/9992 (74.3%) | Total Accuracy: 0.5431 | Batch Accuracy: 0.625
+Progress: 7456/9992 (74.6%) | Total Accuracy: 0.5436 | Batch Accuracy: 0.65625
+Progress: 7488/9992 (74.9%) | Total Accuracy: 0.5433 | Batch Accuracy: 0.46875
+Progress: 7520/9992 (75.3%) | Total Accuracy: 0.5437 | Batch Accuracy: 0.65625
+Progress: 7552/9992 (75.6%) | Total Accuracy: 0.5440 | Batch Accuracy: 0.59375
+Progress: 7584/9992 (75.9%) | Total Accuracy: 0.5439 | Batch Accuracy: 0.53125
+Progress: 7616/9992 (76.2%) | Total Accuracy: 0.5439 | Batch Accuracy: 0.53125
+Progress: 7648/9992 (76.5%) | Total Accuracy: 0.5431 | Batch Accuracy: 0.375
+Progress: 7680/9992 (76.9%) | Total Accuracy: 0.5434 | Batch Accuracy: 0.59375
+Progress: 7712/9992 (77.2%) | Total Accuracy: 0.5433 | Batch Accuracy: 0.53125
+Progress: 7744/9992 (77.5%) | Total Accuracy: 0.5433 | Batch Accuracy: 0.53125
+Progress: 7776/9992 (77.8%) | Total Accuracy: 0.5432 | Batch Accuracy: 0.53125
+Progress: 7808/9992 (78.1%) | Total Accuracy: 0.5425 | Batch Accuracy: 0.375
+Progress: 7840/9992 (78.5%) | Total Accuracy: 0.5425 | Batch Accuracy: 0.53125
+Progress: 7872/9992 (78.8%) | Total Accuracy: 0.5428 | Batch Accuracy: 0.625
+Progress: 7904/9992 (79.1%) | Total Accuracy: 0.5425 | Batch Accuracy: 0.46875
+Progress: 7936/9992 (79.4%) | Total Accuracy: 0.5427 | Batch Accuracy: 0.59375
+Progress: 7968/9992 (79.7%) | Total Accuracy: 0.5430 | Batch Accuracy: 0.625
+Progress: 8000/9992 (80.1%) | Total Accuracy: 0.5427 | Batch Accuracy: 0.46875
+Progress: 8032/9992 (80.4%) | Total Accuracy: 0.5425 | Batch Accuracy: 0.46875
+Progress: 8064/9992 (80.7%) | Total Accuracy: 0.5423 | Batch Accuracy: 0.5
+Progress: 8096/9992 (81.0%) | Total Accuracy: 0.5422 | Batch Accuracy: 0.53125
+Progress: 8128/9992 (81.3%) | Total Accuracy: 0.5420 | Batch Accuracy: 0.46875
+Progress: 8160/9992 (81.7%) | Total Accuracy: 0.5425 | Batch Accuracy: 0.6875
+Progress: 8192/9992 (82.0%) | Total Accuracy: 0.5430 | Batch Accuracy: 0.65625
+Progress: 8224/9992 (82.3%) | Total Accuracy: 0.5426 | Batch Accuracy: 0.4375
+Progress: 8256/9992 (82.6%) | Total Accuracy: 0.5429 | Batch Accuracy: 0.625
+Progress: 8288/9992 (82.9%) | Total Accuracy: 0.5419 | Batch Accuracy: 0.28125
+Progress: 8320/9992 (83.3%) | Total Accuracy: 0.5416 | Batch Accuracy: 0.46875
+Progress: 8352/9992 (83.6%) | Total Accuracy: 0.5414 | Batch Accuracy: 0.5
+Progress: 8384/9992 (83.9%) | Total Accuracy: 0.5408 | Batch Accuracy: 0.375
+Progress: 8416/9992 (84.2%) | Total Accuracy: 0.5410 | Batch Accuracy: 0.59375
+Progress: 8448/9992 (84.5%) | Total Accuracy: 0.5412 | Batch Accuracy: 0.59375
+Progress: 8480/9992 (84.9%) | Total Accuracy: 0.5416 | Batch Accuracy: 0.65625
+Progress: 8512/9992 (85.2%) | Total Accuracy: 0.5414 | Batch Accuracy: 0.46875
+Progress: 8544/9992 (85.5%) | Total Accuracy: 0.5410 | Batch Accuracy: 0.4375
+Progress: 8576/9992 (85.8%) | Total Accuracy: 0.5417 | Batch Accuracy: 0.75
+Progress: 8608/9992 (86.1%) | Total Accuracy: 0.5414 | Batch Accuracy: 0.4375
+Progress: 8640/9992 (86.5%) | Total Accuracy: 0.5416 | Batch Accuracy: 0.59375
+Progress: 8672/9992 (86.8%) | Total Accuracy: 0.5417 | Batch Accuracy: 0.59375
+Progress: 8704/9992 (87.1%) | Total Accuracy: 0.5417 | Batch Accuracy: 0.53125
+Progress: 8736/9992 (87.4%) | Total Accuracy: 0.5411 | Batch Accuracy: 0.375
+Progress: 8768/9992 (87.8%) | Total Accuracy: 0.5412 | Batch Accuracy: 0.5625
+Progress: 8800/9992 (88.1%) | Total Accuracy: 0.5411 | Batch Accuracy: 0.53125
+Progress: 8832/9992 (88.4%) | Total Accuracy: 0.5413 | Batch Accuracy: 0.59375
+Progress: 8864/9992 (88.7%) | Total Accuracy: 0.5416 | Batch Accuracy: 0.625
+Progress: 8896/9992 (89.0%) | Total Accuracy: 0.5415 | Batch Accuracy: 0.5
+Progress: 8928/9992 (89.4%) | Total Accuracy: 0.5412 | Batch Accuracy: 0.46875
+Progress: 8960/9992 (89.7%) | Total Accuracy: 0.5410 | Batch Accuracy: 0.46875
+Progress: 8992/9992 (90.0%) | Total Accuracy: 0.5414 | Batch Accuracy: 0.65625
+Progress: 9024/9992 (90.3%) | Total Accuracy: 0.5417 | Batch Accuracy: 0.625
+Progress: 9056/9992 (90.6%) | Total Accuracy: 0.5422 | Batch Accuracy: 0.6875
+Progress: 9088/9992 (91.0%) | Total Accuracy: 0.5414 | Batch Accuracy: 0.3125
+Progress: 9120/9992 (91.3%) | Total Accuracy: 0.5411 | Batch Accuracy: 0.46875
+Progress: 9152/9992 (91.6%) | Total Accuracy: 0.5417 | Batch Accuracy: 0.71875
+Progress: 9184/9992 (91.9%) | Total Accuracy: 0.5424 | Batch Accuracy: 0.71875
+Progress: 9216/9992 (92.2%) | Total Accuracy: 0.5425 | Batch Accuracy: 0.59375
+Progress: 9248/9992 (92.6%) | Total Accuracy: 0.5425 | Batch Accuracy: 0.53125
+Progress: 9280/9992 (92.9%) | Total Accuracy: 0.5428 | Batch Accuracy: 0.625
+Progress: 9312/9992 (93.2%) | Total Accuracy: 0.5424 | Batch Accuracy: 0.4375
+Progress: 9344/9992 (93.5%) | Total Accuracy: 0.5425 | Batch Accuracy: 0.5625
+Progress: 9376/9992 (93.8%) | Total Accuracy: 0.5419 | Batch Accuracy: 0.375
+Progress: 9408/9992 (94.2%) | Total Accuracy: 0.5417 | Batch Accuracy: 0.46875
+Progress: 9440/9992 (94.5%) | Total Accuracy: 0.5414 | Batch Accuracy: 0.46875
+Progress: 9472/9992 (94.8%) | Total Accuracy: 0.5406 | Batch Accuracy: 0.3125
+Progress: 9504/9992 (95.1%) | Total Accuracy: 0.5406 | Batch Accuracy: 0.53125
+Progress: 9536/9992 (95.4%) | Total Accuracy: 0.5408 | Batch Accuracy: 0.59375
+Progress: 9568/9992 (95.8%) | Total Accuracy: 0.5401 | Batch Accuracy: 0.34375
+Progress: 9600/9992 (96.1%) | Total Accuracy: 0.5401 | Batch Accuracy: 0.53125
+Progress: 9632/9992 (96.4%) | Total Accuracy: 0.5403 | Batch Accuracy: 0.59375
+Progress: 9664/9992 (96.7%) | Total Accuracy: 0.5407 | Batch Accuracy: 0.65625
+Progress: 9696/9992 (97.0%) | Total Accuracy: 0.5407 | Batch Accuracy: 0.5625
+Progress: 9728/9992 (97.4%) | Total Accuracy: 0.5412 | Batch Accuracy: 0.6875
+Progress: 9760/9992 (97.7%) | Total Accuracy: 0.5415 | Batch Accuracy: 0.625
+Progress: 9792/9992 (98.0%) | Total Accuracy: 0.5415 | Batch Accuracy: 0.53125
+Progress: 9824/9992 (98.3%) | Total Accuracy: 0.5416 | Batch Accuracy: 0.59375
+Progress: 9856/9992 (98.6%) | Total Accuracy: 0.5414 | Batch Accuracy: 0.46875
+Progress: 9888/9992 (99.0%) | Total Accuracy: 0.5416 | Batch Accuracy: 0.59375
+Progress: 9920/9992 (99.3%) | Total Accuracy: 0.5418 | Batch Accuracy: 0.625
+Progress: 9952/9992 (99.6%) | Total Accuracy: 0.5420 | Batch Accuracy: 0.59375
+Progress: 9984/9992 (99.9%) | Total Accuracy: 0.5419 | Batch Accuracy: 0.5
+Progress: 9992/9992 (100.0%) | Total Accuracy: 0.5417 | Batch Accuracy: 0.375
+
+Final validation accuracy: 0.5417
+
+Trial 3/10
+Embedding dimension: 151, Batch size: 152, KG learning rate: 0.00254272, Negatives per positive KG triple: 10, Question learning rate: 0.00189247, Negatives per positive question triple: 10, Hidden layer dimensions in question embedding module: (768, 550, 400), Dropout in question embedding module: 0.115, Weight decay in question embedding module: 3.38885e-07
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning epoch 2
+Beginning epoch 3
+Beginning epoch 4
+Beginning epoch 5
+Beginning epoch 6
+Beginning epoch 7
+Beginning epoch 8
+Beginning epoch 9
+Beginning epoch 10
+Epoch 10/30, Loss: 0.0009
+Beginning epoch 11
+Beginning epoch 12
+Beginning epoch 13
+Beginning epoch 14
+Beginning epoch 15
+Beginning epoch 16
+Beginning epoch 17
+Beginning epoch 18
+Beginning epoch 19
+Beginning epoch 20
+Epoch 20/30, Loss: 0.0006
+Beginning epoch 21
+Beginning epoch 22
+Beginning epoch 23
+Beginning epoch 24
+Beginning epoch 25
+Beginning epoch 26
+Beginning epoch 27
+Beginning epoch 28
+Beginning epoch 29
+Beginning epoch 30
+Epoch 30/30, Loss: 0.0005
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning epoch 2
+Beginning epoch 3
+Beginning epoch 4
+Beginning epoch 5
+Beginning epoch 6
+Beginning epoch 7
+Beginning epoch 8
+Beginning epoch 9
+Beginning epoch 10
+Epoch 10/30, Loss: 0.0013
+Beginning epoch 11
+Beginning epoch 12
+Beginning epoch 13
+Beginning epoch 14
+Beginning epoch 15
+Beginning epoch 16
+Beginning epoch 17
+Beginning epoch 18
+Beginning epoch 19
+Beginning epoch 20
+Epoch 20/30, Loss: 0.0011
+Beginning epoch 21
+Beginning epoch 22
+Beginning epoch 23
+Beginning epoch 24
+Beginning epoch 25
+Beginning epoch 26
+Beginning epoch 27
+Beginning epoch 28
+Beginning epoch 29
+Beginning epoch 30
+Epoch 30/30, Loss: 0.0009
+Beginning validation set performance testing
+Progress: 32/9992 (0.3%) | Total Accuracy: 0.9062 | Batch Accuracy: 0.90625
+Progress: 64/9992 (0.6%) | Total Accuracy: 0.9062 | Batch Accuracy: 0.90625
+Progress: 96/9992 (1.0%) | Total Accuracy: 0.8854 | Batch Accuracy: 0.84375
+Progress: 128/9992 (1.3%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.90625
+Progress: 160/9992 (1.6%) | Total Accuracy: 0.8938 | Batch Accuracy: 0.90625
+Progress: 192/9992 (1.9%) | Total Accuracy: 0.9010 | Batch Accuracy: 0.9375
+Progress: 224/9992 (2.2%) | Total Accuracy: 0.8929 | Batch Accuracy: 0.84375
+Progress: 256/9992 (2.6%) | Total Accuracy: 0.8828 | Batch Accuracy: 0.8125
+Progress: 288/9992 (2.9%) | Total Accuracy: 0.8889 | Batch Accuracy: 0.9375
+Progress: 320/9992 (3.2%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.90625
+Progress: 352/9992 (3.5%) | Total Accuracy: 0.8949 | Batch Accuracy: 0.9375
+Progress: 384/9992 (3.8%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.84375
+Progress: 416/9992 (4.2%) | Total Accuracy: 0.8870 | Batch Accuracy: 0.84375
+Progress: 448/9992 (4.5%) | Total Accuracy: 0.8817 | Batch Accuracy: 0.8125
+Progress: 480/9992 (4.8%) | Total Accuracy: 0.8833 | Batch Accuracy: 0.90625
+Progress: 512/9992 (5.1%) | Total Accuracy: 0.8848 | Batch Accuracy: 0.90625
+Progress: 544/9992 (5.4%) | Total Accuracy: 0.8842 | Batch Accuracy: 0.875
+Progress: 576/9992 (5.8%) | Total Accuracy: 0.8872 | Batch Accuracy: 0.9375
+Progress: 608/9992 (6.1%) | Total Accuracy: 0.8898 | Batch Accuracy: 0.9375
+Progress: 640/9992 (6.4%) | Total Accuracy: 0.8891 | Batch Accuracy: 0.875
+Progress: 672/9992 (6.7%) | Total Accuracy: 0.8884 | Batch Accuracy: 0.875
+Progress: 704/9992 (7.0%) | Total Accuracy: 0.8864 | Batch Accuracy: 0.84375
+Progress: 736/9992 (7.4%) | Total Accuracy: 0.8886 | Batch Accuracy: 0.9375
+Progress: 768/9992 (7.7%) | Total Accuracy: 0.8919 | Batch Accuracy: 0.96875
+Progress: 800/9992 (8.0%) | Total Accuracy: 0.8938 | Batch Accuracy: 0.9375
+Progress: 832/9992 (8.3%) | Total Accuracy: 0.8918 | Batch Accuracy: 0.84375
+Progress: 864/9992 (8.6%) | Total Accuracy: 0.8912 | Batch Accuracy: 0.875
+Progress: 896/9992 (9.0%) | Total Accuracy: 0.8929 | Batch Accuracy: 0.9375
+Progress: 928/9992 (9.3%) | Total Accuracy: 0.8922 | Batch Accuracy: 0.875
+Progress: 960/9992 (9.6%) | Total Accuracy: 0.8938 | Batch Accuracy: 0.9375
+Progress: 992/9992 (9.9%) | Total Accuracy: 0.8952 | Batch Accuracy: 0.9375
+Progress: 1024/9992 (10.2%) | Total Accuracy: 0.8955 | Batch Accuracy: 0.90625
+Progress: 1056/9992 (10.6%) | Total Accuracy: 0.8949 | Batch Accuracy: 0.875
+Progress: 1088/9992 (10.9%) | Total Accuracy: 0.8934 | Batch Accuracy: 0.84375
+Progress: 1120/9992 (11.2%) | Total Accuracy: 0.8920 | Batch Accuracy: 0.84375
+Progress: 1152/9992 (11.5%) | Total Accuracy: 0.8889 | Batch Accuracy: 0.78125
+Progress: 1184/9992 (11.8%) | Total Accuracy: 0.8902 | Batch Accuracy: 0.9375
+Progress: 1216/9992 (12.2%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.90625
+Progress: 1248/9992 (12.5%) | Total Accuracy: 0.8910 | Batch Accuracy: 0.90625
+Progress: 1280/9992 (12.8%) | Total Accuracy: 0.8922 | Batch Accuracy: 0.9375
+Progress: 1312/9992 (13.1%) | Total Accuracy: 0.8918 | Batch Accuracy: 0.875
+Progress: 1344/9992 (13.5%) | Total Accuracy: 0.8891 | Batch Accuracy: 0.78125
+Progress: 1376/9992 (13.8%) | Total Accuracy: 0.8917 | Batch Accuracy: 1.0
+Progress: 1408/9992 (14.1%) | Total Accuracy: 0.8899 | Batch Accuracy: 0.8125
+Progress: 1440/9992 (14.4%) | Total Accuracy: 0.8910 | Batch Accuracy: 0.9375
+Progress: 1472/9992 (14.7%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.875
+Progress: 1504/9992 (15.1%) | Total Accuracy: 0.8916 | Batch Accuracy: 0.9375
+Progress: 1536/9992 (15.4%) | Total Accuracy: 0.8919 | Batch Accuracy: 0.90625
+Progress: 1568/9992 (15.7%) | Total Accuracy: 0.8922 | Batch Accuracy: 0.90625
+Progress: 1600/9992 (16.0%) | Total Accuracy: 0.8912 | Batch Accuracy: 0.84375
+Progress: 1632/9992 (16.3%) | Total Accuracy: 0.8915 | Batch Accuracy: 0.90625
+Progress: 1664/9992 (16.7%) | Total Accuracy: 0.8912 | Batch Accuracy: 0.875
+Progress: 1696/9992 (17.0%) | Total Accuracy: 0.8915 | Batch Accuracy: 0.90625
+Progress: 1728/9992 (17.3%) | Total Accuracy: 0.8924 | Batch Accuracy: 0.9375
+Progress: 1760/9992 (17.6%) | Total Accuracy: 0.8909 | Batch Accuracy: 0.8125
+Progress: 1792/9992 (17.9%) | Total Accuracy: 0.8917 | Batch Accuracy: 0.9375
+Progress: 1824/9992 (18.3%) | Total Accuracy: 0.8925 | Batch Accuracy: 0.9375
+Progress: 1856/9992 (18.6%) | Total Accuracy: 0.8928 | Batch Accuracy: 0.90625
+Progress: 1888/9992 (18.9%) | Total Accuracy: 0.8930 | Batch Accuracy: 0.90625
+Progress: 1920/9992 (19.2%) | Total Accuracy: 0.8927 | Batch Accuracy: 0.875
+Progress: 1952/9992 (19.5%) | Total Accuracy: 0.8934 | Batch Accuracy: 0.9375
+Progress: 1984/9992 (19.9%) | Total Accuracy: 0.8947 | Batch Accuracy: 0.96875
+Progress: 2016/9992 (20.2%) | Total Accuracy: 0.8958 | Batch Accuracy: 0.96875
+Progress: 2048/9992 (20.5%) | Total Accuracy: 0.8940 | Batch Accuracy: 0.78125
+Progress: 2080/9992 (20.8%) | Total Accuracy: 0.8928 | Batch Accuracy: 0.8125
+Progress: 2112/9992 (21.1%) | Total Accuracy: 0.8911 | Batch Accuracy: 0.78125
+Progress: 2144/9992 (21.5%) | Total Accuracy: 0.8899 | Batch Accuracy: 0.8125
+Progress: 2176/9992 (21.8%) | Total Accuracy: 0.8911 | Batch Accuracy: 0.96875
+Progress: 2208/9992 (22.1%) | Total Accuracy: 0.8918 | Batch Accuracy: 0.9375
+Progress: 2240/9992 (22.4%) | Total Accuracy: 0.8915 | Batch Accuracy: 0.875
+Progress: 2272/9992 (22.7%) | Total Accuracy: 0.8908 | Batch Accuracy: 0.84375
+Progress: 2304/9992 (23.1%) | Total Accuracy: 0.8893 | Batch Accuracy: 0.78125
+Progress: 2336/9992 (23.4%) | Total Accuracy: 0.8908 | Batch Accuracy: 1.0
+Progress: 2368/9992 (23.7%) | Total Accuracy: 0.8898 | Batch Accuracy: 0.8125
+Progress: 2400/9992 (24.0%) | Total Accuracy: 0.8908 | Batch Accuracy: 0.96875
+Progress: 2432/9992 (24.3%) | Total Accuracy: 0.8923 | Batch Accuracy: 1.0
+Progress: 2464/9992 (24.7%) | Total Accuracy: 0.8916 | Batch Accuracy: 0.84375
+Progress: 2496/9992 (25.0%) | Total Accuracy: 0.8930 | Batch Accuracy: 1.0
+Progress: 2528/9992 (25.3%) | Total Accuracy: 0.8944 | Batch Accuracy: 1.0
+Progress: 2560/9992 (25.6%) | Total Accuracy: 0.8941 | Batch Accuracy: 0.875
+Progress: 2592/9992 (25.9%) | Total Accuracy: 0.8947 | Batch Accuracy: 0.9375
+Progress: 2624/9992 (26.3%) | Total Accuracy: 0.8948 | Batch Accuracy: 0.90625
+Progress: 2656/9992 (26.6%) | Total Accuracy: 0.8950 | Batch Accuracy: 0.90625
+Progress: 2688/9992 (26.9%) | Total Accuracy: 0.8943 | Batch Accuracy: 0.84375
+Progress: 2720/9992 (27.2%) | Total Accuracy: 0.8938 | Batch Accuracy: 0.84375
+Progress: 2752/9992 (27.5%) | Total Accuracy: 0.8943 | Batch Accuracy: 0.9375
+Progress: 2784/9992 (27.9%) | Total Accuracy: 0.8951 | Batch Accuracy: 0.96875
+Progress: 2816/9992 (28.2%) | Total Accuracy: 0.8956 | Batch Accuracy: 0.9375
+Progress: 2848/9992 (28.5%) | Total Accuracy: 0.8954 | Batch Accuracy: 0.875
+Progress: 2880/9992 (28.8%) | Total Accuracy: 0.8955 | Batch Accuracy: 0.90625
+Progress: 2912/9992 (29.1%) | Total Accuracy: 0.8966 | Batch Accuracy: 1.0
+Progress: 2944/9992 (29.5%) | Total Accuracy: 0.8974 | Batch Accuracy: 0.96875
+Progress: 2976/9992 (29.8%) | Total Accuracy: 0.8972 | Batch Accuracy: 0.875
+Progress: 3008/9992 (30.1%) | Total Accuracy: 0.8976 | Batch Accuracy: 0.9375
+Progress: 3040/9992 (30.4%) | Total Accuracy: 0.8980 | Batch Accuracy: 0.9375
+Progress: 3072/9992 (30.7%) | Total Accuracy: 0.8984 | Batch Accuracy: 0.9375
+Progress: 3104/9992 (31.1%) | Total Accuracy: 0.8988 | Batch Accuracy: 0.9375
+Progress: 3136/9992 (31.4%) | Total Accuracy: 0.8996 | Batch Accuracy: 0.96875
+Progress: 3168/9992 (31.7%) | Total Accuracy: 0.8993 | Batch Accuracy: 0.875
+Progress: 3200/9992 (32.0%) | Total Accuracy: 0.9000 | Batch Accuracy: 0.96875
+Progress: 3232/9992 (32.3%) | Total Accuracy: 0.9004 | Batch Accuracy: 0.9375
+Progress: 3264/9992 (32.7%) | Total Accuracy: 0.8995 | Batch Accuracy: 0.8125
+Progress: 3296/9992 (33.0%) | Total Accuracy: 0.8990 | Batch Accuracy: 0.84375
+Progress: 3328/9992 (33.3%) | Total Accuracy: 0.8999 | Batch Accuracy: 1.0
+Progress: 3360/9992 (33.6%) | Total Accuracy: 0.9000 | Batch Accuracy: 0.90625
+Progress: 3392/9992 (33.9%) | Total Accuracy: 0.8995 | Batch Accuracy: 0.84375
+Progress: 3424/9992 (34.3%) | Total Accuracy: 0.8998 | Batch Accuracy: 0.9375
+Progress: 3456/9992 (34.6%) | Total Accuracy: 0.8999 | Batch Accuracy: 0.90625
+Progress: 3488/9992 (34.9%) | Total Accuracy: 0.8997 | Batch Accuracy: 0.875
+Progress: 3520/9992 (35.2%) | Total Accuracy: 0.8994 | Batch Accuracy: 0.875
+Progress: 3552/9992 (35.5%) | Total Accuracy: 0.9001 | Batch Accuracy: 0.96875
+Progress: 3584/9992 (35.9%) | Total Accuracy: 0.8996 | Batch Accuracy: 0.84375
+Progress: 3616/9992 (36.2%) | Total Accuracy: 0.8993 | Batch Accuracy: 0.875
+Progress: 3648/9992 (36.5%) | Total Accuracy: 0.8999 | Batch Accuracy: 0.96875
+Progress: 3680/9992 (36.8%) | Total Accuracy: 0.8997 | Batch Accuracy: 0.875
+Progress: 3712/9992 (37.1%) | Total Accuracy: 0.8995 | Batch Accuracy: 0.875
+Progress: 3744/9992 (37.5%) | Total Accuracy: 0.8993 | Batch Accuracy: 0.875
+Progress: 3776/9992 (37.8%) | Total Accuracy: 0.8978 | Batch Accuracy: 0.71875
+Progress: 3808/9992 (38.1%) | Total Accuracy: 0.8978 | Batch Accuracy: 0.90625
+Progress: 3840/9992 (38.4%) | Total Accuracy: 0.8982 | Batch Accuracy: 0.9375
+Progress: 3872/9992 (38.8%) | Total Accuracy: 0.8980 | Batch Accuracy: 0.875
+Progress: 3904/9992 (39.1%) | Total Accuracy: 0.8973 | Batch Accuracy: 0.8125
+Progress: 3936/9992 (39.4%) | Total Accuracy: 0.8976 | Batch Accuracy: 0.9375
+Progress: 3968/9992 (39.7%) | Total Accuracy: 0.8979 | Batch Accuracy: 0.9375
+Progress: 4000/9992 (40.0%) | Total Accuracy: 0.8980 | Batch Accuracy: 0.90625
+Progress: 4032/9992 (40.4%) | Total Accuracy: 0.8976 | Batch Accuracy: 0.84375
+Progress: 4064/9992 (40.7%) | Total Accuracy: 0.8981 | Batch Accuracy: 0.96875
+Progress: 4096/9992 (41.0%) | Total Accuracy: 0.8989 | Batch Accuracy: 1.0
+Progress: 4128/9992 (41.3%) | Total Accuracy: 0.8997 | Batch Accuracy: 1.0
+Progress: 4160/9992 (41.6%) | Total Accuracy: 0.8995 | Batch Accuracy: 0.875
+Progress: 4192/9992 (42.0%) | Total Accuracy: 0.8993 | Batch Accuracy: 0.875
+Progress: 4224/9992 (42.3%) | Total Accuracy: 0.8994 | Batch Accuracy: 0.90625
+Progress: 4256/9992 (42.6%) | Total Accuracy: 0.8994 | Batch Accuracy: 0.90625
+Progress: 4288/9992 (42.9%) | Total Accuracy: 0.9002 | Batch Accuracy: 1.0
+Progress: 4320/9992 (43.2%) | Total Accuracy: 0.9002 | Batch Accuracy: 0.90625
+Progress: 4352/9992 (43.6%) | Total Accuracy: 0.9003 | Batch Accuracy: 0.90625
+Progress: 4384/9992 (43.9%) | Total Accuracy: 0.8996 | Batch Accuracy: 0.8125
+Progress: 4416/9992 (44.2%) | Total Accuracy: 0.8999 | Batch Accuracy: 0.9375
+Progress: 4448/9992 (44.5%) | Total Accuracy: 0.9002 | Batch Accuracy: 0.9375
+Progress: 4480/9992 (44.8%) | Total Accuracy: 0.9007 | Batch Accuracy: 0.96875
+Progress: 4512/9992 (45.2%) | Total Accuracy: 0.9012 | Batch Accuracy: 0.96875
+Progress: 4544/9992 (45.5%) | Total Accuracy: 0.9014 | Batch Accuracy: 0.9375
+Progress: 4576/9992 (45.8%) | Total Accuracy: 0.9014 | Batch Accuracy: 0.90625
+Progress: 4608/9992 (46.1%) | Total Accuracy: 0.9021 | Batch Accuracy: 1.0
+Progress: 4640/9992 (46.4%) | Total Accuracy: 0.9022 | Batch Accuracy: 0.90625
+Progress: 4672/9992 (46.8%) | Total Accuracy: 0.9026 | Batch Accuracy: 0.96875
+Progress: 4704/9992 (47.1%) | Total Accuracy: 0.9024 | Batch Accuracy: 0.875
+Progress: 4736/9992 (47.4%) | Total Accuracy: 0.9027 | Batch Accuracy: 0.9375
+Progress: 4768/9992 (47.7%) | Total Accuracy: 0.9029 | Batch Accuracy: 0.9375
+Progress: 4800/9992 (48.0%) | Total Accuracy: 0.9025 | Batch Accuracy: 0.84375
+Progress: 4832/9992 (48.4%) | Total Accuracy: 0.9025 | Batch Accuracy: 0.90625
+Progress: 4864/9992 (48.7%) | Total Accuracy: 0.9023 | Batch Accuracy: 0.875
+Progress: 4896/9992 (49.0%) | Total Accuracy: 0.9028 | Batch Accuracy: 0.96875
+Progress: 4928/9992 (49.3%) | Total Accuracy: 0.9028 | Batch Accuracy: 0.90625
+Progress: 4960/9992 (49.6%) | Total Accuracy: 0.9028 | Batch Accuracy: 0.90625
+Progress: 4992/9992 (50.0%) | Total Accuracy: 0.9026 | Batch Accuracy: 0.875
+Progress: 5024/9992 (50.3%) | Total Accuracy: 0.9023 | Batch Accuracy: 0.84375
+Progress: 5056/9992 (50.6%) | Total Accuracy: 0.9019 | Batch Accuracy: 0.84375
+Progress: 5088/9992 (50.9%) | Total Accuracy: 0.9021 | Batch Accuracy: 0.9375
+Progress: 5120/9992 (51.2%) | Total Accuracy: 0.9020 | Batch Accuracy: 0.875
+Progress: 5152/9992 (51.6%) | Total Accuracy: 0.9020 | Batch Accuracy: 0.90625
+Progress: 5184/9992 (51.9%) | Total Accuracy: 0.9020 | Batch Accuracy: 0.90625
+Progress: 5216/9992 (52.2%) | Total Accuracy: 0.9018 | Batch Accuracy: 0.875
+Progress: 5248/9992 (52.5%) | Total Accuracy: 0.9022 | Batch Accuracy: 0.96875
+Progress: 5280/9992 (52.8%) | Total Accuracy: 0.9023 | Batch Accuracy: 0.90625
+Progress: 5312/9992 (53.2%) | Total Accuracy: 0.9027 | Batch Accuracy: 0.96875
+Progress: 5344/9992 (53.5%) | Total Accuracy: 0.9031 | Batch Accuracy: 0.96875
+Progress: 5376/9992 (53.8%) | Total Accuracy: 0.9033 | Batch Accuracy: 0.9375
+Progress: 5408/9992 (54.1%) | Total Accuracy: 0.9027 | Batch Accuracy: 0.8125
+Progress: 5440/9992 (54.4%) | Total Accuracy: 0.9028 | Batch Accuracy: 0.90625
+Progress: 5472/9992 (54.8%) | Total Accuracy: 0.9022 | Batch Accuracy: 0.8125
+Progress: 5504/9992 (55.1%) | Total Accuracy: 0.9026 | Batch Accuracy: 0.96875
+Progress: 5536/9992 (55.4%) | Total Accuracy: 0.9026 | Batch Accuracy: 0.90625
+Progress: 5568/9992 (55.7%) | Total Accuracy: 0.9027 | Batch Accuracy: 0.90625
+Progress: 5600/9992 (56.0%) | Total Accuracy: 0.9030 | Batch Accuracy: 0.96875
+Progress: 5632/9992 (56.4%) | Total Accuracy: 0.9032 | Batch Accuracy: 0.9375
+Progress: 5664/9992 (56.7%) | Total Accuracy: 0.9036 | Batch Accuracy: 0.96875
+Progress: 5696/9992 (57.0%) | Total Accuracy: 0.9038 | Batch Accuracy: 0.9375
+Progress: 5728/9992 (57.3%) | Total Accuracy: 0.9038 | Batch Accuracy: 0.90625
+Progress: 5760/9992 (57.6%) | Total Accuracy: 0.9040 | Batch Accuracy: 0.9375
+Progress: 5792/9992 (58.0%) | Total Accuracy: 0.9040 | Batch Accuracy: 0.90625
+Progress: 5824/9992 (58.3%) | Total Accuracy: 0.9042 | Batch Accuracy: 0.9375
+Progress: 5856/9992 (58.6%) | Total Accuracy: 0.9045 | Batch Accuracy: 0.96875
+Progress: 5888/9992 (58.9%) | Total Accuracy: 0.9051 | Batch Accuracy: 1.0
+Progress: 5920/9992 (59.2%) | Total Accuracy: 0.9051 | Batch Accuracy: 0.90625
+Progress: 5952/9992 (59.6%) | Total Accuracy: 0.9051 | Batch Accuracy: 0.90625
+Progress: 5984/9992 (59.9%) | Total Accuracy: 0.9056 | Batch Accuracy: 1.0
+Progress: 6016/9992 (60.2%) | Total Accuracy: 0.9051 | Batch Accuracy: 0.8125
+Progress: 6048/9992 (60.5%) | Total Accuracy: 0.9054 | Batch Accuracy: 0.96875
+Progress: 6080/9992 (60.8%) | Total Accuracy: 0.9053 | Batch Accuracy: 0.875
+Progress: 6112/9992 (61.2%) | Total Accuracy: 0.9058 | Batch Accuracy: 1.0
+Progress: 6144/9992 (61.5%) | Total Accuracy: 0.9062 | Batch Accuracy: 1.0
+Progress: 6176/9992 (61.8%) | Total Accuracy: 0.9061 | Batch Accuracy: 0.875
+Progress: 6208/9992 (62.1%) | Total Accuracy: 0.9062 | Batch Accuracy: 0.9375
+Progress: 6240/9992 (62.4%) | Total Accuracy: 0.9067 | Batch Accuracy: 1.0
+Progress: 6272/9992 (62.8%) | Total Accuracy: 0.9070 | Batch Accuracy: 0.96875
+Progress: 6304/9992 (63.1%) | Total Accuracy: 0.9072 | Batch Accuracy: 0.9375
+Progress: 6336/9992 (63.4%) | Total Accuracy: 0.9075 | Batch Accuracy: 0.96875
+Progress: 6368/9992 (63.7%) | Total Accuracy: 0.9077 | Batch Accuracy: 0.9375
+Progress: 6400/9992 (64.1%) | Total Accuracy: 0.9080 | Batch Accuracy: 0.96875
+Progress: 6432/9992 (64.4%) | Total Accuracy: 0.9080 | Batch Accuracy: 0.90625
+Progress: 6464/9992 (64.7%) | Total Accuracy: 0.9073 | Batch Accuracy: 0.78125
+Progress: 6496/9992 (65.0%) | Total Accuracy: 0.9073 | Batch Accuracy: 0.90625
+Progress: 6528/9992 (65.3%) | Total Accuracy: 0.9072 | Batch Accuracy: 0.875
+Progress: 6560/9992 (65.7%) | Total Accuracy: 0.9075 | Batch Accuracy: 0.96875
+Progress: 6592/9992 (66.0%) | Total Accuracy: 0.9075 | Batch Accuracy: 0.90625
+Progress: 6624/9992 (66.3%) | Total Accuracy: 0.9076 | Batch Accuracy: 0.9375
+Progress: 6656/9992 (66.6%) | Total Accuracy: 0.9081 | Batch Accuracy: 1.0
+Progress: 6688/9992 (66.9%) | Total Accuracy: 0.9082 | Batch Accuracy: 0.9375
+Progress: 6720/9992 (67.3%) | Total Accuracy: 0.9077 | Batch Accuracy: 0.8125
+Progress: 6752/9992 (67.6%) | Total Accuracy: 0.9082 | Batch Accuracy: 1.0
+Progress: 6784/9992 (67.9%) | Total Accuracy: 0.9083 | Batch Accuracy: 0.9375
+Progress: 6816/9992 (68.2%) | Total Accuracy: 0.9083 | Batch Accuracy: 0.90625
+Progress: 6848/9992 (68.5%) | Total Accuracy: 0.9079 | Batch Accuracy: 0.8125
+Progress: 6880/9992 (68.9%) | Total Accuracy: 0.9078 | Batch Accuracy: 0.90625
+Progress: 6912/9992 (69.2%) | Total Accuracy: 0.9083 | Batch Accuracy: 1.0
+Progress: 6944/9992 (69.5%) | Total Accuracy: 0.9083 | Batch Accuracy: 0.90625
+Progress: 6976/9992 (69.8%) | Total Accuracy: 0.9080 | Batch Accuracy: 0.84375
+Progress: 7008/9992 (70.1%) | Total Accuracy: 0.9084 | Batch Accuracy: 1.0
+Progress: 7040/9992 (70.5%) | Total Accuracy: 0.9085 | Batch Accuracy: 0.9375
+Progress: 7072/9992 (70.8%) | Total Accuracy: 0.9088 | Batch Accuracy: 0.96875
+Progress: 7104/9992 (71.1%) | Total Accuracy: 0.9086 | Batch Accuracy: 0.875
+Progress: 7136/9992 (71.4%) | Total Accuracy: 0.9088 | Batch Accuracy: 0.9375
+Progress: 7168/9992 (71.7%) | Total Accuracy: 0.9090 | Batch Accuracy: 0.96875
+Progress: 7200/9992 (72.1%) | Total Accuracy: 0.9090 | Batch Accuracy: 0.90625
+Progress: 7232/9992 (72.4%) | Total Accuracy: 0.9086 | Batch Accuracy: 0.8125
+Progress: 7264/9992 (72.7%) | Total Accuracy: 0.9085 | Batch Accuracy: 0.875
+Progress: 7296/9992 (73.0%) | Total Accuracy: 0.9084 | Batch Accuracy: 0.90625
+Progress: 7328/9992 (73.3%) | Total Accuracy: 0.9084 | Batch Accuracy: 0.90625
+Progress: 7360/9992 (73.7%) | Total Accuracy: 0.9084 | Batch Accuracy: 0.90625
+Progress: 7392/9992 (74.0%) | Total Accuracy: 0.9081 | Batch Accuracy: 0.84375
+Progress: 7424/9992 (74.3%) | Total Accuracy: 0.9081 | Batch Accuracy: 0.90625
+Progress: 7456/9992 (74.6%) | Total Accuracy: 0.9080 | Batch Accuracy: 0.875
+Progress: 7488/9992 (74.9%) | Total Accuracy: 0.9083 | Batch Accuracy: 0.96875
+Progress: 7520/9992 (75.3%) | Total Accuracy: 0.9082 | Batch Accuracy: 0.90625
+Progress: 7552/9992 (75.6%) | Total Accuracy: 0.9081 | Batch Accuracy: 0.875
+Progress: 7584/9992 (75.9%) | Total Accuracy: 0.9081 | Batch Accuracy: 0.90625
+Progress: 7616/9992 (76.2%) | Total Accuracy: 0.9084 | Batch Accuracy: 0.96875
+Progress: 7648/9992 (76.5%) | Total Accuracy: 0.9081 | Batch Accuracy: 0.84375
+Progress: 7680/9992 (76.9%) | Total Accuracy: 0.9081 | Batch Accuracy: 0.90625
+Progress: 7712/9992 (77.2%) | Total Accuracy: 0.9081 | Batch Accuracy: 0.90625
+Progress: 7744/9992 (77.5%) | Total Accuracy: 0.9078 | Batch Accuracy: 0.84375
+Progress: 7776/9992 (77.8%) | Total Accuracy: 0.9077 | Batch Accuracy: 0.875
+Progress: 7808/9992 (78.1%) | Total Accuracy: 0.9077 | Batch Accuracy: 0.90625
+Progress: 7840/9992 (78.5%) | Total Accuracy: 0.9078 | Batch Accuracy: 0.9375
+Progress: 7872/9992 (78.8%) | Total Accuracy: 0.9076 | Batch Accuracy: 0.875
+Progress: 7904/9992 (79.1%) | Total Accuracy: 0.9075 | Batch Accuracy: 0.875
+Progress: 7936/9992 (79.4%) | Total Accuracy: 0.9075 | Batch Accuracy: 0.90625
+Progress: 7968/9992 (79.7%) | Total Accuracy: 0.9074 | Batch Accuracy: 0.875
+Progress: 8000/9992 (80.1%) | Total Accuracy: 0.9074 | Batch Accuracy: 0.90625
+Progress: 8032/9992 (80.4%) | Total Accuracy: 0.9074 | Batch Accuracy: 0.90625
+Progress: 8064/9992 (80.7%) | Total Accuracy: 0.9069 | Batch Accuracy: 0.78125
+Progress: 8096/9992 (81.0%) | Total Accuracy: 0.9067 | Batch Accuracy: 0.875
+Progress: 8128/9992 (81.3%) | Total Accuracy: 0.9069 | Batch Accuracy: 0.9375
+Progress: 8160/9992 (81.7%) | Total Accuracy: 0.9069 | Batch Accuracy: 0.90625
+Progress: 8192/9992 (82.0%) | Total Accuracy: 0.9070 | Batch Accuracy: 0.9375
+Progress: 8224/9992 (82.3%) | Total Accuracy: 0.9066 | Batch Accuracy: 0.8125
+Progress: 8256/9992 (82.6%) | Total Accuracy: 0.9062 | Batch Accuracy: 0.8125
+Progress: 8288/9992 (82.9%) | Total Accuracy: 0.9061 | Batch Accuracy: 0.875
+Progress: 8320/9992 (83.3%) | Total Accuracy: 0.9062 | Batch Accuracy: 0.9375
+Progress: 8352/9992 (83.6%) | Total Accuracy: 0.9062 | Batch Accuracy: 0.90625
+Progress: 8384/9992 (83.9%) | Total Accuracy: 0.9060 | Batch Accuracy: 0.84375
+Progress: 8416/9992 (84.2%) | Total Accuracy: 0.9060 | Batch Accuracy: 0.90625
+Progress: 8448/9992 (84.5%) | Total Accuracy: 0.9061 | Batch Accuracy: 0.9375
+Progress: 8480/9992 (84.9%) | Total Accuracy: 0.9062 | Batch Accuracy: 0.9375
+Progress: 8512/9992 (85.2%) | Total Accuracy: 0.9064 | Batch Accuracy: 0.9375
+Progress: 8544/9992 (85.5%) | Total Accuracy: 0.9062 | Batch Accuracy: 0.875
+Progress: 8576/9992 (85.8%) | Total Accuracy: 0.9062 | Batch Accuracy: 0.90625
+Progress: 8608/9992 (86.1%) | Total Accuracy: 0.9066 | Batch Accuracy: 1.0
+Progress: 8640/9992 (86.5%) | Total Accuracy: 0.9066 | Batch Accuracy: 0.90625
+Progress: 8672/9992 (86.8%) | Total Accuracy: 0.9066 | Batch Accuracy: 0.90625
+Progress: 8704/9992 (87.1%) | Total Accuracy: 0.9066 | Batch Accuracy: 0.90625
+Progress: 8736/9992 (87.4%) | Total Accuracy: 0.9067 | Batch Accuracy: 0.9375
+Progress: 8768/9992 (87.8%) | Total Accuracy: 0.9067 | Batch Accuracy: 0.90625
+Progress: 8800/9992 (88.1%) | Total Accuracy: 0.9065 | Batch Accuracy: 0.84375
+Progress: 8832/9992 (88.4%) | Total Accuracy: 0.9067 | Batch Accuracy: 0.96875
+Progress: 8864/9992 (88.7%) | Total Accuracy: 0.9066 | Batch Accuracy: 0.875
+Progress: 8896/9992 (89.0%) | Total Accuracy: 0.9065 | Batch Accuracy: 0.875
+Progress: 8928/9992 (89.4%) | Total Accuracy: 0.9064 | Batch Accuracy: 0.875
+Progress: 8960/9992 (89.7%) | Total Accuracy: 0.9066 | Batch Accuracy: 0.96875
+Progress: 8992/9992 (90.0%) | Total Accuracy: 0.9068 | Batch Accuracy: 0.96875
+Progress: 9024/9992 (90.3%) | Total Accuracy: 0.9070 | Batch Accuracy: 0.96875
+Progress: 9056/9992 (90.6%) | Total Accuracy: 0.9071 | Batch Accuracy: 0.9375
+Progress: 9088/9992 (91.0%) | Total Accuracy: 0.9072 | Batch Accuracy: 0.9375
+Progress: 9120/9992 (91.3%) | Total Accuracy: 0.9073 | Batch Accuracy: 0.9375
+Progress: 9152/9992 (91.6%) | Total Accuracy: 0.9073 | Batch Accuracy: 0.90625
+Progress: 9184/9992 (91.9%) | Total Accuracy: 0.9074 | Batch Accuracy: 0.9375
+Progress: 9216/9992 (92.2%) | Total Accuracy: 0.9076 | Batch Accuracy: 0.9375
+Progress: 9248/9992 (92.6%) | Total Accuracy: 0.9077 | Batch Accuracy: 0.9375
+Progress: 9280/9992 (92.9%) | Total Accuracy: 0.9078 | Batch Accuracy: 0.9375
+Progress: 9312/9992 (93.2%) | Total Accuracy: 0.9079 | Batch Accuracy: 0.9375
+Progress: 9344/9992 (93.5%) | Total Accuracy: 0.9082 | Batch Accuracy: 1.0
+Progress: 9376/9992 (93.8%) | Total Accuracy: 0.9081 | Batch Accuracy: 0.875
+Progress: 9408/9992 (94.2%) | Total Accuracy: 0.9081 | Batch Accuracy: 0.90625
+Progress: 9440/9992 (94.5%) | Total Accuracy: 0.9083 | Batch Accuracy: 0.96875
+Progress: 9472/9992 (94.8%) | Total Accuracy: 0.9083 | Batch Accuracy: 0.90625
+Progress: 9504/9992 (95.1%) | Total Accuracy: 0.9086 | Batch Accuracy: 1.0
+Progress: 9536/9992 (95.4%) | Total Accuracy: 0.9085 | Batch Accuracy: 0.875
+Progress: 9568/9992 (95.8%) | Total Accuracy: 0.9084 | Batch Accuracy: 0.90625
+Progress: 9600/9992 (96.1%) | Total Accuracy: 0.9081 | Batch Accuracy: 0.8125
+Progress: 9632/9992 (96.4%) | Total Accuracy: 0.9079 | Batch Accuracy: 0.84375
+Progress: 9664/9992 (96.7%) | Total Accuracy: 0.9078 | Batch Accuracy: 0.875
+Progress: 9696/9992 (97.0%) | Total Accuracy: 0.9079 | Batch Accuracy: 0.9375
+Progress: 9728/9992 (97.4%) | Total Accuracy: 0.9080 | Batch Accuracy: 0.9375
+Progress: 9760/9992 (97.7%) | Total Accuracy: 0.9079 | Batch Accuracy: 0.875
+Progress: 9792/9992 (98.0%) | Total Accuracy: 0.9080 | Batch Accuracy: 0.9375
+Progress: 9824/9992 (98.3%) | Total Accuracy: 0.9081 | Batch Accuracy: 0.9375
+Progress: 9856/9992 (98.6%) | Total Accuracy: 0.9080 | Batch Accuracy: 0.875
+Progress: 9888/9992 (99.0%) | Total Accuracy: 0.9081 | Batch Accuracy: 0.9375
+Progress: 9920/9992 (99.3%) | Total Accuracy: 0.9081 | Batch Accuracy: 0.90625
+Progress: 9952/9992 (99.6%) | Total Accuracy: 0.9083 | Batch Accuracy: 0.96875
+Progress: 9984/9992 (99.9%) | Total Accuracy: 0.9083 | Batch Accuracy: 0.90625
+Progress: 9992/9992 (100.0%) | Total Accuracy: 0.9081 | Batch Accuracy: 0.75
+
+Final validation accuracy: 0.9081
+
+Trial 4/10
+Embedding dimension: 182, Batch size: 246, KG learning rate: 0.000336762, Negatives per positive KG triple: 15, Question learning rate: 0.000859402, Negatives per positive question triple: 8, Hidden layer dimensions in question embedding module: (768, 550, 400), Dropout in question embedding module: 0.357, Weight decay in question embedding module: 1.44168e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning epoch 2
+Beginning epoch 3
+Beginning epoch 4
+Beginning epoch 5
+Beginning epoch 6
+Beginning epoch 7
+Beginning epoch 8
+Beginning epoch 9
+Beginning epoch 10
+Epoch 10/30, Loss: 0.0984
+Beginning epoch 11
+Beginning epoch 12
+Beginning epoch 13
+Beginning epoch 14
+Beginning epoch 15
+Beginning epoch 16
+Beginning epoch 17
+Beginning epoch 18
+Beginning epoch 19
+Beginning epoch 20
+Epoch 20/30, Loss: 0.0275
+Beginning epoch 21
+Beginning epoch 22
+Beginning epoch 23
+Beginning epoch 24
+Beginning epoch 25
+Beginning epoch 26
+Beginning epoch 27
+Beginning epoch 28
+Beginning epoch 29
+Beginning epoch 30
+Epoch 30/30, Loss: 0.0073
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning epoch 2
+Beginning epoch 3
+Beginning epoch 4
+Beginning epoch 5
+Beginning epoch 6
+Beginning epoch 7
+Beginning epoch 8
+Beginning epoch 9
+Beginning epoch 10
+Epoch 10/30, Loss: 0.0032
+Beginning epoch 11
+Beginning epoch 12
+Beginning epoch 13
+Beginning epoch 14
+Beginning epoch 15
+Beginning epoch 16
+Beginning epoch 17
+Beginning epoch 18
+Beginning epoch 19
+Beginning epoch 20
+Epoch 20/30, Loss: 0.0025
+Beginning epoch 21
+Beginning epoch 22
+Beginning epoch 23
+Beginning epoch 24
+Beginning epoch 25
+Beginning epoch 26
+Beginning epoch 27
+Beginning epoch 28
+Beginning epoch 29
+Beginning epoch 30
+Epoch 30/30, Loss: 0.0023
+Beginning validation set performance testing
+Progress: 32/9992 (0.3%) | Total Accuracy: 0.8750 | Batch Accuracy: 0.875
+Progress: 64/9992 (0.6%) | Total Accuracy: 0.8750 | Batch Accuracy: 0.875
+Progress: 96/9992 (1.0%) | Total Accuracy: 0.8854 | Batch Accuracy: 0.90625
+Progress: 128/9992 (1.3%) | Total Accuracy: 0.8984 | Batch Accuracy: 0.9375
+Progress: 160/9992 (1.6%) | Total Accuracy: 0.9000 | Batch Accuracy: 0.90625
+Progress: 192/9992 (1.9%) | Total Accuracy: 0.9010 | Batch Accuracy: 0.90625
+Progress: 224/9992 (2.2%) | Total Accuracy: 0.8929 | Batch Accuracy: 0.84375
+Progress: 256/9992 (2.6%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.875
+Progress: 288/9992 (2.9%) | Total Accuracy: 0.8750 | Batch Accuracy: 0.75
+Progress: 320/9992 (3.2%) | Total Accuracy: 0.8719 | Batch Accuracy: 0.84375
+Progress: 352/9992 (3.5%) | Total Accuracy: 0.8778 | Batch Accuracy: 0.9375
+Progress: 384/9992 (3.8%) | Total Accuracy: 0.8776 | Batch Accuracy: 0.875
+Progress: 416/9992 (4.2%) | Total Accuracy: 0.8630 | Batch Accuracy: 0.6875
+Progress: 448/9992 (4.5%) | Total Accuracy: 0.8571 | Batch Accuracy: 0.78125
+Progress: 480/9992 (4.8%) | Total Accuracy: 0.8542 | Batch Accuracy: 0.8125
+Progress: 512/9992 (5.1%) | Total Accuracy: 0.8555 | Batch Accuracy: 0.875
+Progress: 544/9992 (5.4%) | Total Accuracy: 0.8566 | Batch Accuracy: 0.875
+Progress: 576/9992 (5.8%) | Total Accuracy: 0.8542 | Batch Accuracy: 0.8125
+Progress: 608/9992 (6.1%) | Total Accuracy: 0.8602 | Batch Accuracy: 0.96875
+Progress: 640/9992 (6.4%) | Total Accuracy: 0.8609 | Batch Accuracy: 0.875
+Progress: 672/9992 (6.7%) | Total Accuracy: 0.8616 | Batch Accuracy: 0.875
+Progress: 704/9992 (7.0%) | Total Accuracy: 0.8594 | Batch Accuracy: 0.8125
+Progress: 736/9992 (7.4%) | Total Accuracy: 0.8614 | Batch Accuracy: 0.90625
+Progress: 768/9992 (7.7%) | Total Accuracy: 0.8607 | Batch Accuracy: 0.84375
+Progress: 800/9992 (8.0%) | Total Accuracy: 0.8612 | Batch Accuracy: 0.875
+Progress: 832/9992 (8.3%) | Total Accuracy: 0.8594 | Batch Accuracy: 0.8125
+Progress: 864/9992 (8.6%) | Total Accuracy: 0.8576 | Batch Accuracy: 0.8125
+Progress: 896/9992 (9.0%) | Total Accuracy: 0.8571 | Batch Accuracy: 0.84375
+Progress: 928/9992 (9.3%) | Total Accuracy: 0.8556 | Batch Accuracy: 0.8125
+Progress: 960/9992 (9.6%) | Total Accuracy: 0.8542 | Batch Accuracy: 0.8125
+Progress: 992/9992 (9.9%) | Total Accuracy: 0.8528 | Batch Accuracy: 0.8125
+Progress: 1024/9992 (10.2%) | Total Accuracy: 0.8525 | Batch Accuracy: 0.84375
+Progress: 1056/9992 (10.6%) | Total Accuracy: 0.8561 | Batch Accuracy: 0.96875
+Progress: 1088/9992 (10.9%) | Total Accuracy: 0.8557 | Batch Accuracy: 0.84375
+Progress: 1120/9992 (11.2%) | Total Accuracy: 0.8554 | Batch Accuracy: 0.84375
+Progress: 1152/9992 (11.5%) | Total Accuracy: 0.8542 | Batch Accuracy: 0.8125
+Progress: 1184/9992 (11.8%) | Total Accuracy: 0.8547 | Batch Accuracy: 0.875
+Progress: 1216/9992 (12.2%) | Total Accuracy: 0.8561 | Batch Accuracy: 0.90625
+Progress: 1248/9992 (12.5%) | Total Accuracy: 0.8550 | Batch Accuracy: 0.8125
+Progress: 1280/9992 (12.8%) | Total Accuracy: 0.8539 | Batch Accuracy: 0.8125
+Progress: 1312/9992 (13.1%) | Total Accuracy: 0.8529 | Batch Accuracy: 0.8125
+Progress: 1344/9992 (13.5%) | Total Accuracy: 0.8512 | Batch Accuracy: 0.78125
+Progress: 1376/9992 (13.8%) | Total Accuracy: 0.8532 | Batch Accuracy: 0.9375
+Progress: 1408/9992 (14.1%) | Total Accuracy: 0.8530 | Batch Accuracy: 0.84375
+Progress: 1440/9992 (14.4%) | Total Accuracy: 0.8528 | Batch Accuracy: 0.84375
+Progress: 1472/9992 (14.7%) | Total Accuracy: 0.8546 | Batch Accuracy: 0.9375
+Progress: 1504/9992 (15.1%) | Total Accuracy: 0.8551 | Batch Accuracy: 0.875
+Progress: 1536/9992 (15.4%) | Total Accuracy: 0.8542 | Batch Accuracy: 0.8125
+Progress: 1568/9992 (15.7%) | Total Accuracy: 0.8559 | Batch Accuracy: 0.9375
+Progress: 1600/9992 (16.0%) | Total Accuracy: 0.8512 | Batch Accuracy: 0.625
+Progress: 1632/9992 (16.3%) | Total Accuracy: 0.8511 | Batch Accuracy: 0.84375
+Progress: 1664/9992 (16.7%) | Total Accuracy: 0.8522 | Batch Accuracy: 0.90625
+Progress: 1696/9992 (17.0%) | Total Accuracy: 0.8520 | Batch Accuracy: 0.84375
+Progress: 1728/9992 (17.3%) | Total Accuracy: 0.8536 | Batch Accuracy: 0.9375
+Progress: 1760/9992 (17.6%) | Total Accuracy: 0.8540 | Batch Accuracy: 0.875
+Progress: 1792/9992 (17.9%) | Total Accuracy: 0.8555 | Batch Accuracy: 0.9375
+Progress: 1824/9992 (18.3%) | Total Accuracy: 0.8558 | Batch Accuracy: 0.875
+Progress: 1856/9992 (18.6%) | Total Accuracy: 0.8561 | Batch Accuracy: 0.875
+Progress: 1888/9992 (18.9%) | Total Accuracy: 0.8554 | Batch Accuracy: 0.8125
+Progress: 1920/9992 (19.2%) | Total Accuracy: 0.8552 | Batch Accuracy: 0.84375
+Progress: 1952/9992 (19.5%) | Total Accuracy: 0.8571 | Batch Accuracy: 0.96875
+Progress: 1984/9992 (19.9%) | Total Accuracy: 0.8569 | Batch Accuracy: 0.84375
+Progress: 2016/9992 (20.2%) | Total Accuracy: 0.8581 | Batch Accuracy: 0.9375
+Progress: 2048/9992 (20.5%) | Total Accuracy: 0.8579 | Batch Accuracy: 0.84375
+Progress: 2080/9992 (20.8%) | Total Accuracy: 0.8572 | Batch Accuracy: 0.8125
+Progress: 2112/9992 (21.1%) | Total Accuracy: 0.8570 | Batch Accuracy: 0.84375
+Progress: 2144/9992 (21.5%) | Total Accuracy: 0.8568 | Batch Accuracy: 0.84375
+Progress: 2176/9992 (21.8%) | Total Accuracy: 0.8571 | Batch Accuracy: 0.875
+Progress: 2208/9992 (22.1%) | Total Accuracy: 0.8582 | Batch Accuracy: 0.9375
+Progress: 2240/9992 (22.4%) | Total Accuracy: 0.8580 | Batch Accuracy: 0.84375
+Progress: 2272/9992 (22.7%) | Total Accuracy: 0.8565 | Batch Accuracy: 0.75
+Progress: 2304/9992 (23.1%) | Total Accuracy: 0.8555 | Batch Accuracy: 0.78125
+Progress: 2336/9992 (23.4%) | Total Accuracy: 0.8570 | Batch Accuracy: 0.96875
+Progress: 2368/9992 (23.7%) | Total Accuracy: 0.8568 | Batch Accuracy: 0.84375
+Progress: 2400/9992 (24.0%) | Total Accuracy: 0.8575 | Batch Accuracy: 0.90625
+Progress: 2432/9992 (24.3%) | Total Accuracy: 0.8594 | Batch Accuracy: 1.0
+Progress: 2464/9992 (24.7%) | Total Accuracy: 0.8596 | Batch Accuracy: 0.875
+Progress: 2496/9992 (25.0%) | Total Accuracy: 0.8594 | Batch Accuracy: 0.84375
+Progress: 2528/9992 (25.3%) | Total Accuracy: 0.8608 | Batch Accuracy: 0.96875
+Progress: 2560/9992 (25.6%) | Total Accuracy: 0.8617 | Batch Accuracy: 0.9375
+Progress: 2592/9992 (25.9%) | Total Accuracy: 0.8627 | Batch Accuracy: 0.9375
+Progress: 2624/9992 (26.3%) | Total Accuracy: 0.8624 | Batch Accuracy: 0.84375
+Progress: 2656/9992 (26.6%) | Total Accuracy: 0.8626 | Batch Accuracy: 0.875
+Progress: 2688/9992 (26.9%) | Total Accuracy: 0.8631 | Batch Accuracy: 0.90625
+Progress: 2720/9992 (27.2%) | Total Accuracy: 0.8629 | Batch Accuracy: 0.84375
+Progress: 2752/9992 (27.5%) | Total Accuracy: 0.8626 | Batch Accuracy: 0.84375
+Progress: 2784/9992 (27.9%) | Total Accuracy: 0.8635 | Batch Accuracy: 0.9375
+Progress: 2816/9992 (28.2%) | Total Accuracy: 0.8633 | Batch Accuracy: 0.84375
+Progress: 2848/9992 (28.5%) | Total Accuracy: 0.8627 | Batch Accuracy: 0.8125
+Progress: 2880/9992 (28.8%) | Total Accuracy: 0.8632 | Batch Accuracy: 0.90625
+Progress: 2912/9992 (29.1%) | Total Accuracy: 0.8637 | Batch Accuracy: 0.90625
+Progress: 2944/9992 (29.5%) | Total Accuracy: 0.8645 | Batch Accuracy: 0.9375
+Progress: 2976/9992 (29.8%) | Total Accuracy: 0.8653 | Batch Accuracy: 0.9375
+Progress: 3008/9992 (30.1%) | Total Accuracy: 0.8647 | Batch Accuracy: 0.8125
+Progress: 3040/9992 (30.4%) | Total Accuracy: 0.8641 | Batch Accuracy: 0.8125
+Progress: 3072/9992 (30.7%) | Total Accuracy: 0.8646 | Batch Accuracy: 0.90625
+Progress: 3104/9992 (31.1%) | Total Accuracy: 0.8647 | Batch Accuracy: 0.875
+Progress: 3136/9992 (31.4%) | Total Accuracy: 0.8648 | Batch Accuracy: 0.875
+Progress: 3168/9992 (31.7%) | Total Accuracy: 0.8652 | Batch Accuracy: 0.90625
+Progress: 3200/9992 (32.0%) | Total Accuracy: 0.8647 | Batch Accuracy: 0.8125
+Progress: 3232/9992 (32.3%) | Total Accuracy: 0.8648 | Batch Accuracy: 0.875
+Progress: 3264/9992 (32.7%) | Total Accuracy: 0.8640 | Batch Accuracy: 0.78125
+Progress: 3296/9992 (33.0%) | Total Accuracy: 0.8632 | Batch Accuracy: 0.78125
+Progress: 3328/9992 (33.3%) | Total Accuracy: 0.8633 | Batch Accuracy: 0.875
+Progress: 3360/9992 (33.6%) | Total Accuracy: 0.8634 | Batch Accuracy: 0.875
+Progress: 3392/9992 (33.9%) | Total Accuracy: 0.8629 | Batch Accuracy: 0.8125
+Progress: 3424/9992 (34.3%) | Total Accuracy: 0.8633 | Batch Accuracy: 0.90625
+Progress: 3456/9992 (34.6%) | Total Accuracy: 0.8634 | Batch Accuracy: 0.875
+Progress: 3488/9992 (34.9%) | Total Accuracy: 0.8644 | Batch Accuracy: 0.96875
+Progress: 3520/9992 (35.2%) | Total Accuracy: 0.8648 | Batch Accuracy: 0.90625
+Progress: 3552/9992 (35.5%) | Total Accuracy: 0.8651 | Batch Accuracy: 0.90625
+Progress: 3584/9992 (35.9%) | Total Accuracy: 0.8655 | Batch Accuracy: 0.90625
+Progress: 3616/9992 (36.2%) | Total Accuracy: 0.8656 | Batch Accuracy: 0.875
+Progress: 3648/9992 (36.5%) | Total Accuracy: 0.8660 | Batch Accuracy: 0.90625
+Progress: 3680/9992 (36.8%) | Total Accuracy: 0.8655 | Batch Accuracy: 0.8125
+Progress: 3712/9992 (37.1%) | Total Accuracy: 0.8648 | Batch Accuracy: 0.78125
+Progress: 3744/9992 (37.5%) | Total Accuracy: 0.8651 | Batch Accuracy: 0.90625
+Progress: 3776/9992 (37.8%) | Total Accuracy: 0.8641 | Batch Accuracy: 0.75
+Progress: 3808/9992 (38.1%) | Total Accuracy: 0.8640 | Batch Accuracy: 0.84375
+Progress: 3840/9992 (38.4%) | Total Accuracy: 0.8641 | Batch Accuracy: 0.875
+Progress: 3872/9992 (38.8%) | Total Accuracy: 0.8642 | Batch Accuracy: 0.875
+Progress: 3904/9992 (39.1%) | Total Accuracy: 0.8645 | Batch Accuracy: 0.90625
+Progress: 3936/9992 (39.4%) | Total Accuracy: 0.8641 | Batch Accuracy: 0.8125
+Progress: 3968/9992 (39.7%) | Total Accuracy: 0.8649 | Batch Accuracy: 0.96875
+Progress: 4000/9992 (40.0%) | Total Accuracy: 0.8650 | Batch Accuracy: 0.875
+Progress: 4032/9992 (40.4%) | Total Accuracy: 0.8646 | Batch Accuracy: 0.8125
+Progress: 4064/9992 (40.7%) | Total Accuracy: 0.8647 | Batch Accuracy: 0.875
+Progress: 4096/9992 (41.0%) | Total Accuracy: 0.8650 | Batch Accuracy: 0.90625
+Progress: 4128/9992 (41.3%) | Total Accuracy: 0.8658 | Batch Accuracy: 0.96875
+Progress: 4160/9992 (41.6%) | Total Accuracy: 0.8651 | Batch Accuracy: 0.78125
+Progress: 4192/9992 (42.0%) | Total Accuracy: 0.8650 | Batch Accuracy: 0.84375
+Progress: 4224/9992 (42.3%) | Total Accuracy: 0.8651 | Batch Accuracy: 0.875
+Progress: 4256/9992 (42.6%) | Total Accuracy: 0.8651 | Batch Accuracy: 0.875
+Progress: 4288/9992 (42.9%) | Total Accuracy: 0.8659 | Batch Accuracy: 0.96875
+Progress: 4320/9992 (43.2%) | Total Accuracy: 0.8660 | Batch Accuracy: 0.875
+Progress: 4352/9992 (43.6%) | Total Accuracy: 0.8663 | Batch Accuracy: 0.90625
+Progress: 4384/9992 (43.9%) | Total Accuracy: 0.8661 | Batch Accuracy: 0.84375
+Progress: 4416/9992 (44.2%) | Total Accuracy: 0.8659 | Batch Accuracy: 0.84375
+Progress: 4448/9992 (44.5%) | Total Accuracy: 0.8667 | Batch Accuracy: 0.96875
+Progress: 4480/9992 (44.8%) | Total Accuracy: 0.8672 | Batch Accuracy: 0.9375
+Progress: 4512/9992 (45.2%) | Total Accuracy: 0.8672 | Batch Accuracy: 0.875
+Progress: 4544/9992 (45.5%) | Total Accuracy: 0.8671 | Batch Accuracy: 0.84375
+Progress: 4576/9992 (45.8%) | Total Accuracy: 0.8674 | Batch Accuracy: 0.90625
+Progress: 4608/9992 (46.1%) | Total Accuracy: 0.8676 | Batch Accuracy: 0.90625
+Progress: 4640/9992 (46.4%) | Total Accuracy: 0.8672 | Batch Accuracy: 0.8125
+Progress: 4672/9992 (46.8%) | Total Accuracy: 0.8671 | Batch Accuracy: 0.84375
+Progress: 4704/9992 (47.1%) | Total Accuracy: 0.8673 | Batch Accuracy: 0.90625
+Progress: 4736/9992 (47.4%) | Total Accuracy: 0.8682 | Batch Accuracy: 1.0
+Progress: 4768/9992 (47.7%) | Total Accuracy: 0.8687 | Batch Accuracy: 0.9375
+Progress: 4800/9992 (48.0%) | Total Accuracy: 0.8679 | Batch Accuracy: 0.75
+Progress: 4832/9992 (48.4%) | Total Accuracy: 0.8675 | Batch Accuracy: 0.8125
+Progress: 4864/9992 (48.7%) | Total Accuracy: 0.8678 | Batch Accuracy: 0.90625
+Progress: 4896/9992 (49.0%) | Total Accuracy: 0.8676 | Batch Accuracy: 0.84375
+Progress: 4928/9992 (49.3%) | Total Accuracy: 0.8675 | Batch Accuracy: 0.84375
+Progress: 4960/9992 (49.6%) | Total Accuracy: 0.8679 | Batch Accuracy: 0.9375
+Progress: 4992/9992 (50.0%) | Total Accuracy: 0.8678 | Batch Accuracy: 0.84375
+Progress: 5024/9992 (50.3%) | Total Accuracy: 0.8674 | Batch Accuracy: 0.8125
+Progress: 5056/9992 (50.6%) | Total Accuracy: 0.8677 | Batch Accuracy: 0.90625
+Progress: 5088/9992 (50.9%) | Total Accuracy: 0.8681 | Batch Accuracy: 0.9375
+Progress: 5120/9992 (51.2%) | Total Accuracy: 0.8672 | Batch Accuracy: 0.71875
+Progress: 5152/9992 (51.6%) | Total Accuracy: 0.8674 | Batch Accuracy: 0.90625
+Progress: 5184/9992 (51.9%) | Total Accuracy: 0.8679 | Batch Accuracy: 0.9375
+Progress: 5216/9992 (52.2%) | Total Accuracy: 0.8679 | Batch Accuracy: 0.875
+Progress: 5248/9992 (52.5%) | Total Accuracy: 0.8681 | Batch Accuracy: 0.90625
+Progress: 5280/9992 (52.8%) | Total Accuracy: 0.8678 | Batch Accuracy: 0.8125
+Progress: 5312/9992 (53.2%) | Total Accuracy: 0.8680 | Batch Accuracy: 0.90625
+Progress: 5344/9992 (53.5%) | Total Accuracy: 0.8675 | Batch Accuracy: 0.78125
+Progress: 5376/9992 (53.8%) | Total Accuracy: 0.8679 | Batch Accuracy: 0.9375
+Progress: 5408/9992 (54.1%) | Total Accuracy: 0.8676 | Batch Accuracy: 0.8125
+Progress: 5440/9992 (54.4%) | Total Accuracy: 0.8671 | Batch Accuracy: 0.78125
+Progress: 5472/9992 (54.8%) | Total Accuracy: 0.8668 | Batch Accuracy: 0.8125
+Progress: 5504/9992 (55.1%) | Total Accuracy: 0.8668 | Batch Accuracy: 0.875
+Progress: 5536/9992 (55.4%) | Total Accuracy: 0.8667 | Batch Accuracy: 0.84375
+Progress: 5568/9992 (55.7%) | Total Accuracy: 0.8667 | Batch Accuracy: 0.875
+Progress: 5600/9992 (56.0%) | Total Accuracy: 0.8668 | Batch Accuracy: 0.875
+Progress: 5632/9992 (56.4%) | Total Accuracy: 0.8675 | Batch Accuracy: 1.0
+Progress: 5664/9992 (56.7%) | Total Accuracy: 0.8678 | Batch Accuracy: 0.90625
+Progress: 5696/9992 (57.0%) | Total Accuracy: 0.8680 | Batch Accuracy: 0.90625
+Progress: 5728/9992 (57.3%) | Total Accuracy: 0.8678 | Batch Accuracy: 0.84375
+Progress: 5760/9992 (57.6%) | Total Accuracy: 0.8679 | Batch Accuracy: 0.875
+Progress: 5792/9992 (58.0%) | Total Accuracy: 0.8677 | Batch Accuracy: 0.84375
+Progress: 5824/9992 (58.3%) | Total Accuracy: 0.8681 | Batch Accuracy: 0.9375
+Progress: 5856/9992 (58.6%) | Total Accuracy: 0.8687 | Batch Accuracy: 0.96875
+Progress: 5888/9992 (58.9%) | Total Accuracy: 0.8692 | Batch Accuracy: 0.96875
+Progress: 5920/9992 (59.2%) | Total Accuracy: 0.8688 | Batch Accuracy: 0.78125
+Progress: 5952/9992 (59.6%) | Total Accuracy: 0.8688 | Batch Accuracy: 0.875
+Progress: 5984/9992 (59.9%) | Total Accuracy: 0.8690 | Batch Accuracy: 0.90625
+Progress: 6016/9992 (60.2%) | Total Accuracy: 0.8687 | Batch Accuracy: 0.8125
+Progress: 6048/9992 (60.5%) | Total Accuracy: 0.8692 | Batch Accuracy: 0.96875
+Progress: 6080/9992 (60.8%) | Total Accuracy: 0.8694 | Batch Accuracy: 0.90625
+Progress: 6112/9992 (61.2%) | Total Accuracy: 0.8698 | Batch Accuracy: 0.9375
+Progress: 6144/9992 (61.5%) | Total Accuracy: 0.8695 | Batch Accuracy: 0.8125
+Progress: 6176/9992 (61.8%) | Total Accuracy: 0.8697 | Batch Accuracy: 0.90625
+Progress: 6208/9992 (62.1%) | Total Accuracy: 0.8700 | Batch Accuracy: 0.9375
+Progress: 6240/9992 (62.4%) | Total Accuracy: 0.8699 | Batch Accuracy: 0.84375
+Progress: 6272/9992 (62.8%) | Total Accuracy: 0.8699 | Batch Accuracy: 0.875
+Progress: 6304/9992 (63.1%) | Total Accuracy: 0.8698 | Batch Accuracy: 0.84375
+Progress: 6336/9992 (63.4%) | Total Accuracy: 0.8698 | Batch Accuracy: 0.875
+Progress: 6368/9992 (63.7%) | Total Accuracy: 0.8700 | Batch Accuracy: 0.90625
+Progress: 6400/9992 (64.1%) | Total Accuracy: 0.8698 | Batch Accuracy: 0.84375
+Progress: 6432/9992 (64.4%) | Total Accuracy: 0.8702 | Batch Accuracy: 0.9375
+Progress: 6464/9992 (64.7%) | Total Accuracy: 0.8699 | Batch Accuracy: 0.8125
+Progress: 6496/9992 (65.0%) | Total Accuracy: 0.8688 | Batch Accuracy: 0.65625
+Progress: 6528/9992 (65.3%) | Total Accuracy: 0.8686 | Batch Accuracy: 0.8125
+Progress: 6560/9992 (65.7%) | Total Accuracy: 0.8689 | Batch Accuracy: 0.9375
+Progress: 6592/9992 (66.0%) | Total Accuracy: 0.8692 | Batch Accuracy: 0.9375
+Progress: 6624/9992 (66.3%) | Total Accuracy: 0.8693 | Batch Accuracy: 0.875
+Progress: 6656/9992 (66.6%) | Total Accuracy: 0.8694 | Batch Accuracy: 0.90625
+Progress: 6688/9992 (66.9%) | Total Accuracy: 0.8699 | Batch Accuracy: 0.96875
+Progress: 6720/9992 (67.3%) | Total Accuracy: 0.8695 | Batch Accuracy: 0.78125
+Progress: 6752/9992 (67.6%) | Total Accuracy: 0.8698 | Batch Accuracy: 0.9375
+Progress: 6784/9992 (67.9%) | Total Accuracy: 0.8697 | Batch Accuracy: 0.84375
+Progress: 6816/9992 (68.2%) | Total Accuracy: 0.8700 | Batch Accuracy: 0.9375
+Progress: 6848/9992 (68.5%) | Total Accuracy: 0.8697 | Batch Accuracy: 0.8125
+Progress: 6880/9992 (68.9%) | Total Accuracy: 0.8699 | Batch Accuracy: 0.90625
+Progress: 6912/9992 (69.2%) | Total Accuracy: 0.8704 | Batch Accuracy: 0.96875
+Progress: 6944/9992 (69.5%) | Total Accuracy: 0.8700 | Batch Accuracy: 0.78125
+Progress: 6976/9992 (69.8%) | Total Accuracy: 0.8698 | Batch Accuracy: 0.84375
+Progress: 7008/9992 (70.1%) | Total Accuracy: 0.8699 | Batch Accuracy: 0.875
+Progress: 7040/9992 (70.5%) | Total Accuracy: 0.8699 | Batch Accuracy: 0.875
+Progress: 7072/9992 (70.8%) | Total Accuracy: 0.8701 | Batch Accuracy: 0.90625
+Progress: 7104/9992 (71.1%) | Total Accuracy: 0.8701 | Batch Accuracy: 0.875
+Progress: 7136/9992 (71.4%) | Total Accuracy: 0.8701 | Batch Accuracy: 0.875
+Progress: 7168/9992 (71.7%) | Total Accuracy: 0.8701 | Batch Accuracy: 0.875
+Progress: 7200/9992 (72.1%) | Total Accuracy: 0.8699 | Batch Accuracy: 0.8125
+Progress: 7232/9992 (72.4%) | Total Accuracy: 0.8697 | Batch Accuracy: 0.84375
+Progress: 7264/9992 (72.7%) | Total Accuracy: 0.8699 | Batch Accuracy: 0.90625
+Progress: 7296/9992 (73.0%) | Total Accuracy: 0.8695 | Batch Accuracy: 0.78125
+Progress: 7328/9992 (73.3%) | Total Accuracy: 0.8691 | Batch Accuracy: 0.78125
+Progress: 7360/9992 (73.7%) | Total Accuracy: 0.8690 | Batch Accuracy: 0.84375
+Progress: 7392/9992 (74.0%) | Total Accuracy: 0.8690 | Batch Accuracy: 0.875
+Progress: 7424/9992 (74.3%) | Total Accuracy: 0.8688 | Batch Accuracy: 0.8125
+Progress: 7456/9992 (74.6%) | Total Accuracy: 0.8687 | Batch Accuracy: 0.84375
+Progress: 7488/9992 (74.9%) | Total Accuracy: 0.8687 | Batch Accuracy: 0.875
+Progress: 7520/9992 (75.3%) | Total Accuracy: 0.8686 | Batch Accuracy: 0.84375
+Progress: 7552/9992 (75.6%) | Total Accuracy: 0.8682 | Batch Accuracy: 0.78125
+Progress: 7584/9992 (75.9%) | Total Accuracy: 0.8683 | Batch Accuracy: 0.875
+Progress: 7616/9992 (76.2%) | Total Accuracy: 0.8684 | Batch Accuracy: 0.90625
+Progress: 7648/9992 (76.5%) | Total Accuracy: 0.8685 | Batch Accuracy: 0.875
+Progress: 7680/9992 (76.9%) | Total Accuracy: 0.8684 | Batch Accuracy: 0.84375
+Progress: 7712/9992 (77.2%) | Total Accuracy: 0.8683 | Batch Accuracy: 0.84375
+Progress: 7744/9992 (77.5%) | Total Accuracy: 0.8682 | Batch Accuracy: 0.84375
+Progress: 7776/9992 (77.8%) | Total Accuracy: 0.8682 | Batch Accuracy: 0.875
+Progress: 7808/9992 (78.1%) | Total Accuracy: 0.8682 | Batch Accuracy: 0.875
+Progress: 7840/9992 (78.5%) | Total Accuracy: 0.8681 | Batch Accuracy: 0.84375
+Progress: 7872/9992 (78.8%) | Total Accuracy: 0.8679 | Batch Accuracy: 0.8125
+Progress: 7904/9992 (79.1%) | Total Accuracy: 0.8678 | Batch Accuracy: 0.84375
+Progress: 7936/9992 (79.4%) | Total Accuracy: 0.8679 | Batch Accuracy: 0.90625
+Progress: 7968/9992 (79.7%) | Total Accuracy: 0.8682 | Batch Accuracy: 0.9375
+Progress: 8000/9992 (80.1%) | Total Accuracy: 0.8682 | Batch Accuracy: 0.875
+Progress: 8032/9992 (80.4%) | Total Accuracy: 0.8683 | Batch Accuracy: 0.875
+Progress: 8064/9992 (80.7%) | Total Accuracy: 0.8679 | Batch Accuracy: 0.78125
+Progress: 8096/9992 (81.0%) | Total Accuracy: 0.8680 | Batch Accuracy: 0.875
+Progress: 8128/9992 (81.3%) | Total Accuracy: 0.8681 | Batch Accuracy: 0.90625
+Progress: 8160/9992 (81.7%) | Total Accuracy: 0.8680 | Batch Accuracy: 0.84375
+Progress: 8192/9992 (82.0%) | Total Accuracy: 0.8683 | Batch Accuracy: 0.9375
+Progress: 8224/9992 (82.3%) | Total Accuracy: 0.8678 | Batch Accuracy: 0.75
+Progress: 8256/9992 (82.6%) | Total Accuracy: 0.8676 | Batch Accuracy: 0.8125
+Progress: 8288/9992 (82.9%) | Total Accuracy: 0.8675 | Batch Accuracy: 0.84375
+Progress: 8320/9992 (83.3%) | Total Accuracy: 0.8677 | Batch Accuracy: 0.90625
+Progress: 8352/9992 (83.6%) | Total Accuracy: 0.8677 | Batch Accuracy: 0.875
+Progress: 8384/9992 (83.9%) | Total Accuracy: 0.8671 | Batch Accuracy: 0.71875
+Progress: 8416/9992 (84.2%) | Total Accuracy: 0.8672 | Batch Accuracy: 0.875
+Progress: 8448/9992 (84.5%) | Total Accuracy: 0.8675 | Batch Accuracy: 0.96875
+Progress: 8480/9992 (84.9%) | Total Accuracy: 0.8677 | Batch Accuracy: 0.90625
+Progress: 8512/9992 (85.2%) | Total Accuracy: 0.8672 | Batch Accuracy: 0.75
+Progress: 8544/9992 (85.5%) | Total Accuracy: 0.8672 | Batch Accuracy: 0.84375
+Progress: 8576/9992 (85.8%) | Total Accuracy: 0.8674 | Batch Accuracy: 0.9375
+Progress: 8608/9992 (86.1%) | Total Accuracy: 0.8677 | Batch Accuracy: 0.9375
+Progress: 8640/9992 (86.5%) | Total Accuracy: 0.8676 | Batch Accuracy: 0.84375
+Progress: 8672/9992 (86.8%) | Total Accuracy: 0.8673 | Batch Accuracy: 0.78125
+Progress: 8704/9992 (87.1%) | Total Accuracy: 0.8671 | Batch Accuracy: 0.8125
+Progress: 8736/9992 (87.4%) | Total Accuracy: 0.8671 | Batch Accuracy: 0.875
+Progress: 8768/9992 (87.8%) | Total Accuracy: 0.8672 | Batch Accuracy: 0.90625
+Progress: 8800/9992 (88.1%) | Total Accuracy: 0.8668 | Batch Accuracy: 0.75
+Progress: 8832/9992 (88.4%) | Total Accuracy: 0.8668 | Batch Accuracy: 0.875
+Progress: 8864/9992 (88.7%) | Total Accuracy: 0.8670 | Batch Accuracy: 0.90625
+Progress: 8896/9992 (89.0%) | Total Accuracy: 0.8668 | Batch Accuracy: 0.8125
+Progress: 8928/9992 (89.4%) | Total Accuracy: 0.8668 | Batch Accuracy: 0.875
+Progress: 8960/9992 (89.7%) | Total Accuracy: 0.8673 | Batch Accuracy: 1.0
+Progress: 8992/9992 (90.0%) | Total Accuracy: 0.8673 | Batch Accuracy: 0.875
+Progress: 9024/9992 (90.3%) | Total Accuracy: 0.8675 | Batch Accuracy: 0.90625
+Progress: 9056/9992 (90.6%) | Total Accuracy: 0.8675 | Batch Accuracy: 0.875
+Progress: 9088/9992 (91.0%) | Total Accuracy: 0.8677 | Batch Accuracy: 0.9375
+Progress: 9120/9992 (91.3%) | Total Accuracy: 0.8682 | Batch Accuracy: 1.0
+Progress: 9152/9992 (91.6%) | Total Accuracy: 0.8684 | Batch Accuracy: 0.9375
+Progress: 9184/9992 (91.9%) | Total Accuracy: 0.8686 | Batch Accuracy: 0.90625
+Progress: 9216/9992 (92.2%) | Total Accuracy: 0.8688 | Batch Accuracy: 0.9375
+Progress: 9248/9992 (92.6%) | Total Accuracy: 0.8689 | Batch Accuracy: 0.90625
+Progress: 9280/9992 (92.9%) | Total Accuracy: 0.8690 | Batch Accuracy: 0.875
+Progress: 9312/9992 (93.2%) | Total Accuracy: 0.8689 | Batch Accuracy: 0.84375
+Progress: 9344/9992 (93.5%) | Total Accuracy: 0.8691 | Batch Accuracy: 0.9375
+Progress: 9376/9992 (93.8%) | Total Accuracy: 0.8690 | Batch Accuracy: 0.84375
+Progress: 9408/9992 (94.2%) | Total Accuracy: 0.8692 | Batch Accuracy: 0.90625
+Progress: 9440/9992 (94.5%) | Total Accuracy: 0.8693 | Batch Accuracy: 0.90625
+Progress: 9472/9992 (94.8%) | Total Accuracy: 0.8690 | Batch Accuracy: 0.78125
+Progress: 9504/9992 (95.1%) | Total Accuracy: 0.8688 | Batch Accuracy: 0.8125
+Progress: 9536/9992 (95.4%) | Total Accuracy: 0.8687 | Batch Accuracy: 0.84375
+Progress: 9568/9992 (95.8%) | Total Accuracy: 0.8685 | Batch Accuracy: 0.8125
+Progress: 9600/9992 (96.1%) | Total Accuracy: 0.8683 | Batch Accuracy: 0.8125
+Progress: 9632/9992 (96.4%) | Total Accuracy: 0.8679 | Batch Accuracy: 0.75
+Progress: 9664/9992 (96.7%) | Total Accuracy: 0.8680 | Batch Accuracy: 0.875
+Progress: 9696/9992 (97.0%) | Total Accuracy: 0.8681 | Batch Accuracy: 0.90625
+Progress: 9728/9992 (97.4%) | Total Accuracy: 0.8681 | Batch Accuracy: 0.875
+Progress: 9760/9992 (97.7%) | Total Accuracy: 0.8680 | Batch Accuracy: 0.84375
+Progress: 9792/9992 (98.0%) | Total Accuracy: 0.8680 | Batch Accuracy: 0.84375
+Progress: 9824/9992 (98.3%) | Total Accuracy: 0.8678 | Batch Accuracy: 0.8125
+Progress: 9856/9992 (98.6%) | Total Accuracy: 0.8680 | Batch Accuracy: 0.9375
+Progress: 9888/9992 (99.0%) | Total Accuracy: 0.8682 | Batch Accuracy: 0.9375
+Progress: 9920/9992 (99.3%) | Total Accuracy: 0.8677 | Batch Accuracy: 0.71875
+Progress: 9952/9992 (99.6%) | Total Accuracy: 0.8679 | Batch Accuracy: 0.90625
+Progress: 9984/9992 (99.9%) | Total Accuracy: 0.8681 | Batch Accuracy: 0.9375
+Progress: 9992/9992 (100.0%) | Total Accuracy: 0.8682 | Batch Accuracy: 1.0
+
+Final validation accuracy: 0.8682
+
+Trial 5/10
+Embedding dimension: 87, Batch size: 186, KG learning rate: 0.00162545, Negatives per positive KG triple: 8, Question learning rate: 0.000856928, Negatives per positive question triple: 8, Hidden layer dimensions in question embedding module: (300, 200, 100), Dropout in question embedding module: 0.331, Weight decay in question embedding module: 1.22291e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning epoch 2
+Beginning epoch 3
+Beginning epoch 4
+Beginning epoch 5
+Beginning epoch 6
+Beginning epoch 7
+Beginning epoch 8
+Beginning epoch 9
+Beginning epoch 10
+Epoch 10/30, Loss: 0.0032
+Beginning epoch 11
+Beginning epoch 12
+Beginning epoch 13
+Beginning epoch 14
+Beginning epoch 15
+Beginning epoch 16
+Beginning epoch 17
+Beginning epoch 18
+Beginning epoch 19
+Beginning epoch 20
+Epoch 20/30, Loss: 0.0009
+Beginning epoch 21
+Beginning epoch 22
+Beginning epoch 23
+Beginning epoch 24
+Beginning epoch 25
+Beginning epoch 26
+Beginning epoch 27
+Beginning epoch 28
+Beginning epoch 29
+Beginning epoch 30
+Epoch 30/30, Loss: 0.0006
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning epoch 2
+Beginning epoch 3
+Beginning epoch 4
+Beginning epoch 5
+Beginning epoch 6
+Beginning epoch 7
+Beginning epoch 8
+Beginning epoch 9
+Beginning epoch 10
+Epoch 10/30, Loss: 0.0021
+Beginning epoch 11
+Beginning epoch 12
+Beginning epoch 13
+Beginning epoch 14
+Beginning epoch 15
+Beginning epoch 16
+Beginning epoch 17
+Beginning epoch 18
+Beginning epoch 19
+Beginning epoch 20
+Epoch 20/30, Loss: 0.0014
+Beginning epoch 21
+Beginning epoch 22
+Beginning epoch 23
+Beginning epoch 24
+Beginning epoch 25
+Beginning epoch 26
+Beginning epoch 27
+Beginning epoch 28
+Beginning epoch 29
+Beginning epoch 30
+Epoch 30/30, Loss: 0.0011
+Beginning validation set performance testing
+Progress: 32/9992 (0.3%) | Total Accuracy: 0.9062 | Batch Accuracy: 0.90625
+Progress: 64/9992 (0.6%) | Total Accuracy: 0.8750 | Batch Accuracy: 0.84375
+Progress: 96/9992 (1.0%) | Total Accuracy: 0.8750 | Batch Accuracy: 0.875
+Progress: 128/9992 (1.3%) | Total Accuracy: 0.8828 | Batch Accuracy: 0.90625
+Progress: 160/9992 (1.6%) | Total Accuracy: 0.8875 | Batch Accuracy: 0.90625
+Progress: 192/9992 (1.9%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.90625
+Progress: 224/9992 (2.2%) | Total Accuracy: 0.8884 | Batch Accuracy: 0.875
+Progress: 256/9992 (2.6%) | Total Accuracy: 0.8867 | Batch Accuracy: 0.875
+Progress: 288/9992 (2.9%) | Total Accuracy: 0.8819 | Batch Accuracy: 0.84375
+Progress: 320/9992 (3.2%) | Total Accuracy: 0.8844 | Batch Accuracy: 0.90625
+Progress: 352/9992 (3.5%) | Total Accuracy: 0.8920 | Batch Accuracy: 0.96875
+Progress: 384/9992 (3.8%) | Total Accuracy: 0.8958 | Batch Accuracy: 0.9375
+Progress: 416/9992 (4.2%) | Total Accuracy: 0.8918 | Batch Accuracy: 0.84375
+Progress: 448/9992 (4.5%) | Total Accuracy: 0.8884 | Batch Accuracy: 0.84375
+Progress: 480/9992 (4.8%) | Total Accuracy: 0.8896 | Batch Accuracy: 0.90625
+Progress: 512/9992 (5.1%) | Total Accuracy: 0.8887 | Batch Accuracy: 0.875
+Progress: 544/9992 (5.4%) | Total Accuracy: 0.8879 | Batch Accuracy: 0.875
+Progress: 576/9992 (5.8%) | Total Accuracy: 0.8872 | Batch Accuracy: 0.875
+Progress: 608/9992 (6.1%) | Total Accuracy: 0.8898 | Batch Accuracy: 0.9375
+Progress: 640/9992 (6.4%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.90625
+Progress: 672/9992 (6.7%) | Total Accuracy: 0.8929 | Batch Accuracy: 0.9375
+Progress: 704/9992 (7.0%) | Total Accuracy: 0.8878 | Batch Accuracy: 0.78125
+Progress: 736/9992 (7.4%) | Total Accuracy: 0.8872 | Batch Accuracy: 0.875
+Progress: 768/9992 (7.7%) | Total Accuracy: 0.8854 | Batch Accuracy: 0.84375
+Progress: 800/9992 (8.0%) | Total Accuracy: 0.8850 | Batch Accuracy: 0.875
+Progress: 832/9992 (8.3%) | Total Accuracy: 0.8858 | Batch Accuracy: 0.90625
+Progress: 864/9992 (8.6%) | Total Accuracy: 0.8854 | Batch Accuracy: 0.875
+Progress: 896/9992 (9.0%) | Total Accuracy: 0.8884 | Batch Accuracy: 0.96875
+Progress: 928/9992 (9.3%) | Total Accuracy: 0.8879 | Batch Accuracy: 0.875
+Progress: 960/9992 (9.6%) | Total Accuracy: 0.8875 | Batch Accuracy: 0.875
+Progress: 992/9992 (9.9%) | Total Accuracy: 0.8881 | Batch Accuracy: 0.90625
+Progress: 1024/9992 (10.2%) | Total Accuracy: 0.8877 | Batch Accuracy: 0.875
+Progress: 1056/9992 (10.6%) | Total Accuracy: 0.8883 | Batch Accuracy: 0.90625
+Progress: 1088/9992 (10.9%) | Total Accuracy: 0.8879 | Batch Accuracy: 0.875
+Progress: 1120/9992 (11.2%) | Total Accuracy: 0.8875 | Batch Accuracy: 0.875
+Progress: 1152/9992 (11.5%) | Total Accuracy: 0.8872 | Batch Accuracy: 0.875
+Progress: 1184/9992 (11.8%) | Total Accuracy: 0.8894 | Batch Accuracy: 0.96875
+Progress: 1216/9992 (12.2%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.9375
+Progress: 1248/9992 (12.5%) | Total Accuracy: 0.8878 | Batch Accuracy: 0.78125
+Progress: 1280/9992 (12.8%) | Total Accuracy: 0.8883 | Batch Accuracy: 0.90625
+Progress: 1312/9992 (13.1%) | Total Accuracy: 0.8864 | Batch Accuracy: 0.8125
+Progress: 1344/9992 (13.5%) | Total Accuracy: 0.8862 | Batch Accuracy: 0.875
+Progress: 1376/9992 (13.8%) | Total Accuracy: 0.8874 | Batch Accuracy: 0.9375
+Progress: 1408/9992 (14.1%) | Total Accuracy: 0.8864 | Batch Accuracy: 0.84375
+Progress: 1440/9992 (14.4%) | Total Accuracy: 0.8847 | Batch Accuracy: 0.8125
+Progress: 1472/9992 (14.7%) | Total Accuracy: 0.8852 | Batch Accuracy: 0.90625
+Progress: 1504/9992 (15.1%) | Total Accuracy: 0.8856 | Batch Accuracy: 0.90625
+Progress: 1536/9992 (15.4%) | Total Accuracy: 0.8835 | Batch Accuracy: 0.78125
+Progress: 1568/9992 (15.7%) | Total Accuracy: 0.8833 | Batch Accuracy: 0.875
+Progress: 1600/9992 (16.0%) | Total Accuracy: 0.8819 | Batch Accuracy: 0.8125
+Progress: 1632/9992 (16.3%) | Total Accuracy: 0.8824 | Batch Accuracy: 0.90625
+Progress: 1664/9992 (16.7%) | Total Accuracy: 0.8810 | Batch Accuracy: 0.8125
+Progress: 1696/9992 (17.0%) | Total Accuracy: 0.8785 | Batch Accuracy: 0.75
+Progress: 1728/9992 (17.3%) | Total Accuracy: 0.8796 | Batch Accuracy: 0.9375
+Progress: 1760/9992 (17.6%) | Total Accuracy: 0.8801 | Batch Accuracy: 0.90625
+Progress: 1792/9992 (17.9%) | Total Accuracy: 0.8800 | Batch Accuracy: 0.875
+Progress: 1824/9992 (18.3%) | Total Accuracy: 0.8799 | Batch Accuracy: 0.875
+Progress: 1856/9992 (18.6%) | Total Accuracy: 0.8788 | Batch Accuracy: 0.8125
+Progress: 1888/9992 (18.9%) | Total Accuracy: 0.8798 | Batch Accuracy: 0.9375
+Progress: 1920/9992 (19.2%) | Total Accuracy: 0.8792 | Batch Accuracy: 0.84375
+Progress: 1952/9992 (19.5%) | Total Accuracy: 0.8801 | Batch Accuracy: 0.9375
+Progress: 1984/9992 (19.9%) | Total Accuracy: 0.8800 | Batch Accuracy: 0.875
+Progress: 2016/9992 (20.2%) | Total Accuracy: 0.8805 | Batch Accuracy: 0.90625
+Progress: 2048/9992 (20.5%) | Total Accuracy: 0.8794 | Batch Accuracy: 0.8125
+Progress: 2080/9992 (20.8%) | Total Accuracy: 0.8769 | Batch Accuracy: 0.71875
+Progress: 2112/9992 (21.1%) | Total Accuracy: 0.8774 | Batch Accuracy: 0.90625
+Progress: 2144/9992 (21.5%) | Total Accuracy: 0.8783 | Batch Accuracy: 0.9375
+Progress: 2176/9992 (21.8%) | Total Accuracy: 0.8796 | Batch Accuracy: 0.96875
+Progress: 2208/9992 (22.1%) | Total Accuracy: 0.8804 | Batch Accuracy: 0.9375
+Progress: 2240/9992 (22.4%) | Total Accuracy: 0.8812 | Batch Accuracy: 0.9375
+Progress: 2272/9992 (22.7%) | Total Accuracy: 0.8812 | Batch Accuracy: 0.875
+Progress: 2304/9992 (23.1%) | Total Accuracy: 0.8806 | Batch Accuracy: 0.84375
+Progress: 2336/9992 (23.4%) | Total Accuracy: 0.8814 | Batch Accuracy: 0.9375
+Progress: 2368/9992 (23.7%) | Total Accuracy: 0.8818 | Batch Accuracy: 0.90625
+Progress: 2400/9992 (24.0%) | Total Accuracy: 0.8825 | Batch Accuracy: 0.9375
+Progress: 2432/9992 (24.3%) | Total Accuracy: 0.8840 | Batch Accuracy: 1.0
+Progress: 2464/9992 (24.7%) | Total Accuracy: 0.8839 | Batch Accuracy: 0.875
+Progress: 2496/9992 (25.0%) | Total Accuracy: 0.8834 | Batch Accuracy: 0.84375
+Progress: 2528/9992 (25.3%) | Total Accuracy: 0.8837 | Batch Accuracy: 0.90625
+Progress: 2560/9992 (25.6%) | Total Accuracy: 0.8836 | Batch Accuracy: 0.875
+Progress: 2592/9992 (25.9%) | Total Accuracy: 0.8846 | Batch Accuracy: 0.96875
+Progress: 2624/9992 (26.3%) | Total Accuracy: 0.8841 | Batch Accuracy: 0.84375
+Progress: 2656/9992 (26.6%) | Total Accuracy: 0.8825 | Batch Accuracy: 0.75
+Progress: 2688/9992 (26.9%) | Total Accuracy: 0.8821 | Batch Accuracy: 0.84375
+Progress: 2720/9992 (27.2%) | Total Accuracy: 0.8816 | Batch Accuracy: 0.84375
+Progress: 2752/9992 (27.5%) | Total Accuracy: 0.8826 | Batch Accuracy: 0.96875
+Progress: 2784/9992 (27.9%) | Total Accuracy: 0.8836 | Batch Accuracy: 0.96875
+Progress: 2816/9992 (28.2%) | Total Accuracy: 0.8835 | Batch Accuracy: 0.875
+Progress: 2848/9992 (28.5%) | Total Accuracy: 0.8841 | Batch Accuracy: 0.9375
+Progress: 2880/9992 (28.8%) | Total Accuracy: 0.8844 | Batch Accuracy: 0.90625
+Progress: 2912/9992 (29.1%) | Total Accuracy: 0.8846 | Batch Accuracy: 0.90625
+Progress: 2944/9992 (29.5%) | Total Accuracy: 0.8855 | Batch Accuracy: 0.96875
+Progress: 2976/9992 (29.8%) | Total Accuracy: 0.8854 | Batch Accuracy: 0.875
+Progress: 3008/9992 (30.1%) | Total Accuracy: 0.8853 | Batch Accuracy: 0.875
+Progress: 3040/9992 (30.4%) | Total Accuracy: 0.8855 | Batch Accuracy: 0.90625
+Progress: 3072/9992 (30.7%) | Total Accuracy: 0.8861 | Batch Accuracy: 0.9375
+Progress: 3104/9992 (31.1%) | Total Accuracy: 0.8863 | Batch Accuracy: 0.90625
+Progress: 3136/9992 (31.4%) | Total Accuracy: 0.8862 | Batch Accuracy: 0.875
+Progress: 3168/9992 (31.7%) | Total Accuracy: 0.8860 | Batch Accuracy: 0.875
+Progress: 3200/9992 (32.0%) | Total Accuracy: 0.8856 | Batch Accuracy: 0.84375
+Progress: 3232/9992 (32.3%) | Total Accuracy: 0.8861 | Batch Accuracy: 0.9375
+Progress: 3264/9992 (32.7%) | Total Accuracy: 0.8857 | Batch Accuracy: 0.84375
+Progress: 3296/9992 (33.0%) | Total Accuracy: 0.8859 | Batch Accuracy: 0.90625
+Progress: 3328/9992 (33.3%) | Total Accuracy: 0.8861 | Batch Accuracy: 0.90625
+Progress: 3360/9992 (33.6%) | Total Accuracy: 0.8866 | Batch Accuracy: 0.9375
+Progress: 3392/9992 (33.9%) | Total Accuracy: 0.8868 | Batch Accuracy: 0.90625
+Progress: 3424/9992 (34.3%) | Total Accuracy: 0.8867 | Batch Accuracy: 0.875
+Progress: 3456/9992 (34.6%) | Total Accuracy: 0.8860 | Batch Accuracy: 0.8125
+Progress: 3488/9992 (34.9%) | Total Accuracy: 0.8856 | Batch Accuracy: 0.84375
+Progress: 3520/9992 (35.2%) | Total Accuracy: 0.8858 | Batch Accuracy: 0.90625
+Progress: 3552/9992 (35.5%) | Total Accuracy: 0.8865 | Batch Accuracy: 0.96875
+Progress: 3584/9992 (35.9%) | Total Accuracy: 0.8859 | Batch Accuracy: 0.8125
+Progress: 3616/9992 (36.2%) | Total Accuracy: 0.8861 | Batch Accuracy: 0.90625
+Progress: 3648/9992 (36.5%) | Total Accuracy: 0.8865 | Batch Accuracy: 0.9375
+Progress: 3680/9992 (36.8%) | Total Accuracy: 0.8870 | Batch Accuracy: 0.9375
+Progress: 3712/9992 (37.1%) | Total Accuracy: 0.8866 | Batch Accuracy: 0.84375
+Progress: 3744/9992 (37.5%) | Total Accuracy: 0.8870 | Batch Accuracy: 0.9375
+Progress: 3776/9992 (37.8%) | Total Accuracy: 0.8869 | Batch Accuracy: 0.875
+Progress: 3808/9992 (38.1%) | Total Accuracy: 0.8866 | Batch Accuracy: 0.84375
+Progress: 3840/9992 (38.4%) | Total Accuracy: 0.8870 | Batch Accuracy: 0.9375
+Progress: 3872/9992 (38.8%) | Total Accuracy: 0.8869 | Batch Accuracy: 0.875
+Progress: 3904/9992 (39.1%) | Total Accuracy: 0.8868 | Batch Accuracy: 0.875
+Progress: 3936/9992 (39.4%) | Total Accuracy: 0.8864 | Batch Accuracy: 0.84375
+Progress: 3968/9992 (39.7%) | Total Accuracy: 0.8863 | Batch Accuracy: 0.875
+Progress: 4000/9992 (40.0%) | Total Accuracy: 0.8865 | Batch Accuracy: 0.90625
+Progress: 4032/9992 (40.4%) | Total Accuracy: 0.8862 | Batch Accuracy: 0.84375
+Progress: 4064/9992 (40.7%) | Total Accuracy: 0.8868 | Batch Accuracy: 0.96875
+Progress: 4096/9992 (41.0%) | Total Accuracy: 0.8875 | Batch Accuracy: 0.96875
+Progress: 4128/9992 (41.3%) | Total Accuracy: 0.8881 | Batch Accuracy: 0.96875
+Progress: 4160/9992 (41.6%) | Total Accuracy: 0.8875 | Batch Accuracy: 0.8125
+Progress: 4192/9992 (42.0%) | Total Accuracy: 0.8876 | Batch Accuracy: 0.90625
+Progress: 4224/9992 (42.3%) | Total Accuracy: 0.8873 | Batch Accuracy: 0.84375
+Progress: 4256/9992 (42.6%) | Total Accuracy: 0.8875 | Batch Accuracy: 0.90625
+Progress: 4288/9992 (42.9%) | Total Accuracy: 0.8883 | Batch Accuracy: 1.0
+Progress: 4320/9992 (43.2%) | Total Accuracy: 0.8882 | Batch Accuracy: 0.875
+Progress: 4352/9992 (43.6%) | Total Accuracy: 0.8881 | Batch Accuracy: 0.875
+Progress: 4384/9992 (43.9%) | Total Accuracy: 0.8885 | Batch Accuracy: 0.9375
+Progress: 4416/9992 (44.2%) | Total Accuracy: 0.8886 | Batch Accuracy: 0.90625
+Progress: 4448/9992 (44.5%) | Total Accuracy: 0.8887 | Batch Accuracy: 0.90625
+Progress: 4480/9992 (44.8%) | Total Accuracy: 0.8891 | Batch Accuracy: 0.9375
+Progress: 4512/9992 (45.2%) | Total Accuracy: 0.8887 | Batch Accuracy: 0.84375
+Progress: 4544/9992 (45.5%) | Total Accuracy: 0.8878 | Batch Accuracy: 0.75
+Progress: 4576/9992 (45.8%) | Total Accuracy: 0.8879 | Batch Accuracy: 0.90625
+Progress: 4608/9992 (46.1%) | Total Accuracy: 0.8880 | Batch Accuracy: 0.90625
+Progress: 4640/9992 (46.4%) | Total Accuracy: 0.8879 | Batch Accuracy: 0.875
+Progress: 4672/9992 (46.8%) | Total Accuracy: 0.8881 | Batch Accuracy: 0.90625
+Progress: 4704/9992 (47.1%) | Total Accuracy: 0.8888 | Batch Accuracy: 1.0
+Progress: 4736/9992 (47.4%) | Total Accuracy: 0.8894 | Batch Accuracy: 0.96875
+Progress: 4768/9992 (47.7%) | Total Accuracy: 0.8897 | Batch Accuracy: 0.9375
+Progress: 4800/9992 (48.0%) | Total Accuracy: 0.8894 | Batch Accuracy: 0.84375
+Progress: 4832/9992 (48.4%) | Total Accuracy: 0.8891 | Batch Accuracy: 0.84375
+Progress: 4864/9992 (48.7%) | Total Accuracy: 0.8892 | Batch Accuracy: 0.90625
+Progress: 4896/9992 (49.0%) | Total Accuracy: 0.8891 | Batch Accuracy: 0.875
+Progress: 4928/9992 (49.3%) | Total Accuracy: 0.8886 | Batch Accuracy: 0.8125
+Progress: 4960/9992 (49.6%) | Total Accuracy: 0.8891 | Batch Accuracy: 0.96875
+Progress: 4992/9992 (50.0%) | Total Accuracy: 0.8888 | Batch Accuracy: 0.84375
+Progress: 5024/9992 (50.3%) | Total Accuracy: 0.8887 | Batch Accuracy: 0.875
+Progress: 5056/9992 (50.6%) | Total Accuracy: 0.8888 | Batch Accuracy: 0.90625
+Progress: 5088/9992 (50.9%) | Total Accuracy: 0.8892 | Batch Accuracy: 0.9375
+Progress: 5120/9992 (51.2%) | Total Accuracy: 0.8891 | Batch Accuracy: 0.875
+Progress: 5152/9992 (51.6%) | Total Accuracy: 0.8894 | Batch Accuracy: 0.9375
+Progress: 5184/9992 (51.9%) | Total Accuracy: 0.8900 | Batch Accuracy: 1.0
+Progress: 5216/9992 (52.2%) | Total Accuracy: 0.8905 | Batch Accuracy: 0.96875
+Progress: 5248/9992 (52.5%) | Total Accuracy: 0.8910 | Batch Accuracy: 0.96875
+Progress: 5280/9992 (52.8%) | Total Accuracy: 0.8903 | Batch Accuracy: 0.78125
+Progress: 5312/9992 (53.2%) | Total Accuracy: 0.8908 | Batch Accuracy: 0.96875
+Progress: 5344/9992 (53.5%) | Total Accuracy: 0.8907 | Batch Accuracy: 0.875
+Progress: 5376/9992 (53.8%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.875
+Progress: 5408/9992 (54.1%) | Total Accuracy: 0.8903 | Batch Accuracy: 0.84375
+Progress: 5440/9992 (54.4%) | Total Accuracy: 0.8901 | Batch Accuracy: 0.84375
+Progress: 5472/9992 (54.8%) | Total Accuracy: 0.8896 | Batch Accuracy: 0.8125
+Progress: 5504/9992 (55.1%) | Total Accuracy: 0.8895 | Batch Accuracy: 0.875
+Progress: 5536/9992 (55.4%) | Total Accuracy: 0.8898 | Batch Accuracy: 0.9375
+Progress: 5568/9992 (55.7%) | Total Accuracy: 0.8899 | Batch Accuracy: 0.90625
+Progress: 5600/9992 (56.0%) | Total Accuracy: 0.8905 | Batch Accuracy: 1.0
+Progress: 5632/9992 (56.4%) | Total Accuracy: 0.8908 | Batch Accuracy: 0.9375
+Progress: 5664/9992 (56.7%) | Total Accuracy: 0.8905 | Batch Accuracy: 0.84375
+Progress: 5696/9992 (57.0%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.90625
+Progress: 5728/9992 (57.3%) | Total Accuracy: 0.8905 | Batch Accuracy: 0.875
+Progress: 5760/9992 (57.6%) | Total Accuracy: 0.8908 | Batch Accuracy: 0.9375
+Progress: 5792/9992 (58.0%) | Total Accuracy: 0.8905 | Batch Accuracy: 0.84375
+Progress: 5824/9992 (58.3%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.90625
+Progress: 5856/9992 (58.6%) | Total Accuracy: 0.8905 | Batch Accuracy: 0.875
+Progress: 5888/9992 (58.9%) | Total Accuracy: 0.8911 | Batch Accuracy: 1.0
+Progress: 5920/9992 (59.2%) | Total Accuracy: 0.8910 | Batch Accuracy: 0.875
+Progress: 5952/9992 (59.6%) | Total Accuracy: 0.8910 | Batch Accuracy: 0.875
+Progress: 5984/9992 (59.9%) | Total Accuracy: 0.8914 | Batch Accuracy: 0.96875
+Progress: 6016/9992 (60.2%) | Total Accuracy: 0.8913 | Batch Accuracy: 0.875
+Progress: 6048/9992 (60.5%) | Total Accuracy: 0.8919 | Batch Accuracy: 1.0
+Progress: 6080/9992 (60.8%) | Total Accuracy: 0.8921 | Batch Accuracy: 0.9375
+Progress: 6112/9992 (61.2%) | Total Accuracy: 0.8922 | Batch Accuracy: 0.90625
+Progress: 6144/9992 (61.5%) | Total Accuracy: 0.8921 | Batch Accuracy: 0.875
+Progress: 6176/9992 (61.8%) | Total Accuracy: 0.8920 | Batch Accuracy: 0.875
+Progress: 6208/9992 (62.1%) | Total Accuracy: 0.8919 | Batch Accuracy: 0.875
+Progress: 6240/9992 (62.4%) | Total Accuracy: 0.8921 | Batch Accuracy: 0.9375
+Progress: 6272/9992 (62.8%) | Total Accuracy: 0.8922 | Batch Accuracy: 0.90625
+Progress: 6304/9992 (63.1%) | Total Accuracy: 0.8926 | Batch Accuracy: 0.96875
+Progress: 6336/9992 (63.4%) | Total Accuracy: 0.8930 | Batch Accuracy: 0.96875
+Progress: 6368/9992 (63.7%) | Total Accuracy: 0.8931 | Batch Accuracy: 0.90625
+Progress: 6400/9992 (64.1%) | Total Accuracy: 0.8933 | Batch Accuracy: 0.9375
+Progress: 6432/9992 (64.4%) | Total Accuracy: 0.8935 | Batch Accuracy: 0.9375
+Progress: 6464/9992 (64.7%) | Total Accuracy: 0.8933 | Batch Accuracy: 0.84375
+Progress: 6496/9992 (65.0%) | Total Accuracy: 0.8929 | Batch Accuracy: 0.8125
+Progress: 6528/9992 (65.3%) | Total Accuracy: 0.8928 | Batch Accuracy: 0.875
+Progress: 6560/9992 (65.7%) | Total Accuracy: 0.8930 | Batch Accuracy: 0.9375
+Progress: 6592/9992 (66.0%) | Total Accuracy: 0.8932 | Batch Accuracy: 0.9375
+Progress: 6624/9992 (66.3%) | Total Accuracy: 0.8931 | Batch Accuracy: 0.875
+Progress: 6656/9992 (66.6%) | Total Accuracy: 0.8935 | Batch Accuracy: 0.96875
+Progress: 6688/9992 (66.9%) | Total Accuracy: 0.8937 | Batch Accuracy: 0.9375
+Progress: 6720/9992 (67.3%) | Total Accuracy: 0.8933 | Batch Accuracy: 0.8125
+Progress: 6752/9992 (67.6%) | Total Accuracy: 0.8935 | Batch Accuracy: 0.9375
+Progress: 6784/9992 (67.9%) | Total Accuracy: 0.8933 | Batch Accuracy: 0.84375
+Progress: 6816/9992 (68.2%) | Total Accuracy: 0.8936 | Batch Accuracy: 0.96875
+Progress: 6848/9992 (68.5%) | Total Accuracy: 0.8931 | Batch Accuracy: 0.78125
+Progress: 6880/9992 (68.9%) | Total Accuracy: 0.8930 | Batch Accuracy: 0.875
+Progress: 6912/9992 (69.2%) | Total Accuracy: 0.8932 | Batch Accuracy: 0.9375
+Progress: 6944/9992 (69.5%) | Total Accuracy: 0.8930 | Batch Accuracy: 0.84375
+Progress: 6976/9992 (69.8%) | Total Accuracy: 0.8931 | Batch Accuracy: 0.90625
+Progress: 7008/9992 (70.1%) | Total Accuracy: 0.8934 | Batch Accuracy: 0.96875
+Progress: 7040/9992 (70.5%) | Total Accuracy: 0.8935 | Batch Accuracy: 0.90625
+Progress: 7072/9992 (70.8%) | Total Accuracy: 0.8937 | Batch Accuracy: 0.9375
+Progress: 7104/9992 (71.1%) | Total Accuracy: 0.8934 | Batch Accuracy: 0.84375
+Progress: 7136/9992 (71.4%) | Total Accuracy: 0.8935 | Batch Accuracy: 0.90625
+Progress: 7168/9992 (71.7%) | Total Accuracy: 0.8936 | Batch Accuracy: 0.90625
+Progress: 7200/9992 (72.1%) | Total Accuracy: 0.8931 | Batch Accuracy: 0.78125
+Progress: 7232/9992 (72.4%) | Total Accuracy: 0.8923 | Batch Accuracy: 0.71875
+Progress: 7264/9992 (72.7%) | Total Accuracy: 0.8922 | Batch Accuracy: 0.875
+Progress: 7296/9992 (73.0%) | Total Accuracy: 0.8916 | Batch Accuracy: 0.75
+Progress: 7328/9992 (73.3%) | Total Accuracy: 0.8918 | Batch Accuracy: 0.9375
+Progress: 7360/9992 (73.7%) | Total Accuracy: 0.8917 | Batch Accuracy: 0.875
+Progress: 7392/9992 (74.0%) | Total Accuracy: 0.8918 | Batch Accuracy: 0.90625
+Progress: 7424/9992 (74.3%) | Total Accuracy: 0.8918 | Batch Accuracy: 0.90625
+Progress: 7456/9992 (74.6%) | Total Accuracy: 0.8919 | Batch Accuracy: 0.90625
+Progress: 7488/9992 (74.9%) | Total Accuracy: 0.8916 | Batch Accuracy: 0.8125
+Progress: 7520/9992 (75.3%) | Total Accuracy: 0.8914 | Batch Accuracy: 0.84375
+Progress: 7552/9992 (75.6%) | Total Accuracy: 0.8908 | Batch Accuracy: 0.75
+Progress: 7584/9992 (75.9%) | Total Accuracy: 0.8904 | Batch Accuracy: 0.8125
+Progress: 7616/9992 (76.2%) | Total Accuracy: 0.8909 | Batch Accuracy: 1.0
+Progress: 7648/9992 (76.5%) | Total Accuracy: 0.8911 | Batch Accuracy: 0.9375
+Progress: 7680/9992 (76.9%) | Total Accuracy: 0.8909 | Batch Accuracy: 0.84375
+Progress: 7712/9992 (77.2%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.8125
+Progress: 7744/9992 (77.5%) | Total Accuracy: 0.8902 | Batch Accuracy: 0.8125
+Progress: 7776/9992 (77.8%) | Total Accuracy: 0.8904 | Batch Accuracy: 0.9375
+Progress: 7808/9992 (78.1%) | Total Accuracy: 0.8905 | Batch Accuracy: 0.90625
+Progress: 7840/9992 (78.5%) | Total Accuracy: 0.8909 | Batch Accuracy: 1.0
+Progress: 7872/9992 (78.8%) | Total Accuracy: 0.8909 | Batch Accuracy: 0.875
+Progress: 7904/9992 (79.1%) | Total Accuracy: 0.8902 | Batch Accuracy: 0.71875
+Progress: 7936/9992 (79.4%) | Total Accuracy: 0.8902 | Batch Accuracy: 0.90625
+Progress: 7968/9992 (79.7%) | Total Accuracy: 0.8903 | Batch Accuracy: 0.90625
+Progress: 8000/9992 (80.1%) | Total Accuracy: 0.8905 | Batch Accuracy: 0.9375
+Progress: 8032/9992 (80.4%) | Total Accuracy: 0.8904 | Batch Accuracy: 0.875
+Progress: 8064/9992 (80.7%) | Total Accuracy: 0.8904 | Batch Accuracy: 0.875
+Progress: 8096/9992 (81.0%) | Total Accuracy: 0.8901 | Batch Accuracy: 0.8125
+Progress: 8128/9992 (81.3%) | Total Accuracy: 0.8903 | Batch Accuracy: 0.9375
+Progress: 8160/9992 (81.7%) | Total Accuracy: 0.8903 | Batch Accuracy: 0.90625
+Progress: 8192/9992 (82.0%) | Total Accuracy: 0.8905 | Batch Accuracy: 0.9375
+Progress: 8224/9992 (82.3%) | Total Accuracy: 0.8903 | Batch Accuracy: 0.84375
+Progress: 8256/9992 (82.6%) | Total Accuracy: 0.8903 | Batch Accuracy: 0.875
+Progress: 8288/9992 (82.9%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.96875
+Progress: 8320/9992 (83.3%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.90625
+Progress: 8352/9992 (83.6%) | Total Accuracy: 0.8903 | Batch Accuracy: 0.8125
+Progress: 8384/9992 (83.9%) | Total Accuracy: 0.8901 | Batch Accuracy: 0.84375
+Progress: 8416/9992 (84.2%) | Total Accuracy: 0.8901 | Batch Accuracy: 0.875
+Progress: 8448/9992 (84.5%) | Total Accuracy: 0.8902 | Batch Accuracy: 0.90625
+Progress: 8480/9992 (84.9%) | Total Accuracy: 0.8902 | Batch Accuracy: 0.90625
+Progress: 8512/9992 (85.2%) | Total Accuracy: 0.8904 | Batch Accuracy: 0.9375
+Progress: 8544/9992 (85.5%) | Total Accuracy: 0.8904 | Batch Accuracy: 0.90625
+Progress: 8576/9992 (85.8%) | Total Accuracy: 0.8907 | Batch Accuracy: 0.96875
+Progress: 8608/9992 (86.1%) | Total Accuracy: 0.8908 | Batch Accuracy: 0.90625
+Progress: 8640/9992 (86.5%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.84375
+Progress: 8672/9992 (86.8%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.875
+Progress: 8704/9992 (87.1%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.90625
+Progress: 8736/9992 (87.4%) | Total Accuracy: 0.8908 | Batch Accuracy: 0.9375
+Progress: 8768/9992 (87.8%) | Total Accuracy: 0.8912 | Batch Accuracy: 1.0
+Progress: 8800/9992 (88.1%) | Total Accuracy: 0.8910 | Batch Accuracy: 0.84375
+Progress: 8832/9992 (88.4%) | Total Accuracy: 0.8910 | Batch Accuracy: 0.875
+Progress: 8864/9992 (88.7%) | Total Accuracy: 0.8910 | Batch Accuracy: 0.90625
+Progress: 8896/9992 (89.0%) | Total Accuracy: 0.8907 | Batch Accuracy: 0.8125
+Progress: 8928/9992 (89.4%) | Total Accuracy: 0.8908 | Batch Accuracy: 0.90625
+Progress: 8960/9992 (89.7%) | Total Accuracy: 0.8908 | Batch Accuracy: 0.90625
+Progress: 8992/9992 (90.0%) | Total Accuracy: 0.8909 | Batch Accuracy: 0.90625
+Progress: 9024/9992 (90.3%) | Total Accuracy: 0.8910 | Batch Accuracy: 0.90625
+Progress: 9056/9992 (90.6%) | Total Accuracy: 0.8909 | Batch Accuracy: 0.875
+Progress: 9088/9992 (91.0%) | Total Accuracy: 0.8911 | Batch Accuracy: 0.9375
+Progress: 9120/9992 (91.3%) | Total Accuracy: 0.8913 | Batch Accuracy: 0.96875
+Progress: 9152/9992 (91.6%) | Total Accuracy: 0.8913 | Batch Accuracy: 0.875
+Progress: 9184/9992 (91.9%) | Total Accuracy: 0.8913 | Batch Accuracy: 0.90625
+Progress: 9216/9992 (92.2%) | Total Accuracy: 0.8914 | Batch Accuracy: 0.90625
+Progress: 9248/9992 (92.6%) | Total Accuracy: 0.8915 | Batch Accuracy: 0.9375
+Progress: 9280/9992 (92.9%) | Total Accuracy: 0.8916 | Batch Accuracy: 0.90625
+Progress: 9312/9992 (93.2%) | Total Accuracy: 0.8915 | Batch Accuracy: 0.875
+Progress: 9344/9992 (93.5%) | Total Accuracy: 0.8914 | Batch Accuracy: 0.84375
+Progress: 9376/9992 (93.8%) | Total Accuracy: 0.8912 | Batch Accuracy: 0.84375
+Progress: 9408/9992 (94.2%) | Total Accuracy: 0.8913 | Batch Accuracy: 0.90625
+Progress: 9440/9992 (94.5%) | Total Accuracy: 0.8911 | Batch Accuracy: 0.84375
+Progress: 9472/9992 (94.8%) | Total Accuracy: 0.8908 | Batch Accuracy: 0.8125
+Progress: 9504/9992 (95.1%) | Total Accuracy: 0.8907 | Batch Accuracy: 0.84375
+Progress: 9536/9992 (95.4%) | Total Accuracy: 0.8904 | Batch Accuracy: 0.8125
+Progress: 9568/9992 (95.8%) | Total Accuracy: 0.8905 | Batch Accuracy: 0.90625
+Progress: 9600/9992 (96.1%) | Total Accuracy: 0.8906 | Batch Accuracy: 0.9375
+Progress: 9632/9992 (96.4%) | Total Accuracy: 0.8903 | Batch Accuracy: 0.78125
+Progress: 9664/9992 (96.7%) | Total Accuracy: 0.8904 | Batch Accuracy: 0.9375
+Progress: 9696/9992 (97.0%) | Total Accuracy: 0.8907 | Batch Accuracy: 0.96875
+Progress: 9728/9992 (97.4%) | Total Accuracy: 0.8908 | Batch Accuracy: 0.9375
+Progress: 9760/9992 (97.7%) | Total Accuracy: 0.8909 | Batch Accuracy: 0.90625
+Progress: 9792/9992 (98.0%) | Total Accuracy: 0.8908 | Batch Accuracy: 0.875
+Progress: 9824/9992 (98.3%) | Total Accuracy: 0.8910 | Batch Accuracy: 0.9375
+Progress: 9856/9992 (98.6%) | Total Accuracy: 0.8905 | Batch Accuracy: 0.75
+Progress: 9888/9992 (99.0%) | Total Accuracy: 0.8905 | Batch Accuracy: 0.875
+Progress: 9920/9992 (99.3%) | Total Accuracy: 0.8902 | Batch Accuracy: 0.8125
+Progress: 9952/9992 (99.6%) | Total Accuracy: 0.8904 | Batch Accuracy: 0.9375
+Progress: 9984/9992 (99.9%) | Total Accuracy: 0.8903 | Batch Accuracy: 0.875
+Progress: 9992/9992 (100.0%) | Total Accuracy: 0.8902 | Batch Accuracy: 0.75
+
+Final validation accuracy: 0.8902

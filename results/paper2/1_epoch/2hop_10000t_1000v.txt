@@ -1,0 +1,1264 @@
+
+Trial 1/30
+Embedding dimension: 158, Batch size: 112, KG learning rate: 0.000251278, Negatives per positive KG triple: 7, Question learning rate: 0.000318075, Negatives per positive question triple: 9, Hidden layer dimensions in question embedding module: (768, 500, 300), Dropout in question embedding module: 0.336, Weight decay in question embedding module: 5.4678e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.03125
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.125
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.0
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0446 | Batch Accuracy: 0.0625
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0508 | Batch Accuracy: 0.09375
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0625
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0563 | Batch Accuracy: 0.09375
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0511 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0547 | Batch Accuracy: 0.09375
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0577 | Batch Accuracy: 0.09375
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0580 | Batch Accuracy: 0.0625
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0583 | Batch Accuracy: 0.0625
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0566 | Batch Accuracy: 0.03125
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0570 | Batch Accuracy: 0.0625
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0573 | Batch Accuracy: 0.0625
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0559 | Batch Accuracy: 0.03125
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0531 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.03125
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0526 | Batch Accuracy: 0.0625
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0557 | Batch Accuracy: 0.125
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0547 | Batch Accuracy: 0.03125
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0525 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0517 | Batch Accuracy: 0.03125
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0556 | Batch Accuracy: 0.15625
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0569 | Batch Accuracy: 0.09375
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0593 | Batch Accuracy: 0.125
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0604 | Batch Accuracy: 0.09375
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0615 | Batch Accuracy: 0.09375
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0620 | Batch Accuracy: 0.125
+
+Final validation accuracy: 0.0620
+
+Trial 2/30
+Embedding dimension: 177, Batch size: 60, KG learning rate: 0.000125745, Negatives per positive KG triple: 15, Question learning rate: 0.000165684, Negatives per positive question triple: 10, Hidden layer dimensions in question embedding module: (1024, 768, 512), Dropout in question embedding module: 0.395, Weight decay in question embedding module: 0.000212565
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0938 | Batch Accuracy: 0.09375
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.0625
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.09375
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0688 | Batch Accuracy: 0.09375
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.03125
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0714 | Batch Accuracy: 0.125
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.125
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0833 | Batch Accuracy: 0.125
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0844 | Batch Accuracy: 0.09375
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0795 | Batch Accuracy: 0.03125
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0807 | Batch Accuracy: 0.09375
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0793 | Batch Accuracy: 0.0625
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.0625
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0750 | Batch Accuracy: 0.03125
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0742 | Batch Accuracy: 0.0625
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0717 | Batch Accuracy: 0.03125
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0712 | Batch Accuracy: 0.0625
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0707 | Batch Accuracy: 0.0625
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0672 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0640 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0653 | Batch Accuracy: 0.09375
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0666 | Batch Accuracy: 0.09375
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0638 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0612 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0589 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.15625
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0647 | Batch Accuracy: 0.125
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0657 | Batch Accuracy: 0.09375
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0635 | Batch Accuracy: 0.0
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0665 | Batch Accuracy: 0.15625
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0680 | Batch Accuracy: 0.25
+
+Final validation accuracy: 0.0680
+
+Trial 3/30
+Embedding dimension: 81, Batch size: 78, KG learning rate: 0.000166135, Negatives per positive KG triple: 9, Question learning rate: 0.000877862, Negatives per positive question triple: 9, Hidden layer dimensions in question embedding module: (768, 550, 400), Dropout in question embedding module: 0.366, Weight decay in question embedding module: 8.09757e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0208 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.125
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.0
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0536 | Batch Accuracy: 0.125
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0586 | Batch Accuracy: 0.09375
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0660 | Batch Accuracy: 0.125
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0750 | Batch Accuracy: 0.15625
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0710 | Batch Accuracy: 0.03125
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0651 | Batch Accuracy: 0.0
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0673 | Batch Accuracy: 0.09375
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0607 | Batch Accuracy: 0.03125
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0590 | Batch Accuracy: 0.03125
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0592 | Batch Accuracy: 0.0625
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0563 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0551 | Batch Accuracy: 0.03125
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0568 | Batch Accuracy: 0.09375
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0571 | Batch Accuracy: 0.0625
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0547 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0537 | Batch Accuracy: 0.03125
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0529 | Batch Accuracy: 0.03125
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0556 | Batch Accuracy: 0.125
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0558 | Batch Accuracy: 0.0625
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0571 | Batch Accuracy: 0.09375
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0552 | Batch Accuracy: 0.0
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0554 | Batch Accuracy: 0.0625
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0570 | Batch Accuracy: 0.25
+
+Final validation accuracy: 0.0570
+
+Trial 4/30
+Embedding dimension: 82, Batch size: 163, KG learning rate: 0.00174889, Negatives per positive KG triple: 11, Question learning rate: 0.00275333, Negatives per positive question triple: 8, Hidden layer dimensions in question embedding module: (300, 200, 100), Dropout in question embedding module: 0.174, Weight decay in question embedding module: 7.71549e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0208 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0234 | Batch Accuracy: 0.03125
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0260 | Batch Accuracy: 0.0
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0357 | Batch Accuracy: 0.09375
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.125
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0486 | Batch Accuracy: 0.0625
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.03125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0455 | Batch Accuracy: 0.03125
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.0625
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0433 | Batch Accuracy: 0.0
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0446 | Batch Accuracy: 0.0625
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0391 | Batch Accuracy: 0.0
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0386 | Batch Accuracy: 0.03125
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0382 | Batch Accuracy: 0.03125
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0378 | Batch Accuracy: 0.03125
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0375 | Batch Accuracy: 0.03125
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0357 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0369 | Batch Accuracy: 0.0625
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0353 | Batch Accuracy: 0.0
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0352 | Batch Accuracy: 0.03125
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0338 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0337 | Batch Accuracy: 0.03125
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0359 | Batch Accuracy: 0.09375
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0379 | Batch Accuracy: 0.09375
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0377 | Batch Accuracy: 0.03125
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0385 | Batch Accuracy: 0.0625
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0383 | Batch Accuracy: 0.03125
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0400 | Batch Accuracy: 0.25
+
+Final validation accuracy: 0.0400
+
+Trial 5/30
+Embedding dimension: 164, Batch size: 32, KG learning rate: 0.00313425, Negatives per positive KG triple: 8, Question learning rate: 0.000379245, Negatives per positive question triple: 12, Hidden layer dimensions in question embedding module: (768, 500, 300), Dropout in question embedding module: 0.374, Weight decay in question embedding module: 2.29212e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0104 | Batch Accuracy: 0.03125
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0234 | Batch Accuracy: 0.0625
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0187 | Batch Accuracy: 0.0
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.0
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0223 | Batch Accuracy: 0.0625
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0195 | Batch Accuracy: 0.0
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0208 | Batch Accuracy: 0.03125
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0219 | Batch Accuracy: 0.03125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0227 | Batch Accuracy: 0.03125
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0234 | Batch Accuracy: 0.03125
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0264 | Batch Accuracy: 0.0625
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0246 | Batch Accuracy: 0.0
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0229 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0254 | Batch Accuracy: 0.0625
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0257 | Batch Accuracy: 0.03125
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0260 | Batch Accuracy: 0.03125
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0247 | Batch Accuracy: 0.0
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0250 | Batch Accuracy: 0.03125
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0238 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0241 | Batch Accuracy: 0.03125
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0245 | Batch Accuracy: 0.03125
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0247 | Batch Accuracy: 0.03125
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0238 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0240 | Batch Accuracy: 0.03125
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0243 | Batch Accuracy: 0.03125
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0234 | Batch Accuracy: 0.0
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0237 | Batch Accuracy: 0.03125
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0229 | Batch Accuracy: 0.0
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0232 | Batch Accuracy: 0.03125
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0240 | Batch Accuracy: 0.125
+
+Final validation accuracy: 0.0240
+
+Trial 6/30
+Embedding dimension: 66, Batch size: 117, KG learning rate: 0.000239832, Negatives per positive KG triple: 14, Question learning rate: 0.00196472, Negatives per positive question triple: 15, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.468, Weight decay in question embedding module: 3.98676e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.09375
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0547 | Batch Accuracy: 0.0625
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.03125
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.03125
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0580 | Batch Accuracy: 0.125
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0586 | Batch Accuracy: 0.0625
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0660 | Batch Accuracy: 0.125
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0656 | Batch Accuracy: 0.0625
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0597 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.09375
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0601 | Batch Accuracy: 0.03125
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0603 | Batch Accuracy: 0.0625
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0563 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0566 | Batch Accuracy: 0.0625
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0551 | Batch Accuracy: 0.03125
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0556 | Batch Accuracy: 0.0625
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0559 | Batch Accuracy: 0.0625
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0531 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0506 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0526 | Batch Accuracy: 0.09375
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0530 | Batch Accuracy: 0.0625
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0508 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0488 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0509 | Batch Accuracy: 0.15625
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0513 | Batch Accuracy: 0.0625
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0528 | Batch Accuracy: 0.09375
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0510 | Batch Accuracy: 0.0
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0544 | Batch Accuracy: 0.15625
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0560 | Batch Accuracy: 0.25
+
+Final validation accuracy: 0.0560
+
+Trial 7/30
+Embedding dimension: 117, Batch size: 184, KG learning rate: 0.00104664, Negatives per positive KG triple: 5, Question learning rate: 0.000716238, Negatives per positive question triple: 5, Hidden layer dimensions in question embedding module: (512, 256, 128), Dropout in question embedding module: 0.404, Weight decay in question embedding module: 8.78291e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0938 | Batch Accuracy: 0.09375
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.0625
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0547 | Batch Accuracy: 0.0625
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0750 | Batch Accuracy: 0.15625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0677 | Batch Accuracy: 0.03125
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0714 | Batch Accuracy: 0.09375
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0703 | Batch Accuracy: 0.0625
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0729 | Batch Accuracy: 0.09375
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0710 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0703 | Batch Accuracy: 0.0625
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0721 | Batch Accuracy: 0.09375
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0737 | Batch Accuracy: 0.09375
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0708 | Batch Accuracy: 0.03125
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0723 | Batch Accuracy: 0.09375
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0717 | Batch Accuracy: 0.0625
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0712 | Batch Accuracy: 0.0625
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0707 | Batch Accuracy: 0.0625
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0672 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0640 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0682 | Batch Accuracy: 0.15625
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0679 | Batch Accuracy: 0.0625
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0651 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0601 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.125
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0636 | Batch Accuracy: 0.09375
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0647 | Batch Accuracy: 0.09375
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0646 | Batch Accuracy: 0.0625
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0665 | Batch Accuracy: 0.125
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0670 | Batch Accuracy: 0.125
+
+Final validation accuracy: 0.0670
+
+Trial 8/30
+Embedding dimension: 51, Batch size: 224, KG learning rate: 0.000167037, Negatives per positive KG triple: 7, Question learning rate: 0.000468995, Negatives per positive question triple: 5, Hidden layer dimensions in question embedding module: (512, 256, 128), Dropout in question embedding module: 0.451, Weight decay in question embedding module: 1.67514e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0125 | Batch Accuracy: 0.0625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.03125
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0179 | Batch Accuracy: 0.03125
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0234 | Batch Accuracy: 0.0625
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0347 | Batch Accuracy: 0.125
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0375 | Batch Accuracy: 0.0625
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0341 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0292 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0293 | Batch Accuracy: 0.03125
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0276 | Batch Accuracy: 0.0
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0278 | Batch Accuracy: 0.03125
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0296 | Batch Accuracy: 0.0625
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0281 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0268 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0270 | Batch Accuracy: 0.03125
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.125
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0299 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0288 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0276 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0289 | Batch Accuracy: 0.0625
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0279 | Batch Accuracy: 0.0
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0269 | Batch Accuracy: 0.0
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0260 | Batch Accuracy: 0.0
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0272 | Batch Accuracy: 0.0625
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0280 | Batch Accuracy: 0.125
+
+Final validation accuracy: 0.0280
+
+Trial 9/30
+Embedding dimension: 90, Batch size: 138, KG learning rate: 0.000251561, Negatives per positive KG triple: 7, Question learning rate: 0.00177261, Negatives per positive question triple: 2, Hidden layer dimensions in question embedding module: (600, 400, 200), Dropout in question embedding module: 0.184, Weight decay in question embedding module: 0.000149383
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.1250 | Batch Accuracy: 0.125
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.03125
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0703 | Batch Accuracy: 0.125
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0875 | Batch Accuracy: 0.15625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.03125
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0804 | Batch Accuracy: 0.09375
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0820 | Batch Accuracy: 0.09375
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0799 | Batch Accuracy: 0.0625
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0813 | Batch Accuracy: 0.09375
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0739 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0729 | Batch Accuracy: 0.0625
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0697 | Batch Accuracy: 0.03125
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0714 | Batch Accuracy: 0.09375
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0708 | Batch Accuracy: 0.0625
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0742 | Batch Accuracy: 0.125
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0699 | Batch Accuracy: 0.0
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0694 | Batch Accuracy: 0.0625
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0691 | Batch Accuracy: 0.0625
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0672 | Batch Accuracy: 0.03125
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0640 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0653 | Batch Accuracy: 0.09375
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0666 | Batch Accuracy: 0.09375
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0638 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0612 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0601 | Batch Accuracy: 0.03125
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0602 | Batch Accuracy: 0.0625
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0603 | Batch Accuracy: 0.0625
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0603 | Batch Accuracy: 0.0625
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0583 | Batch Accuracy: 0.0
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0595 | Batch Accuracy: 0.09375
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0610 | Batch Accuracy: 0.25
+
+Final validation accuracy: 0.0610
+
+Trial 10/30
+Embedding dimension: 190, Batch size: 109, KG learning rate: 0.00148138, Negatives per positive KG triple: 1, Question learning rate: 0.00885283, Negatives per positive question triple: 5, Hidden layer dimensions in question embedding module: (600, 400, 200), Dropout in question embedding module: 0.344, Weight decay in question embedding module: 6.0417e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.09375
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0391 | Batch Accuracy: 0.0
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.09375
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.0
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0446 | Batch Accuracy: 0.0625
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0430 | Batch Accuracy: 0.03125
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.03125
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0406 | Batch Accuracy: 0.03125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0398 | Batch Accuracy: 0.03125
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0443 | Batch Accuracy: 0.09375
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0409 | Batch Accuracy: 0.0
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0424 | Batch Accuracy: 0.0625
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0458 | Batch Accuracy: 0.09375
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0430 | Batch Accuracy: 0.0
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0423 | Batch Accuracy: 0.03125
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0451 | Batch Accuracy: 0.09375
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0461 | Batch Accuracy: 0.0625
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.0625
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0476 | Batch Accuracy: 0.0625
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0497 | Batch Accuracy: 0.09375
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0476 | Batch Accuracy: 0.0
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0482 | Batch Accuracy: 0.0625
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0462 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0457 | Batch Accuracy: 0.03125
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0475 | Batch Accuracy: 0.09375
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0502 | Batch Accuracy: 0.125
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0506 | Batch Accuracy: 0.0625
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0531 | Batch Accuracy: 0.125
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0534 | Batch Accuracy: 0.0625
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0530 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0530
+
+Trial 11/30
+Embedding dimension: 169, Batch size: 221, KG learning rate: 0.00472678, Negatives per positive KG triple: 15, Question learning rate: 0.00465518, Negatives per positive question triple: 3, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.460, Weight decay in question embedding module: 7.61297e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0375 | Batch Accuracy: 0.0625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.0625
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0357 | Batch Accuracy: 0.0
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0352 | Batch Accuracy: 0.03125
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0347 | Batch Accuracy: 0.03125
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0375 | Batch Accuracy: 0.0625
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0369 | Batch Accuracy: 0.03125
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0391 | Batch Accuracy: 0.0625
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0457 | Batch Accuracy: 0.125
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0446 | Batch Accuracy: 0.03125
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0437 | Batch Accuracy: 0.03125
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0449 | Batch Accuracy: 0.0625
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0460 | Batch Accuracy: 0.0625
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0451 | Batch Accuracy: 0.03125
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0461 | Batch Accuracy: 0.0625
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0437 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0455 | Batch Accuracy: 0.125
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0462 | Batch Accuracy: 0.0625
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0443 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0425 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0421 | Batch Accuracy: 0.03125
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0463 | Batch Accuracy: 0.15625
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0480 | Batch Accuracy: 0.09375
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0485 | Batch Accuracy: 0.0625
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0490 | Batch Accuracy: 0.0625
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0504 | Batch Accuracy: 0.09375
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0500
+
+Trial 12/30
+Embedding dimension: 170, Batch size: 215, KG learning rate: 0.00312505, Negatives per positive KG triple: 15, Question learning rate: 0.00241139, Negatives per positive question triple: 12, Hidden layer dimensions in question embedding module: (768, 500, 300), Dropout in question embedding module: 0.371, Weight decay in question embedding module: 2.53123e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0208 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0437 | Batch Accuracy: 0.09375
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.03125
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0446 | Batch Accuracy: 0.0625
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0508 | Batch Accuracy: 0.09375
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0486 | Batch Accuracy: 0.03125
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.0625
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0455 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0443 | Batch Accuracy: 0.03125
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0433 | Batch Accuracy: 0.03125
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0424 | Batch Accuracy: 0.03125
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0396 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0391 | Batch Accuracy: 0.03125
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0368 | Batch Accuracy: 0.0
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0347 | Batch Accuracy: 0.0
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0362 | Batch Accuracy: 0.0625
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0344 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0327 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0341 | Batch Accuracy: 0.0625
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0326 | Batch Accuracy: 0.0
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0300 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0288 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0324 | Batch Accuracy: 0.125
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0324 | Batch Accuracy: 0.03125
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0334 | Batch Accuracy: 0.0625
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0323 | Batch Accuracy: 0.0
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0353 | Batch Accuracy: 0.125
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0370 | Batch Accuracy: 0.25
+
+Final validation accuracy: 0.0370
+
+Trial 13/30
+Embedding dimension: 91, Batch size: 225, KG learning rate: 0.00249416, Negatives per positive KG triple: 10, Question learning rate: 0.000765754, Negatives per positive question triple: 13, Hidden layer dimensions in question embedding module: (600, 400, 200), Dropout in question embedding module: 0.085, Weight decay in question embedding module: 2.0071e-08
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.03125
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0547 | Batch Accuracy: 0.125
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0750 | Batch Accuracy: 0.15625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0677 | Batch Accuracy: 0.03125
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0714 | Batch Accuracy: 0.09375
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0703 | Batch Accuracy: 0.0625
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0729 | Batch Accuracy: 0.09375
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0710 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0677 | Batch Accuracy: 0.03125
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0697 | Batch Accuracy: 0.09375
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0692 | Batch Accuracy: 0.0625
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0667 | Batch Accuracy: 0.03125
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0684 | Batch Accuracy: 0.09375
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0662 | Batch Accuracy: 0.03125
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0642 | Batch Accuracy: 0.03125
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0658 | Batch Accuracy: 0.09375
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0641 | Batch Accuracy: 0.03125
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.03125
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0653 | Batch Accuracy: 0.125
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0679 | Batch Accuracy: 0.125
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0651 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0638 | Batch Accuracy: 0.03125
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.03125
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0637 | Batch Accuracy: 0.09375
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0636 | Batch Accuracy: 0.0625
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0647 | Batch Accuracy: 0.09375
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0635 | Batch Accuracy: 0.03125
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.03125
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0630 | Batch Accuracy: 0.125
+
+Final validation accuracy: 0.0630
+
+Trial 14/30
+Embedding dimension: 140, Batch size: 190, KG learning rate: 0.00757564, Negatives per positive KG triple: 6, Question learning rate: 0.00132897, Negatives per positive question triple: 7, Hidden layer dimensions in question embedding module: (768, 550, 400), Dropout in question embedding module: 0.021, Weight decay in question embedding module: 5.21536e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0208 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.0
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0250 | Batch Accuracy: 0.0625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0260 | Batch Accuracy: 0.03125
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0268 | Batch Accuracy: 0.03125
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0273 | Batch Accuracy: 0.03125
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0278 | Batch Accuracy: 0.03125
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0284 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0286 | Batch Accuracy: 0.03125
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0337 | Batch Accuracy: 0.09375
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0293 | Batch Accuracy: 0.0
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0294 | Batch Accuracy: 0.03125
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0278 | Batch Accuracy: 0.0
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0280 | Batch Accuracy: 0.03125
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0281 | Batch Accuracy: 0.03125
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0268 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0270 | Batch Accuracy: 0.03125
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0272 | Batch Accuracy: 0.03125
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0260 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0262 | Batch Accuracy: 0.03125
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0252 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0289 | Batch Accuracy: 0.125
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.09375
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0302 | Batch Accuracy: 0.0
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0310 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0310
+
+Trial 15/30
+Embedding dimension: 135, Batch size: 171, KG learning rate: 0.000456126, Negatives per positive KG triple: 8, Question learning rate: 0.000246681, Negatives per positive question triple: 7, Hidden layer dimensions in question embedding module: (512, 256, 128), Dropout in question embedding module: 0.012, Weight decay in question embedding module: 3.24979e-07
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0938 | Batch Accuracy: 0.09375
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0781 | Batch Accuracy: 0.0625
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0547 | Batch Accuracy: 0.0625
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.09375
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0536 | Batch Accuracy: 0.0625
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.125
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0656 | Batch Accuracy: 0.09375
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.03125
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0651 | Batch Accuracy: 0.09375
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0649 | Batch Accuracy: 0.0625
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0647 | Batch Accuracy: 0.0625
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0604 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0586 | Batch Accuracy: 0.03125
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0570 | Batch Accuracy: 0.03125
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0573 | Batch Accuracy: 0.0625
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0576 | Batch Accuracy: 0.0625
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0547 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0540 | Batch Accuracy: 0.09375
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0543 | Batch Accuracy: 0.0625
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0481 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0509 | Batch Accuracy: 0.125
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0536 | Batch Accuracy: 0.125
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0550 | Batch Accuracy: 0.09375
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0531 | Batch Accuracy: 0.0
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0554 | Batch Accuracy: 0.125
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0570 | Batch Accuracy: 0.25
+
+Final validation accuracy: 0.0570
+
+Trial 16/30
+Embedding dimension: 158, Batch size: 85, KG learning rate: 0.00198129, Negatives per positive KG triple: 2, Question learning rate: 0.000172593, Negatives per positive question triple: 10, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.493, Weight decay in question embedding module: 8.02186e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0104 | Batch Accuracy: 0.03125
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.03125
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0250 | Batch Accuracy: 0.0625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0260 | Batch Accuracy: 0.03125
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0391 | Batch Accuracy: 0.09375
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.0625
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0406 | Batch Accuracy: 0.03125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0398 | Batch Accuracy: 0.03125
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0391 | Batch Accuracy: 0.03125
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0409 | Batch Accuracy: 0.0625
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0379 | Batch Accuracy: 0.0
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0375 | Batch Accuracy: 0.03125
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0371 | Batch Accuracy: 0.03125
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0349 | Batch Accuracy: 0.0
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0347 | Batch Accuracy: 0.03125
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0345 | Batch Accuracy: 0.03125
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0328 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0342 | Batch Accuracy: 0.0625
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0341 | Batch Accuracy: 0.03125
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0326 | Batch Accuracy: 0.0
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0300 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0288 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0278 | Batch Accuracy: 0.0
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0268 | Batch Accuracy: 0.0
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0280 | Batch Accuracy: 0.0625
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0271 | Batch Accuracy: 0.0
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0282 | Batch Accuracy: 0.0625
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0300 | Batch Accuracy: 0.25
+
+Final validation accuracy: 0.0300
+
+Trial 17/30
+Embedding dimension: 21, Batch size: 187, KG learning rate: 0.00250832, Negatives per positive KG triple: 3, Question learning rate: 0.00235097, Negatives per positive question triple: 9, Hidden layer dimensions in question embedding module: (300, 200, 100), Dropout in question embedding module: 0.143, Weight decay in question embedding module: 3.7996e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0938 | Batch Accuracy: 0.09375
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.03125
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0391 | Batch Accuracy: 0.03125
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0375 | Batch Accuracy: 0.03125
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0357 | Batch Accuracy: 0.0625
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0430 | Batch Accuracy: 0.09375
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.03125
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0437 | Batch Accuracy: 0.0625
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0426 | Batch Accuracy: 0.03125
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0443 | Batch Accuracy: 0.0625
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0481 | Batch Accuracy: 0.09375
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0513 | Batch Accuracy: 0.09375
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0625
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0527 | Batch Accuracy: 0.0625
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0515 | Batch Accuracy: 0.03125
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0486 | Batch Accuracy: 0.0
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0461 | Batch Accuracy: 0.0
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0437 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0432 | Batch Accuracy: 0.03125
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0412 | Batch Accuracy: 0.0
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0435 | Batch Accuracy: 0.09375
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0400 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0421 | Batch Accuracy: 0.09375
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0440 | Batch Accuracy: 0.09375
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0446 | Batch Accuracy: 0.0625
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0442 | Batch Accuracy: 0.03125
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0437 | Batch Accuracy: 0.03125
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0433 | Batch Accuracy: 0.03125
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0440 | Batch Accuracy: 0.125
+
+Final validation accuracy: 0.0440
+
+Trial 18/30
+Embedding dimension: 44, Batch size: 155, KG learning rate: 0.00464018, Negatives per positive KG triple: 6, Question learning rate: 0.00189781, Negatives per positive question triple: 13, Hidden layer dimensions in question embedding module: (1024, 768, 512), Dropout in question embedding module: 0.291, Weight decay in question embedding module: 9.40633e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.0
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0104 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0234 | Batch Accuracy: 0.0625
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0260 | Batch Accuracy: 0.0
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0268 | Batch Accuracy: 0.03125
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0347 | Batch Accuracy: 0.0625
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0344 | Batch Accuracy: 0.03125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0341 | Batch Accuracy: 0.03125
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0391 | Batch Accuracy: 0.09375
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0361 | Batch Accuracy: 0.0
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0335 | Batch Accuracy: 0.0
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0352 | Batch Accuracy: 0.09375
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0331 | Batch Accuracy: 0.0
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0298 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0284 | Batch Accuracy: 0.0
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0326 | Batch Accuracy: 0.125
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0300 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0288 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0278 | Batch Accuracy: 0.0
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0279 | Batch Accuracy: 0.03125
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0280 | Batch Accuracy: 0.03125
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0271 | Batch Accuracy: 0.0
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0282 | Batch Accuracy: 0.0625
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0290 | Batch Accuracy: 0.125
+
+Final validation accuracy: 0.0290
+
+Trial 19/30
+Embedding dimension: 166, Batch size: 170, KG learning rate: 0.000285517, Negatives per positive KG triple: 14, Question learning rate: 0.00210581, Negatives per positive question triple: 3, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.459, Weight decay in question embedding module: 3.56565e-08
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.03125
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0391 | Batch Accuracy: 0.0625
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0375 | Batch Accuracy: 0.03125
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0357 | Batch Accuracy: 0.0625
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0352 | Batch Accuracy: 0.03125
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0347 | Batch Accuracy: 0.03125
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0284 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0286 | Batch Accuracy: 0.03125
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0335 | Batch Accuracy: 0.0625
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0333 | Batch Accuracy: 0.03125
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0332 | Batch Accuracy: 0.03125
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0330 | Batch Accuracy: 0.0625
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0329 | Batch Accuracy: 0.03125
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0344 | Batch Accuracy: 0.0625
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0327 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0341 | Batch Accuracy: 0.0625
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0353 | Batch Accuracy: 0.0625
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0339 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0325 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0301 | Batch Accuracy: 0.0
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0302 | Batch Accuracy: 0.03125
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0302 | Batch Accuracy: 0.03125
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0302 | Batch Accuracy: 0.03125
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0300 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0300
+
+Trial 20/30
+Embedding dimension: 87, Batch size: 212, KG learning rate: 0.00124737, Negatives per positive KG triple: 5, Question learning rate: 0.00305059, Negatives per positive question triple: 12, Hidden layer dimensions in question embedding module: (768, 500, 300), Dropout in question embedding module: 0.294, Weight decay in question embedding module: 6.58421e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.0625
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.0625
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.0625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.03125
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0491 | Batch Accuracy: 0.0625
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0430 | Batch Accuracy: 0.0
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0451 | Batch Accuracy: 0.0625
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0437 | Batch Accuracy: 0.03125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0398 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0391 | Batch Accuracy: 0.03125
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0409 | Batch Accuracy: 0.0625
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0379 | Batch Accuracy: 0.0
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0354 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0391 | Batch Accuracy: 0.09375
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0368 | Batch Accuracy: 0.0
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0365 | Batch Accuracy: 0.03125
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0362 | Batch Accuracy: 0.03125
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0344 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0327 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0355 | Batch Accuracy: 0.09375
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0340 | Batch Accuracy: 0.0
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0326 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0300 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0324 | Batch Accuracy: 0.09375
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0335 | Batch Accuracy: 0.0625
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0345 | Batch Accuracy: 0.0625
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0333 | Batch Accuracy: 0.0
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0353 | Batch Accuracy: 0.09375
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0360 | Batch Accuracy: 0.125
+
+Final validation accuracy: 0.0360
+
+Trial 21/30
+Embedding dimension: 173, Batch size: 81, KG learning rate: 0.00371446, Negatives per positive KG triple: 8, Question learning rate: 0.00582893, Negatives per positive question triple: 9, Hidden layer dimensions in question embedding module: (512, 256, 128), Dropout in question embedding module: 0.054, Weight decay in question embedding module: 9.61611e-08
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.03125
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0234 | Batch Accuracy: 0.0
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0260 | Batch Accuracy: 0.0
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0278 | Batch Accuracy: 0.0
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0375 | Batch Accuracy: 0.125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0341 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0288 | Batch Accuracy: 0.0
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0290 | Batch Accuracy: 0.03125
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0271 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0293 | Batch Accuracy: 0.0625
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0276 | Batch Accuracy: 0.0
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0260 | Batch Accuracy: 0.0
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0263 | Batch Accuracy: 0.03125
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0266 | Batch Accuracy: 0.03125
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0268 | Batch Accuracy: 0.03125
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0256 | Batch Accuracy: 0.0
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0245 | Batch Accuracy: 0.0
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0234 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0225 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0216 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0208 | Batch Accuracy: 0.0
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0212 | Batch Accuracy: 0.03125
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0205 | Batch Accuracy: 0.0
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0240 | Batch Accuracy: 0.125
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0232 | Batch Accuracy: 0.0
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0240 | Batch Accuracy: 0.125
+
+Final validation accuracy: 0.0240
+
+Trial 22/30
+Embedding dimension: 121, Batch size: 228, KG learning rate: 0.000653988, Negatives per positive KG triple: 11, Question learning rate: 0.000586173, Negatives per positive question triple: 8, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.036, Weight decay in question embedding module: 2.4563e-08
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.03125
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0547 | Batch Accuracy: 0.125
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0750 | Batch Accuracy: 0.15625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0677 | Batch Accuracy: 0.03125
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0714 | Batch Accuracy: 0.09375
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0742 | Batch Accuracy: 0.09375
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0764 | Batch Accuracy: 0.09375
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0813 | Batch Accuracy: 0.125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0739 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0703 | Batch Accuracy: 0.03125
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0721 | Batch Accuracy: 0.09375
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0714 | Batch Accuracy: 0.0625
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0708 | Batch Accuracy: 0.0625
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0703 | Batch Accuracy: 0.0625
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0699 | Batch Accuracy: 0.0625
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0694 | Batch Accuracy: 0.0625
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0707 | Batch Accuracy: 0.09375
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0688 | Batch Accuracy: 0.03125
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0670 | Batch Accuracy: 0.03125
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0739 | Batch Accuracy: 0.21875
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0761 | Batch Accuracy: 0.125
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0729 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0712 | Batch Accuracy: 0.03125
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0697 | Batch Accuracy: 0.03125
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0706 | Batch Accuracy: 0.09375
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0714 | Batch Accuracy: 0.09375
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0722 | Batch Accuracy: 0.09375
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0719 | Batch Accuracy: 0.0625
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0716 | Batch Accuracy: 0.0625
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0720 | Batch Accuracy: 0.125
+
+Final validation accuracy: 0.0720
+
+Trial 23/30
+Embedding dimension: 185, Batch size: 196, KG learning rate: 0.00260286, Negatives per positive KG triple: 7, Question learning rate: 0.00393597, Negatives per positive question triple: 7, Hidden layer dimensions in question embedding module: (768, 500, 300), Dropout in question embedding module: 0.103, Weight decay in question embedding module: 4.74698e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.0625
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.03125
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.0625
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.0625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0625
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0580 | Batch Accuracy: 0.09375
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.09375
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0656 | Batch Accuracy: 0.09375
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.03125
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0599 | Batch Accuracy: 0.03125
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0577 | Batch Accuracy: 0.03125
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0603 | Batch Accuracy: 0.09375
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0563 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0547 | Batch Accuracy: 0.03125
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0515 | Batch Accuracy: 0.0
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0486 | Batch Accuracy: 0.0
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0477 | Batch Accuracy: 0.03125
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.03125
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0461 | Batch Accuracy: 0.03125
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0526 | Batch Accuracy: 0.1875
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0543 | Batch Accuracy: 0.09375
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0512 | Batch Accuracy: 0.03125
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0493 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0498 | Batch Accuracy: 0.0625
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0491 | Batch Accuracy: 0.03125
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0528 | Batch Accuracy: 0.15625
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.03125
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0534 | Batch Accuracy: 0.09375
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0540 | Batch Accuracy: 0.125
+
+Final validation accuracy: 0.0540
+
+Trial 24/30
+Embedding dimension: 64, Batch size: 127, KG learning rate: 0.00545426, Negatives per positive KG triple: 8, Question learning rate: 0.00013287, Negatives per positive question triple: 10, Hidden layer dimensions in question embedding module: (768, 500, 300), Dropout in question embedding module: 0.248, Weight decay in question embedding module: 2.57339e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.03125
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0104 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.03125
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0125 | Batch Accuracy: 0.0
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0104 | Batch Accuracy: 0.0
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0089 | Batch Accuracy: 0.0
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0078 | Batch Accuracy: 0.0
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0069 | Batch Accuracy: 0.0
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0063 | Batch Accuracy: 0.0
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0057 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0078 | Batch Accuracy: 0.03125
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0096 | Batch Accuracy: 0.03125
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0112 | Batch Accuracy: 0.03125
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0104 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0117 | Batch Accuracy: 0.03125
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0110 | Batch Accuracy: 0.0
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0122 | Batch Accuracy: 0.03125
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0115 | Batch Accuracy: 0.0
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0109 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0104 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0099 | Batch Accuracy: 0.0
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0095 | Batch Accuracy: 0.0
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0091 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0100 | Batch Accuracy: 0.03125
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0096 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0093 | Batch Accuracy: 0.0
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0089 | Batch Accuracy: 0.0
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0086 | Batch Accuracy: 0.0
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0083 | Batch Accuracy: 0.0
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0081 | Batch Accuracy: 0.0
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0080 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0080
+
+Trial 25/30
+Embedding dimension: 172, Batch size: 154, KG learning rate: 0.00150924, Negatives per positive KG triple: 2, Question learning rate: 0.000122961, Negatives per positive question triple: 8, Hidden layer dimensions in question embedding module: (768, 500, 300), Dropout in question embedding module: 0.138, Weight decay in question embedding module: 1.59701e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.0625
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0563 | Batch Accuracy: 0.09375
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.0
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0491 | Batch Accuracy: 0.0625
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0430 | Batch Accuracy: 0.0
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.03125
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0406 | Batch Accuracy: 0.03125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0369 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0391 | Batch Accuracy: 0.0625
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0361 | Batch Accuracy: 0.0
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0357 | Batch Accuracy: 0.03125
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0375 | Batch Accuracy: 0.0625
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0391 | Batch Accuracy: 0.0625
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0404 | Batch Accuracy: 0.0625
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0399 | Batch Accuracy: 0.03125
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0444 | Batch Accuracy: 0.125
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0422 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0402 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0426 | Batch Accuracy: 0.09375
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0448 | Batch Accuracy: 0.09375
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0430 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0425 | Batch Accuracy: 0.03125
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0421 | Batch Accuracy: 0.03125
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.03125
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0413 | Batch Accuracy: 0.03125
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0399 | Batch Accuracy: 0.0
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0396 | Batch Accuracy: 0.03125
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0403 | Batch Accuracy: 0.0625
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0420 | Batch Accuracy: 0.25
+
+Final validation accuracy: 0.0420
+
+Trial 26/30
+Embedding dimension: 38, Batch size: 196, KG learning rate: 0.000106205, Negatives per positive KG triple: 3, Question learning rate: 0.000108353, Negatives per positive question triple: 2, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.391, Weight decay in question embedding module: 0.000505008
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0031 | Batch Accuracy: 0.03125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0028 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0026 | Batch Accuracy: 0.0
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0024 | Batch Accuracy: 0.0
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0022 | Batch Accuracy: 0.0
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0021 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0020 | Batch Accuracy: 0.0
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0018 | Batch Accuracy: 0.0
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0017 | Batch Accuracy: 0.0
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0016 | Batch Accuracy: 0.0
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0016 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0015 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0014 | Batch Accuracy: 0.0
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0014 | Batch Accuracy: 0.0
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0013 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0013 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0012 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0012 | Batch Accuracy: 0.0
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0011 | Batch Accuracy: 0.0
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0011 | Batch Accuracy: 0.0
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0010 | Batch Accuracy: 0.0
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0020 | Batch Accuracy: 0.03125
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0020 | Batch Accuracy: 0.0
+
+Final validation accuracy: 0.0020
+
+Trial 27/30
+Embedding dimension: 177, Batch size: 164, KG learning rate: 0.00720661, Negatives per positive KG triple: 2, Question learning rate: 0.0011238, Negatives per positive question triple: 5, Hidden layer dimensions in question embedding module: (768, 550, 400), Dropout in question embedding module: 0.189, Weight decay in question embedding module: 0.00051171
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.0625
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0234 | Batch Accuracy: 0.0
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0352 | Batch Accuracy: 0.0625
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.09375
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.09375
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0426 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0417 | Batch Accuracy: 0.03125
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0385 | Batch Accuracy: 0.0
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0357 | Batch Accuracy: 0.0
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0333 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0332 | Batch Accuracy: 0.03125
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0295 | Batch Accuracy: 0.0
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0296 | Batch Accuracy: 0.03125
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0297 | Batch Accuracy: 0.03125
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0283 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0298 | Batch Accuracy: 0.0625
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0285 | Batch Accuracy: 0.0
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0286 | Batch Accuracy: 0.03125
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0288 | Batch Accuracy: 0.03125
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0288 | Batch Accuracy: 0.03125
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0301 | Batch Accuracy: 0.0625
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0301 | Batch Accuracy: 0.03125
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0291 | Batch Accuracy: 0.0
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0292 | Batch Accuracy: 0.03125
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0302 | Batch Accuracy: 0.0625
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0310 | Batch Accuracy: 0.125
+
+Final validation accuracy: 0.0310
+
+Trial 28/30
+Embedding dimension: 101, Batch size: 179, KG learning rate: 0.00480453, Negatives per positive KG triple: 12, Question learning rate: 0.000108848, Negatives per positive question triple: 11, Hidden layer dimensions in question embedding module: (300, 200, 100), Dropout in question embedding module: 0.407, Weight decay in question embedding module: 1.71299e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0000 | Batch Accuracy: 0.0
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0208 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.125
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.03125
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0580 | Batch Accuracy: 0.125
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.09375
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.0625
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0594 | Batch Accuracy: 0.03125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0540 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0495 | Batch Accuracy: 0.0
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0553 | Batch Accuracy: 0.125
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0558 | Batch Accuracy: 0.0625
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0547 | Batch Accuracy: 0.09375
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0533 | Batch Accuracy: 0.03125
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.03125
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0526 | Batch Accuracy: 0.0625
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0491 | Batch Accuracy: 0.03125
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0526 | Batch Accuracy: 0.125
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0543 | Batch Accuracy: 0.09375
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0521 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0481 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0486 | Batch Accuracy: 0.0625
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0491 | Batch Accuracy: 0.0625
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0485 | Batch Accuracy: 0.03125
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0479 | Batch Accuracy: 0.03125
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0484 | Batch Accuracy: 0.0625
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0490 | Batch Accuracy: 0.125
+
+Final validation accuracy: 0.0490
+
+Trial 29/30
+Embedding dimension: 60, Batch size: 173, KG learning rate: 0.00194559, Negatives per positive KG triple: 6, Question learning rate: 0.00125601, Negatives per positive question triple: 5, Hidden layer dimensions in question embedding module: (768, 512, 256), Dropout in question embedding module: 0.383, Weight decay in question embedding module: 9.25628e-05
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0208 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.125
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0500 | Batch Accuracy: 0.0625
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0469 | Batch Accuracy: 0.03125
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0580 | Batch Accuracy: 0.125
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0664 | Batch Accuracy: 0.125
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0660 | Batch Accuracy: 0.0625
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.03125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0597 | Batch Accuracy: 0.03125
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0625 | Batch Accuracy: 0.09375
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0601 | Batch Accuracy: 0.03125
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0580 | Batch Accuracy: 0.03125
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0563 | Batch Accuracy: 0.03125
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0605 | Batch Accuracy: 0.125
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0607 | Batch Accuracy: 0.0625
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0590 | Batch Accuracy: 0.03125
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0609 | Batch Accuracy: 0.09375
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0578 | Batch Accuracy: 0.0
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0551 | Batch Accuracy: 0.0
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0568 | Batch Accuracy: 0.09375
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0611 | Batch Accuracy: 0.15625
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0586 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0575 | Batch Accuracy: 0.03125
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0553 | Batch Accuracy: 0.0
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0579 | Batch Accuracy: 0.125
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0580 | Batch Accuracy: 0.0625
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0593 | Batch Accuracy: 0.09375
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0594 | Batch Accuracy: 0.0625
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0595 | Batch Accuracy: 0.0625
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0610 | Batch Accuracy: 0.25
+
+Final validation accuracy: 0.0610
+
+Trial 30/30
+Embedding dimension: 58, Batch size: 100, KG learning rate: 0.0048315, Negatives per positive KG triple: 11, Question learning rate: 0.00679249, Negatives per positive question triple: 5, Hidden layer dimensions in question embedding module: (300, 200, 100), Dropout in question embedding module: 0.295, Weight decay in question embedding module: 4.60015e-06
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning validation set performance testing
+Progress: 32/1000 (3.2%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 64/1000 (6.4%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.0
+Progress: 96/1000 (9.6%) | Total Accuracy: 0.0104 | Batch Accuracy: 0.0
+Progress: 128/1000 (12.8%) | Total Accuracy: 0.0156 | Batch Accuracy: 0.03125
+Progress: 160/1000 (16.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.09375
+Progress: 192/1000 (19.2%) | Total Accuracy: 0.0260 | Batch Accuracy: 0.0
+Progress: 224/1000 (22.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0625
+Progress: 256/1000 (25.6%) | Total Accuracy: 0.0391 | Batch Accuracy: 0.09375
+Progress: 288/1000 (28.8%) | Total Accuracy: 0.0382 | Batch Accuracy: 0.03125
+Progress: 320/1000 (32.0%) | Total Accuracy: 0.0375 | Batch Accuracy: 0.03125
+Progress: 352/1000 (35.2%) | Total Accuracy: 0.0341 | Batch Accuracy: 0.0
+Progress: 384/1000 (38.4%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 416/1000 (41.6%) | Total Accuracy: 0.0361 | Batch Accuracy: 0.09375
+Progress: 448/1000 (44.8%) | Total Accuracy: 0.0357 | Batch Accuracy: 0.03125
+Progress: 480/1000 (48.0%) | Total Accuracy: 0.0333 | Batch Accuracy: 0.0
+Progress: 512/1000 (51.2%) | Total Accuracy: 0.0352 | Batch Accuracy: 0.0625
+Progress: 544/1000 (54.4%) | Total Accuracy: 0.0331 | Batch Accuracy: 0.0
+Progress: 576/1000 (57.6%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.0
+Progress: 608/1000 (60.8%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 640/1000 (64.0%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 672/1000 (67.2%) | Total Accuracy: 0.0312 | Batch Accuracy: 0.03125
+Progress: 704/1000 (70.4%) | Total Accuracy: 0.0298 | Batch Accuracy: 0.0
+Progress: 736/1000 (73.6%) | Total Accuracy: 0.0299 | Batch Accuracy: 0.03125
+Progress: 768/1000 (76.8%) | Total Accuracy: 0.0286 | Batch Accuracy: 0.0
+Progress: 800/1000 (80.0%) | Total Accuracy: 0.0275 | Batch Accuracy: 0.0
+Progress: 832/1000 (83.2%) | Total Accuracy: 0.0276 | Batch Accuracy: 0.03125
+Progress: 864/1000 (86.4%) | Total Accuracy: 0.0289 | Batch Accuracy: 0.0625
+Progress: 896/1000 (89.6%) | Total Accuracy: 0.0290 | Batch Accuracy: 0.03125
+Progress: 928/1000 (92.8%) | Total Accuracy: 0.0291 | Batch Accuracy: 0.03125
+Progress: 960/1000 (96.0%) | Total Accuracy: 0.0323 | Batch Accuracy: 0.125
+Progress: 992/1000 (99.2%) | Total Accuracy: 0.0333 | Batch Accuracy: 0.0625
+Progress: 1000/1000 (100.0%) | Total Accuracy: 0.0340 | Batch Accuracy: 0.125
+
+Final validation accuracy: 0.0340
+
+Best hyperparameters:
+{'embedding_dimension': 121, 'kg embedding module learning_rate': 0.0006539879710927773, 'question embedding module learning_rate': 0.000586173463538383, 'batch_size': 228, 'negatives per positive KG triple': 11, 'question embedding module hidden_dimensions': (768, 512, 256), 'dropout_rate': 0.03575671337052794, 'weight_decay': 2.4563019827952004e-08, 'negatives per positive question triple': 8}
+Best validation accuracy: 0.0720

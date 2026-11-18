@@ -100,7 +100,7 @@ class VRN(nn.Module):
             return None
 
         return -F.log_softmax(logits, dim=0)[answers].mean()
-    
+
     def validation_loss(self, example: Example, candidates: list[str], logits: Tensor) -> Tensor | None:
         answers = [
             i for i, entity in enumerate(candidates)
