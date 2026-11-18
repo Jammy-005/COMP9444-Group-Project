@@ -78,70 +78,68 @@ class PullNet(nn.Module):
         similarities = torch.sigmoid(relations_embedding @ question_embedding)
 
         _, indices = torch.topk(similarities, min(num_facts, len(facts)))
-        return [facts[int(indices[i])] for i in range(indices.numel())]
+        return [facts[i] for i in indices.tolist()]
 
     # G_q = (V, E), where V = V_entity U V_fact (KB-only)
     def _graph_cnn(self, entities: set[str], facts: set[tuple[str, str, str]], question_embedding: Tensor) -> dict[str, Tensor]:
-        entities_embedding = {
-            entity: self.entity_embeddings(
-                torch.tensor(self.entity_ids[entity], dtype=torch.long, device=question_embedding.device)
+        """Batch fact/entity updates; same mean aggregation as the original."""
+        device = question_embedding.device
+        names = list(entities)
+        positions = {name: i for i, name in enumerate(names)}
+        entity_indices = torch.tensor(
+            [self.entity_ids[name] for name in names], dtype=torch.long, device=device
+        )
+        entity_vectors = self.entity_embeddings(entity_indices)
+
+        if facts:
+            triples = list(facts)
+            subjects = torch.tensor(
+                [positions[s] for s, _, _ in triples], dtype=torch.long, device=device
             )
-            for entity in entities
-        }
-
-        # v_e connects to v_f iff v_e is its subject or object
-        incoming: dict[str, list[Tensor]] = {entity: [] for entity in entities}
-
-        for subject, relation, object in facts:
-            relation_embedding = self.relation_embeddings(
-                torch.tensor(self.relation_ids[relation], dtype=torch.long, device=question_embedding.device)
+            relations = torch.tensor(
+                [self.relation_ids[r] for _, r, _ in triples], dtype=torch.long, device=device
             )
-            fact_embedding = torch.relu(self.fact_update(
-                torch.cat((entities_embedding[subject], relation_embedding, entities_embedding[object]))
-            ))
+            objects = torch.tensor(
+                [positions[o] for _, _, o in triples], dtype=torch.long, device=device
+            )
 
-            incoming[subject].append(fact_embedding)
-            incoming[object].append(fact_embedding)
+            fact_vectors = torch.relu(self.fact_update(torch.cat((
+                entity_vectors[subjects],
+                self.relation_embeddings(relations),
+                entity_vectors[objects],
+            ), dim=1)))
 
-        # aggregate connected fact embeddings
-        updated: dict[str, Tensor] = {}
+            incidence = torch.cat((subjects, objects))
+            incoming = torch.zeros_like(entity_vectors)
+            incoming.index_add_(0, incidence, torch.cat((fact_vectors, fact_vectors)))
+            counts = torch.bincount(incidence, minlength=len(names)).clamp_min(1)
+            incoming = incoming / counts.unsqueeze(1)
+        else:
+            incoming = torch.zeros_like(entity_vectors)
 
-        for entity in entities:
-            if incoming[entity]:
-                fact_embedding = torch.stack(incoming[entity]).mean(dim=0)
-            else:
-                fact_embedding = torch.zeros_like(question_embedding)
-
-            combined = torch.cat((entities_embedding[entity], fact_embedding, question_embedding))
-            updated[entity] = torch.relu(self.entity_update(combined))
-
-        return updated
+        combined = torch.cat((
+            entity_vectors, incoming,
+            question_embedding.unsqueeze(0).expand(len(names), -1),
+        ), dim=1)
+        updated = torch.relu(self.entity_update(combined))
+        return dict(zip(names, updated.unbind(dim=0)))
 
     # classify_pullnodes(G_q, k): select top k entities to expand
     def _classify_pullnodes(self, entity_embeddings: dict[str, Tensor], k: int, epsilon: float) -> list[str]:
         entities = list(entity_embeddings)
-
-        logits = torch.stack([
-            self.pull_classifier(entity_embeddings[entity]).squeeze(-1)
-            for entity in entities
-        ])
-        probabilities = torch.sigmoid(logits)
-
+        batch = torch.stack(list(entity_embeddings.values()), dim=0)
+        probabilities = torch.sigmoid(self.pull_classifier(batch).squeeze(-1))
         if self.training:
             indices = torch.nonzero(probabilities > epsilon).flatten()
         else:
             _, indices = torch.topk(probabilities, min(k, len(entities)))
-        return [entities[int(indices[i])] for i in range(indices.numel())]
+        return [entities[i] for i in indices.tolist()]
 
     # classify_answer(G_q): score candidate answer entities
     def _classify_answer(self, entity_embeddings: dict[str, Tensor]) -> tuple[list[str], Tensor]:
         entities = list(entity_embeddings)
-
-        logits = torch.stack([
-            self.answer_classifier(entity_embeddings[entity]).squeeze(-1)
-            for entity in entities
-        ])
-        return entities, logits
+        batch = torch.stack(list(entity_embeddings.values()), dim=0)
+        return entities, self.answer_classifier(batch).squeeze(-1)
 
 
     def _run(

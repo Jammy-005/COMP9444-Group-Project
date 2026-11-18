@@ -70,8 +70,9 @@ def main() -> None:
     parser.add_argument("--model", type=str, default = "paper1")
     parser.add_argument("--root", type=Path, default=Path("data"))
     parser.add_argument("--hops", type=int, default=1)
-    parser.add_argument("--epochs", type=int, default=5)
-    parser.add_argument("--limit", type=int, default = 1000)
+    parser.add_argument("--epochs", type=int, default=1)
+    parser.add_argument("--train", type=int, default=None)
+    parser.add_argument("--test", type=int, default=None)
     parser.add_argument("--lr", type=float, default=0.001)
     parser.add_argument("--no_cuda", action="store_true", default=False)
     args = parser.parse_args()
@@ -80,7 +81,8 @@ def main() -> None:
     root = Path(args.root)
     hops = int(args.hops)
     epochs = int(args.epochs)
-    limit = int(args.limit)
+    train_samples = args.train
+    test_samples = args.test
     lr = float(args.lr)
 
     device = torch.device("cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu")
@@ -94,8 +96,14 @@ def main() -> None:
             raise ValueError("provided model is not supported")
 
     graph = KnowledgeGraph(root / "kb.txt")
-    training = load_qa(root, hops, "train")[:limit]
-    validation = load_qa(root, hops, "dev")[:limit]
+
+    training = load_qa(root, hops, "train")
+    if train_samples is not None and train_samples <= len(training):
+        training = random.sample(training, train_samples)
+
+    validation = load_qa(root, hops, "dev")
+    if test_samples is not None and test_samples <= len(validation):
+        validation = random.sample(validation, test_samples)
 
     model = Model(graph, training).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
