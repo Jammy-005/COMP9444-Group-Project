@@ -1,3 +1,4 @@
+Command: python3 train.py --hops 2 --train 10000 --val 1000 --kgem_epochs 1 --qem_epochs 1
 
 Trial 1/30
 Embedding dimension: 158, Batch size: 112, KG learning rate: 0.000251278, Negatives per positive KG triple: 7, Question learning rate: 0.000318075, Negatives per positive question triple: 9, Hidden layer dimensions in question embedding module: (768, 500, 300), Dropout in question embedding module: 0.336, Weight decay in question embedding module: 5.4678e-06
