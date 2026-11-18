@@ -1,8 +1,8 @@
-
 from __future__ import annotations
 
 from collections import deque
 from functools import lru_cache
+import os
 from collections.abc import Sequence
 
 import torch
@@ -12,12 +12,22 @@ from torch.nn import functional as F
 from base import INVERSE, Example, KnowledgeGraph
 
 
+# TODO (experiments): Toggle independently for controlled 2-hop comparisons.
+# Direction-aware relations already improved your observed 2-hop Hits@1.
+USE_DIRECTIONAL_RELATIONS = os.getenv("PULLNET_DIRECTIONAL", "1") == "1"
+# TODO (topic): Make the question's starting entity explicit to the graph CNN.
+USE_TOPIC_FEATURE = os.getenv("PULLNET_TOPIC", "0") == "1"
+# TODO (depth): Add a second message-passing layer at answer scoring only.
+USE_SECOND_ANSWER_GCN_LAYER = os.getenv("PULLNET_DEEP", "0") == "1"
+
+
 class PullNet(nn.Module):
     def __init__(self, graph: KnowledgeGraph, train_examples: Sequence[Example], hidden_dim: int = 128) -> None:
         super().__init__()
         self.graph: KnowledgeGraph = graph
 
-        relations = sorted(graph.get_all_relations(include_inverse=True))
+        # TODO (direction): Keep incoming and outgoing relations distinct for retrieval.
+        relations = sorted(graph.get_all_relations(include_inverse=USE_DIRECTIONAL_RELATIONS))
         self.relation_ids: dict[str, int] = {relation: i for i, relation in enumerate(relations)}
 
         vocabulary = sorted({
@@ -39,6 +49,18 @@ class PullNet(nn.Module):
 
         self.pull_classifier = nn.Linear(hidden_dim, 1)
         self.answer_classifier = nn.Linear(hidden_dim, 1)
+
+        # TODO (topic): Learn one shared marker for whichever node starts the question.
+        # Initialised to zero to leave baseline predictions unchanged initially.
+        self.topic_bias = nn.Parameter(torch.zeros(hidden_dim))
+
+        # TODO (depth): A second pass for the FINAL answer graph only. Its entity
+        # update is zero-initialised, so initially the residual output equals
+        # the original single-layer graph CNN. The new weights can still learn.
+        self.second_fact_update = nn.Linear(3 * hidden_dim, hidden_dim)
+        self.second_entity_update = nn.Linear(3 * hidden_dim, hidden_dim)
+        nn.init.zeros_(self.second_entity_update.weight)
+        nn.init.zeros_(self.second_entity_update.bias)
 
         # Plain Python caches (not model parameters or buffers).
         self._token_cache: dict[str, tuple[int, ...]] = {
@@ -73,7 +95,8 @@ class PullNet(nn.Module):
                     (target, connection, entity) if relation.startswith(INVERSE)
                     else (entity, connection, target)
                 )
-                relation_ids.append(self.relation_ids[relation])  # TODO: Keep forward/inverse distinct when selecting facts.
+                # TODO (direction): Score each edge with its true traversal direction.
+                relation_ids.append(self.relation_ids[relation if USE_DIRECTIONAL_RELATIONS else connection])
         return tuple(facts), tuple(relation_ids)
 
     # pull_facts(v_e, q): retrieve top N_f facts using S(r, q)
@@ -91,7 +114,14 @@ class PullNet(nn.Module):
         return [facts[i] for i in indices.tolist()]
 
     # G_q = (V, E), where V = V_entity U V_fact (KB-only)
-    def _graph_cnn(self, entities: set[str], facts: set[tuple[str, str, str]], question_embedding: Tensor) -> dict[str, Tensor]:
+    def _graph_cnn(
+        self,
+        entities: set[str],
+        facts: set[tuple[str, str, str]],
+        question_embedding: Tensor,
+        topic: str | None = None,
+        second_layer: bool = False,
+    ) -> dict[str, Tensor]:
         """Batch fact/entity updates; same mean aggregation as the original."""
         device = question_embedding.device
         names = list(entities)
@@ -100,6 +130,15 @@ class PullNet(nn.Module):
             [self.entity_ids[name] for name in names], dtype=torch.long, device=device
         )
         entity_vectors = self.entity_embeddings(entity_indices)
+
+        # TODO (topic): Distinguish the starting node from other retrieved nodes.
+        if USE_TOPIC_FEATURE and topic in positions:
+            topic_mask = torch.tensor(
+                [name == topic for name in names],
+                dtype=entity_vectors.dtype,
+                device=device,
+            ).unsqueeze(1)
+            entity_vectors = entity_vectors + topic_mask * self.topic_bias
 
         if facts:
             triples = list(facts)
@@ -132,6 +171,26 @@ class PullNet(nn.Module):
             question_embedding.unsqueeze(0).expand(len(names), -1),
         ), dim=1)
         updated = torch.relu(self.entity_update(combined))
+
+        # TODO (depth): The second pass uses UPDATED node features, allowing
+        # information to travel across two graph edges; residual protects the
+        # original one-pass features. Only used for final answer classification.
+        if second_layer and facts:
+            second_fact_vectors = torch.relu(self.second_fact_update(torch.cat((
+                updated[subjects],
+                self.relation_embeddings(relations),
+                updated[objects],
+            ), dim=1)))
+            second_incoming = torch.zeros_like(updated)
+            second_incoming.index_add_(0, incidence, torch.cat((second_fact_vectors, second_fact_vectors)))
+            second_incoming = second_incoming / counts.unsqueeze(1)
+            second_combined = torch.cat((
+                updated,
+                second_incoming,
+                question_embedding.unsqueeze(0).expand(len(names), -1),
+            ), dim=1)
+            updated = updated + self.second_entity_update(second_combined)
+
         return dict(zip(names, updated.unbind(dim=0)))
 
     # classify_pullnodes(G_q, k): select top k entities to expand
@@ -178,7 +237,8 @@ class PullNet(nn.Module):
 
         # 2. For t = 0, ..., T-1
         for t in range(hops):
-            entity_embeddings = self._graph_cnn(entities, facts, question_embedding)
+            # TODO (topic): Give the graph CNN the current question's topic.
+            entity_embeddings = self._graph_cnn(entities, facts, question_embedding, topic=question.topic)
             available = {
                 entity: embedding
                 for entity, embedding in entity_embeddings.items()
@@ -232,7 +292,12 @@ class PullNet(nn.Module):
                 break
 
         # 8. Classify answers in G_q^T
-        entity_embeddings = self._graph_cnn(entities, facts, question_embedding)
+        # TODO (depth): Optionally use two graph-CNN layers for answer ranking.
+        entity_embeddings = self._graph_cnn(
+            entities, facts, question_embedding,
+            topic=question.topic,
+            second_layer=USE_SECOND_ANSWER_GCN_LAYER,
+        )
         candidates, logits = self._classify_answer(entity_embeddings)
 
         if not supervise:
@@ -310,10 +375,11 @@ class PullNet(nn.Module):
 
     @lru_cache(maxsize=32768)
     def _entity_relation_targets(self, entity: str) -> tuple[tuple[int, tuple[str, ...]], ...]:
-        """TODO: Keep forward and inverse relation groups separate."""
+        """Static relation groups, optionally separating inverse edges."""
         groups: dict[int, list[str]] = {}
         for relation, targets in self.graph.edges.get(entity, {}).items():
-            relation_id = self.relation_ids[relation]  # TODO: Supervise each direction separately.
+            # TODO (direction): Keep forward/inverse labels separate in supervision.
+            relation_id = self.relation_ids[relation if USE_DIRECTIONAL_RELATIONS else relation.removeprefix(INVERSE)]
             groups.setdefault(relation_id, []).extend(targets)
         return tuple((relation_id, tuple(targets)) for relation_id, targets in groups.items())
 
@@ -356,8 +422,10 @@ class PullNet(nn.Module):
         labels: dict[str, float] = {}
 
         for relation, targets in self.graph.edges.get(entity, {}).items():
+            # TODO (direction): Match supervision to directional retrieval.
+            connection = relation if USE_DIRECTIONAL_RELATIONS else relation.removeprefix(INVERSE)
             positive = any(shortest.get(target) == t + 1 for target in targets)
-            labels[relation] = float(positive)  # TODO: Distinguish relation direction if this method is used.
+            labels[connection] = max(labels.get(connection, 0), float(positive))
         if not labels:
             return None
 
