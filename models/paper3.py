@@ -344,17 +344,11 @@ class PullNet(nn.Module):
         return F.binary_cross_entropy_with_logits(logits, targets)
 
     def _answer_loss(self, entities: list[str], logits: Tensor, question: Example) -> Tensor:
-        # Change: use softmax instead of log loss
-        positive = torch.tensor(
-            [entity in question.answers for entity in entities],
-            dtype=torch.bool,
-            device=logits.device,
+        labels = torch.tensor(
+            [float(entity in question.answers) for entity in entities],
+            dtype=logits.dtype, device=logits.device
         )
-
-        return (
-            torch.logsumexp(logits, dim=0)
-            - torch.logsumexp(logits[positive], dim=0)
-        )
+        return F.binary_cross_entropy_with_logits(logits, labels)
 
     def validation_loss(self, example: Example, candidates: list[str], logits: Tensor) -> Tensor | None:
         if not any(entity in example.answers for entity in candidates):
