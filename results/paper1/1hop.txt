@@ -1,3 +1,5 @@
+Command: python3 models/train.py --model=paper1 --hops=1
+
 Train Epoch: 1 [100/96106 (0%)]	Loss: 1.035213
 Train Epoch: 1 [200/96106 (0%)]	Loss: 0.202510
 Train Epoch: 1 [300/96106 (0%)]	Loss: 0.117927
