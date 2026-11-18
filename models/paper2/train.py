@@ -60,10 +60,10 @@ if __name__ == "__main__":
     train = args.train
     val = args.val
 
-    random.seed(42)
-    torch.manual_seed(42)
+    random.seed(41)
+    torch.manual_seed(41)
     if torch.cuda.is_available():
-        torch.cuda.manual_seed_all(42)
+        torch.cuda.manual_seed_all(41)
 
     kb_path = PROJECT_ROOT / "data" / "kb.txt"
     if not kb_path.is_file():
@@ -94,9 +94,9 @@ if __name__ == "__main__":
     embedding_dims = (20, 200)
     batch_sizes = (32, 256)
     kgem_learning_rates = (7e-4, 1e-2)
-    kgem_negative_samples = (1, 15)
+    kgem_negative_samples = (1, 10)
     qem_learning_rates = (7e-4, 1e-2)
-    qem_negative_samples = (1, 15)
+    qem_negative_samples = (1, 10)
     hidden_dims = [
         (1024, 768, 512),
         (768, 512, 256),
