@@ -1,0 +1,226 @@
+
+Trial 1/30
+Embedding dimension: 111, Batch size: 127, KG learning rate: 0.000726731, Negatives per positive KG triple: 4, Question learning rate: 0.00115434, Negatives per positive question triple: 10, Hidden layer dimensions in question embedding module: (512, 256, 128), Dropout in question embedding module: 0.396, Weight decay in question embedding module: 7.07813e-08
+Beginning KG embedding module fitting
+Beginning epoch 1
+Beginning epoch 2
+Beginning epoch 3
+Beginning epoch 4
+Beginning epoch 5
+Beginning epoch 6
+Beginning epoch 7
+Beginning epoch 8
+Beginning epoch 9
+Beginning epoch 10
+Epoch 10/100, Loss: 0.0091
+Beginning epoch 11
+Beginning epoch 12
+Beginning epoch 13
+Beginning epoch 14
+Beginning epoch 15
+Beginning epoch 16
+Beginning epoch 17
+Beginning epoch 18
+Beginning epoch 19
+Beginning epoch 20
+Epoch 20/100, Loss: 0.0022
+Beginning epoch 21
+Beginning epoch 22
+Beginning epoch 23
+Beginning epoch 24
+Beginning epoch 25
+Beginning epoch 26
+Beginning epoch 27
+Beginning epoch 28
+Beginning epoch 29
+Beginning epoch 30
+Epoch 30/100, Loss: 0.0010
+Beginning epoch 31
+Beginning epoch 32
+Beginning epoch 33
+Beginning epoch 34
+Beginning epoch 35
+Beginning epoch 36
+Beginning epoch 37
+Beginning epoch 38
+Beginning epoch 39
+Beginning epoch 40
+Epoch 40/100, Loss: 0.0006
+Beginning epoch 41
+Beginning epoch 42
+Beginning epoch 43
+Beginning epoch 44
+Beginning epoch 45
+Beginning epoch 46
+Beginning epoch 47
+Beginning epoch 48
+Beginning epoch 49
+Beginning epoch 50
+Epoch 50/100, Loss: 0.0004
+Beginning epoch 51
+Beginning epoch 52
+Beginning epoch 53
+Beginning epoch 54
+Beginning epoch 55
+Beginning epoch 56
+Beginning epoch 57
+Beginning epoch 58
+Beginning epoch 59
+Beginning epoch 60
+Epoch 60/100, Loss: 0.0004
+Beginning epoch 61
+Beginning epoch 62
+Beginning epoch 63
+Beginning epoch 64
+Beginning epoch 65
+Beginning epoch 66
+Beginning epoch 67
+Beginning epoch 68
+Beginning epoch 69
+Beginning epoch 70
+Epoch 70/100, Loss: 0.0002
+Beginning epoch 71
+Beginning epoch 72
+Beginning epoch 73
+Beginning epoch 74
+Beginning epoch 75
+Beginning epoch 76
+Beginning epoch 77
+Beginning epoch 78
+Beginning epoch 79
+Beginning epoch 80
+Epoch 80/100, Loss: 0.0002
+Beginning epoch 81
+Beginning epoch 82
+Beginning epoch 83
+Beginning epoch 84
+Beginning epoch 85
+Beginning epoch 86
+Beginning epoch 87
+Beginning epoch 88
+Beginning epoch 89
+Beginning epoch 90
+Epoch 90/100, Loss: 0.0002
+Beginning epoch 91
+Beginning epoch 92
+Beginning epoch 93
+Beginning epoch 94
+Beginning epoch 95
+Beginning epoch 96
+Beginning epoch 97
+Beginning epoch 98
+Beginning epoch 99
+Beginning epoch 100
+Epoch 100/100, Loss: 0.0001
+Beginning question embedding module fitting
+Beginning epoch 1
+Beginning epoch 2
+Beginning epoch 3
+Beginning epoch 4
+Beginning epoch 5
+Beginning epoch 6
+Beginning epoch 7
+Beginning epoch 8
+Beginning epoch 9
+Beginning epoch 10
+Epoch 10/100, Loss: 0.1638
+Beginning epoch 11
+Beginning epoch 12
+Beginning epoch 13
+Beginning epoch 14
+Beginning epoch 15
+Beginning epoch 16
+Beginning epoch 17
+Beginning epoch 18
+Beginning epoch 19
+Beginning epoch 20
+Epoch 20/100, Loss: 0.1557
+Beginning epoch 21
+Beginning epoch 22
+Beginning epoch 23
+Beginning epoch 24
+Beginning epoch 25
+Beginning epoch 26
+Beginning epoch 27
+Beginning epoch 28
+Beginning epoch 29
+Beginning epoch 30
+Epoch 30/100, Loss: 0.1465
+Beginning epoch 31
+Beginning epoch 32
+Beginning epoch 33
+Beginning epoch 34
+Beginning epoch 35
+Beginning epoch 36
+Beginning epoch 37
+Beginning epoch 38
+Beginning epoch 39
+Beginning epoch 40
+Epoch 40/100, Loss: 0.1247
+Beginning epoch 41
+Beginning epoch 42
+Beginning epoch 43
+Beginning epoch 44
+Beginning epoch 45
+Beginning epoch 46
+Beginning epoch 47
+Beginning epoch 48
+Beginning epoch 49
+Beginning epoch 50
+Epoch 50/100, Loss: 0.1178
+Beginning epoch 51
+Beginning epoch 52
+Beginning epoch 53
+Beginning epoch 54
+Beginning epoch 55
+Beginning epoch 56
+Beginning epoch 57
+Beginning epoch 58
+Beginning epoch 59
+Beginning epoch 60
+Epoch 60/100, Loss: 0.1024
+Beginning epoch 61
+Beginning epoch 62
+Beginning epoch 63
+Beginning epoch 64
+Beginning epoch 65
+Beginning epoch 66
+Beginning epoch 67
+Beginning epoch 68
+Beginning epoch 69
+Beginning epoch 70
+Epoch 70/100, Loss: 0.0983
+Beginning epoch 71
+Beginning epoch 72
+Beginning epoch 73
+Beginning epoch 74
+Beginning epoch 75
+Beginning epoch 76
+Beginning epoch 77
+Beginning epoch 78
+Beginning epoch 79
+Beginning epoch 80
+Epoch 80/100, Loss: 0.0969
+Beginning epoch 81
+Beginning epoch 82
+Beginning epoch 83
+Beginning epoch 84
+Beginning epoch 85
+Beginning epoch 86
+Beginning epoch 87
+Beginning epoch 88
+Beginning epoch 89
+Beginning epoch 90
+Epoch 90/100, Loss: 0.0957
+Beginning epoch 91
+Beginning epoch 92
+Beginning epoch 93
+Beginning epoch 94
+Beginning epoch 95
+Beginning epoch 96
+Beginning epoch 97
+Beginning epoch 98
+Beginning epoch 99
+Beginning epoch 100
+Epoch 100/100, Loss: 0.0931
+Beginning validation set performance testing
