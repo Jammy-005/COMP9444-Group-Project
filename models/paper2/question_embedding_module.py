@@ -331,11 +331,11 @@ class question_embedding_module(nn.Module):
             avg_loss = total_loss / total_samples
             losses.append(avg_loss)
         
-            if (epoch + 1) % 10 == 0:
-                print(
-                    f"Epoch {epoch + 1}/{epochs}, "
-                    f"Loss: {avg_loss:.4f}"
-                )
+
+            print(
+                f"Epoch {epoch + 1}/{epochs}, "
+                f"Loss: {avg_loss:.4f}"
+            )
         
         self.eval()
         return losses
