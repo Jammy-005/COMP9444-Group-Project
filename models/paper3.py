@@ -37,15 +37,27 @@ class PullNet(nn.Module):
         self.fact_update = nn.Linear(3 * hidden_dim, hidden_dim)
         self.entity_update = nn.Linear(3 * hidden_dim, hidden_dim)
 
-        self.pull_classifier = nn.Linear(hidden_dim, 1)
+        # Improvement 1: Use a different pull classifier for each hop
+        self.pull_classifiers = nn.ModuleList([
+            nn.Linear(hidden_dim, 1) for _ in range(3)
+        ])
+        for classifier in self.pull_classifiers[1:]:
+            classifier.load_state_dict(self.pull_classifiers[0].state_dict())
+
+        # Improvement 2: linearly transform question, differently for each hop
+        self.hop_projections = nn.ModuleList([
+            nn.Linear(hidden_dim, hidden_dim) for _ in range(3)
+        ])
+        for projection in self.hop_projections:
+            nn.init.eye_(projection.weight)
+            nn.init.zeros_(projection.bias)
+
         self.answer_classifier = nn.Linear(hidden_dim, 1)
 
-        # Plain Python caches (not model parameters or buffers).
         self._token_cache: dict[str, tuple[int, ...]] = {
             example.template: tuple(self.word_ids.get(word, 0) for word in example.template.split())
             for example in train_examples
         }
-        # None preserves the original unrestricted training-time expansion.
         self.max_training_pulls: int | None = None
 
     # h_q = LSTM(w_1, ..., w_|q|)
@@ -63,7 +75,6 @@ class PullNet(nn.Module):
 
     @lru_cache(maxsize=32768)
     def _incident_facts(self, entity: str) -> tuple[tuple[tuple[str, str, str], ...], tuple[int, ...]]:
-        """Cache the static graph edges and relation IDs for an entity."""
         facts: list[tuple[str, str, str]] = []
         relation_ids: list[int] = []
         for relation, targets in self.graph.edges.get(entity, {}).items():
@@ -92,7 +103,6 @@ class PullNet(nn.Module):
 
     # G_q = (V, E), where V = V_entity U V_fact (KB-only)
     def _graph_cnn(self, entities: set[str], facts: set[tuple[str, str, str]], question_embedding: Tensor) -> dict[str, Tensor]:
-        """Batch fact/entity updates; same mean aggregation as the original."""
         device = question_embedding.device
         names = list(entities)
         positions = {name: i for i, name in enumerate(names)}
@@ -135,10 +145,10 @@ class PullNet(nn.Module):
         return dict(zip(names, updated.unbind(dim=0)))
 
     # classify_pullnodes(G_q, k): select top k entities to expand
-    def _classify_pullnodes(self, entity_embeddings: dict[str, Tensor], k: int, epsilon: float) -> list[str]:
+    def _classify_pullnodes(self, entity_embeddings: dict[str, Tensor], k: int, epsilon: float, t: int) -> list[str]:
         entities = list(entity_embeddings)
         batch = torch.stack(list(entity_embeddings.values()), dim=0)
-        probabilities = torch.sigmoid(self.pull_classifier(batch).squeeze(-1))
+        probabilities = torch.sigmoid(self.pull_classifiers[t](batch).squeeze(-1))
         if self.training:
             indices = torch.nonzero(probabilities > epsilon).flatten()
             if self.max_training_pulls is not None and indices.numel() > self.max_training_pulls:
@@ -164,6 +174,10 @@ class PullNet(nn.Module):
         epsilon: float = 0.5,
         supervise: bool = False,
     ) -> tuple[list[str], Tensor, Tensor | None]:
+        # Fail if more hops than we have prepared classifiers for
+        if not 1 <= hops <= len(self.hop_projections):
+            raise ValueError(f"Expected hops between 1 and {len(self.hop_projections)}, got {hops}")
+
         question_embedding = self._encode_question(question)
         shortest = self._shortest_path_entities(question, hops) if supervise else {}
 
@@ -173,12 +187,14 @@ class PullNet(nn.Module):
         expanded: set[str] = set()
 
         pull_losses: list[Tensor] = []
-        fact_loss_sums: list[Tensor] = []
-        fact_loss_count = 0
+        fact_losses: list[Tensor] = []
 
         # 2. For t = 0, ..., T-1
         for t in range(hops):
-            entity_embeddings = self._graph_cnn(entities, facts, question_embedding)
+            # Transform question embedding once per hop
+            hop_question_embedding = self.hop_projections[t](question_embedding)
+
+            entity_embeddings = self._graph_cnn(entities, facts, hop_question_embedding)
             available = {
                 entity: embedding
                 for entity, embedding in entity_embeddings.items()
@@ -189,19 +205,18 @@ class PullNet(nn.Module):
             if supervise and available:
                 pull_losses.append(self._pull_loss(available, shortest, t))
 
-                fact_group = self._batched_fact_losses(tuple(available), question_embedding, shortest, t)
-                if fact_group is not None:
-                    sum_of_entity_losses, number_of_entities = fact_group
-                    fact_loss_sums.append(sum_of_entity_losses)
-                    fact_loss_count += number_of_entities
+                for entity in available:
+                    fact_loss = self._fact_loss(entity, hop_question_embedding, shortest, t)
+                    if fact_loss is not None:
+                        fact_losses.append(fact_loss)
 
             # 4. Select entities for expansion
-            selected = self._classify_pullnodes(available, k, epsilon) if available else []
+            selected = self._classify_pullnodes(available, k, epsilon, t) if available else []
 
             # 5. Pull facts from selected entities
             for entity in selected:
                 expanded.add(entity)
-                entity_facts = self._pull_facts(entity, question_embedding, num_facts)
+                entity_facts = self._pull_facts(entity, hop_question_embedding, num_facts)
 
                 # 6. Extract head/tail and update G_q
                 for subject, relation, object in entity_facts:
@@ -247,8 +262,8 @@ class PullNet(nn.Module):
         if pull_losses:
             total_loss = total_loss + torch.stack(pull_losses).mean()
 
-        if fact_loss_count:
-            total_loss = total_loss + torch.stack(fact_loss_sums).sum() / fact_loss_count
+        if fact_losses:
+            total_loss = total_loss + torch.stack(fact_losses).mean()
 
         return candidates, logits, total_loss
 
@@ -296,7 +311,7 @@ class PullNet(nn.Module):
     def _pull_loss(self, entity_embeddings: dict[str, Tensor], shortest: dict[str, int], t: int) -> Tensor:
         entities = list(entity_embeddings)
         batch = torch.stack(list(entity_embeddings.values()), dim=0)
-        logits = self.pull_classifier(batch).squeeze(-1)
+        logits = self.pull_classifiers[t](batch).squeeze(-1)
         labels = [
             float(any(
                 shortest.get(target) == t + 1
@@ -307,50 +322,6 @@ class PullNet(nn.Module):
         ]
         targets = torch.tensor(labels, dtype=logits.dtype, device=logits.device)
         return F.binary_cross_entropy_with_logits(logits, targets)
-
-    @lru_cache(maxsize=32768)
-    def _entity_relation_targets(self, entity: str) -> tuple[tuple[int, tuple[str, ...]], ...]:
-        """Static relation groups, retaining original inverse-edge merging."""
-        groups: dict[int, list[str]] = {}
-        for relation, targets in self.graph.edges.get(entity, {}).items():
-            relation_id = self.relation_ids[relation.removeprefix(INVERSE)]
-            groups.setdefault(relation_id, []).extend(targets)
-        return tuple((relation_id, tuple(targets)) for relation_id, targets in groups.items())
-
-    def _batched_fact_losses(
-        self,
-        entities: Sequence[str],
-        question_embedding: Tensor,
-        shortest: dict[str, int],
-        t: int,
-    ) -> tuple[Tensor, int] | None:
-        """Sum of original per-entity mean BCE losses, in one GPU operation."""
-        relation_ids: list[int] = []
-        labels: list[float] = []
-        weights: list[float] = []
-        entities_with_relations = 0
-        for entity in entities:
-            groups = self._entity_relation_targets(entity)
-            if not groups:
-                continue
-            entities_with_relations += 1
-            weight = 1.0 / len(groups)
-            for relation_id, targets in groups:
-                relation_ids.append(relation_id)
-                labels.append(float(any(shortest.get(target) == t + 1 for target in targets)))
-                weights.append(weight)
-
-        if not relation_ids:
-            return None
-
-        device = question_embedding.device
-        ids = torch.tensor(relation_ids, dtype=torch.long, device=device)
-        relations = self.relation_embeddings(ids)
-        logits = relations @ question_embedding
-        labels_tensor = torch.tensor(labels, dtype=logits.dtype, device=device)
-        weights_tensor = torch.tensor(weights, dtype=logits.dtype, device=device)
-        element_losses = F.binary_cross_entropy_with_logits(logits, labels_tensor, reduction="none")
-        return (element_losses * weights_tensor).sum(), entities_with_relations
 
     def _fact_loss(self, entity: str, question_embedding: Tensor, shortest: dict[str, int], t: int) -> Tensor | None:
         labels: dict[str, float] = {}
@@ -373,11 +344,17 @@ class PullNet(nn.Module):
         return F.binary_cross_entropy_with_logits(logits, targets)
 
     def _answer_loss(self, entities: list[str], logits: Tensor, question: Example) -> Tensor:
-        labels = torch.tensor(
-            [float(entity in question.answers) for entity in entities],
-            dtype=logits.dtype, device=logits.device
+        # Change: use softmax instead of log loss
+        positive = torch.tensor(
+            [entity in question.answers for entity in entities],
+            dtype=torch.bool,
+            device=logits.device,
         )
-        return F.binary_cross_entropy_with_logits(logits, labels)
+
+        return (
+            torch.logsumexp(logits, dim=0)
+            - torch.logsumexp(logits[positive], dim=0)
+        )
 
     def validation_loss(self, example: Example, candidates: list[str], logits: Tensor) -> Tensor | None:
         if not any(entity in example.answers for entity in candidates):
