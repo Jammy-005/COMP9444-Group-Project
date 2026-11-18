@@ -69,6 +69,7 @@ def main() -> None:
     parser.add_argument('--hops', type=int, default=3)
     parser.add_argument('--epochs', type=int, default=1)
     parser.add_argument('--train', type=int, default=None)
+    parser.add_argument('--validation', type=int, default=None)
     parser.add_argument('--test', type=int, default=None)
     parser.add_argument('--lr', type=float, default=0.001)
     parser.add_argument('--seed', type=int, default=42)
@@ -91,10 +92,13 @@ def main() -> None:
     graph = KnowledgeGraph(args.root / 'kb.txt')
     training = load_qa(args.root, args.hops, 'train')
     validation = load_qa(args.root, args.hops, 'dev')
+    test_data = load_qa(args.root, args.hops, 'test')
     if args.train is not None and 0 < args.train < len(training):
         training = random.sample(training, args.train)
-    if args.test is not None and 0 < args.test < len(validation):
-        validation = random.sample(validation, args.test)
+    if args.validation is not None and 0 < args.test < len(validation):
+        validation = random.sample(validation, args.validation)
+    if args.test is not None and 0 < args.test < len(test_data):
+        test_data = random.sample(validation, args.test)
 
     model = models[args.model](graph, training).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
@@ -105,6 +109,8 @@ def main() -> None:
         train(model, training, optimizer, args.hops, epoch)
         test(model, validation, args.hops)
 
+    # Bad practice to look at test set after each model training run but so be it
+    test(model, test_data, args.hops)
 
 if __name__ == '__main__':
     main()
