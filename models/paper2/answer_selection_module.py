@@ -71,6 +71,21 @@ class answer_selection_module():
         return [entities[index] for index in best_indices]
 
     def select_answer_fast(self, batch: Iterable[tuple[str, str]]) -> list[str]:
+        """Selects the answer for each question in the batch Iterable, using the method described
+        at the top of this class. DOes it faster by accessing the pre-computed RoBERTa embeddings
+        for questions seen in the training, validation and test data. This method does not work
+        if a question in this batch is not in self.question_embedding_module.question_to_idx.keys().
+        
+        Args:
+            batch (Iterable[tuple[str, str]]): A collection of
+                (topic entity, question) tuples represented as strings.
+                Accepts a list, tuple, or set of tuples. The size of this iterable
+                is batch_size.
+                        
+        Returns:
+            list[str]: A list containing the predicted answer entity for each question. The length
+                of the returned list is batch_size.
+        """
 
         batch = list(batch)
 
