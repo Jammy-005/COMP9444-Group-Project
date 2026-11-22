@@ -60,10 +60,10 @@ if __name__ == "__main__":
     train = args.train
     val = args.val
 
-    random.seed(41)
-    torch.manual_seed(41)
+    random.seed(42)
+    torch.manual_seed(42)
     if torch.cuda.is_available():
-        torch.cuda.manual_seed_all(41)
+        torch.cuda.manual_seed_all(42)
 
     kb_path = PROJECT_ROOT / "data" / "kb.txt"
     if not kb_path.is_file():

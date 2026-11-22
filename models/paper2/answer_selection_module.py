@@ -72,7 +72,7 @@ class answer_selection_module():
 
     def select_answer_fast(self, batch: Iterable[tuple[str, str]]) -> list[str]:
         """Selects the answer for each question in the batch Iterable, using the method described
-        at the top of this class. DOes it faster by accessing the pre-computed RoBERTa embeddings
+        at the top of this class. Does it faster by accessing the pre-computed RoBERTa embeddings
         for questions seen in the training, validation and test data. This method does not work
         if a question in this batch is not in self.question_embedding_module.question_to_idx.keys().
         
